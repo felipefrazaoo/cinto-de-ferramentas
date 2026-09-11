@@ -2182,10 +2182,14 @@ function toggleDark(){
   document.body.classList.toggle('dark',dark);
   localStorage.setItem('cinto_dark',dark);
   document.getElementById('btn-dark').textContent=dark?t().light:t().dark;
+  var mb=document.getElementById('mob-btn-dark');
+  if(mb) mb.textContent=dark?'☀️':'🌙';
 }
 function toggleLang(){
   lang=lang==='pt'?'en':'pt';
   localStorage.setItem('cinto_lang',lang);
+  var ml=document.getElementById('mob-btn-lang');
+  if(ml) ml.textContent=TXT[lang].lang;
   renderAll();
 }
 function toggleType(tp){
@@ -2244,12 +2248,14 @@ function navItem(id,icon,label,count){
 }
 function setCat(id){
   activeCat=id;
-  // Close deep views
   document.getElementById('deep-tool').style.display='none';
   document.getElementById('deep-ex').style.display='none';
   renderNav();renderList();
-  document.getElementById('top-title').textContent=
-    id==='all'?t().all:id==='fav'?t().fav:id==='rec'?t().rec:t().CL[id]||id;
+  var label=id==='all'?t().all:id==='fav'?t().fav:id==='rec'?t().rec:t().CL[id]||id;
+  document.getElementById('top-title').textContent=label;
+  var mt=document.getElementById('mob-top-title');
+  if(mt) mt.textContent=label;
+  closeSidebar();
 }
 
 function renderFilters(){
@@ -2297,13 +2303,14 @@ function selectTool(id){
   saveRecent();
   renderList();
   renderDetail();
+  openMobDetail();
 }
 
 function renderDetail(){
   const det=document.getElementById('det');
   const tool=getSelected();
   if(!tool){
-    det.innerHTML=`<div class="det-rz" id="det-rz" title="Arraste para redimensionar"></div><div class="de"><div class="dei">👆</div><div class="det2">${t().click}</div></div>`;
+    det.innerHTML=`<div class="mob-det-back mob-det-back-hide" onclick="closeMobDetail()">← Voltar</div><div class="det-rz" id="det-rz" title="Arraste para redimensionar"></div><div class="de"><div class="dei">👆</div><div class="det2">${t().click}</div></div>`;
     initResize();return;
   }
   const dc=DEEP_CONTENT[tool.id];
@@ -2317,6 +2324,7 @@ function renderDetail(){
   const whoChips=(tool.who||[]).map(w=>`<span class="wc">${w}</span>`).join('');
   
   det.innerHTML=`
+    <div class="mob-det-back" onclick="closeMobDetail()">← Voltar para lista</div>
     <div class="det-rz" id="det-rz" title="Arraste para redimensionar"></div>
     <div class="db">
       <span class="dtag" style="background:${TB()[tool.type]};color:${TC[tool.type]}">${t().TL[tool.type]}</span>
@@ -2560,6 +2568,41 @@ document.getElementById('search').addEventListener('input',function(){
   document.getElementById('deep-ex').style.display='none';
   renderList();
 });
+var mobSrch=document.getElementById('mob-search');
+if(mobSrch){
+  mobSrch.addEventListener('input',function(){
+    document.getElementById('search').value=this.value;
+    document.getElementById('deep-tool').style.display='none';
+    document.getElementById('deep-ex').style.display='none';
+    renderList();
+  });
+}
+
+
+// ── MOBILE ──────────────────────────────────────────────
+function isMobile(){ return window.innerWidth <= 768; }
+
+function toggleSidebar(){
+  document.getElementById('sb').classList.toggle('open');
+  document.getElementById('sb-overlay').classList.toggle('show');
+}
+function closeSidebar(){
+  document.getElementById('sb').classList.remove('open');
+  document.getElementById('sb-overlay').classList.remove('show');
+}
+function openMobDetail(){
+  if(!isMobile()) return;
+  document.getElementById('det').classList.add('mob-open');
+  var back=document.getElementById('mob-det-back');
+  if(back) back.classList.remove('mob-det-back-hide');
+}
+function closeMobDetail(){
+  document.getElementById('det').classList.remove('mob-open');
+  var back=document.getElementById('mob-det-back');
+  if(back) back.classList.add('mob-det-back-hide');
+  selId=null;
+  renderList();
+}
 
 // ── INIT ─────────────────────────────────────────────────
 load();
