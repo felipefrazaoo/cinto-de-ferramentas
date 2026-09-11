@@ -166,9 +166,138 @@ body{font-family:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;ba
 .f textarea{min-height:70px;resize:vertical}
 .fr{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .ma{display:flex;gap:7px;margin-top:16px}
+
+/* ── MOBILE RESPONSIVE ─────────────────────────────── */
+:root { --mob-header: 52px; }
+
+/* Hamburger button — hidden on desktop */
+.mob-menu-btn {
+  display:none; background:none; border:none; cursor:pointer;
+  font-size:22px; padding:6px 10px; color:var(--tx);
+  position:fixed; top:8px; left:8px; z-index:300;
+  background:var(--sb); border-radius:8px;
+  box-shadow:0 1px 4px rgba(0,0,0,.15);
+}
+/* Mobile top bar */
+.mob-topbar {
+  display:none; position:fixed; top:0; left:0; right:0;
+  height:var(--mob-header); background:var(--sb);
+  border-bottom:1px solid var(--border); z-index:200;
+  align-items:center; padding:0 12px 0 52px; gap:8px;
+}
+.mob-topbar .tt { font-size:14px; font-weight:600; flex:1; }
+.mob-topbar .ctrls { display:flex; gap:6px; margin:0; }
+.mob-topbar .ctrl { padding:5px 10px; font-size:11px; }
+
+/* Sidebar overlay on mobile */
+.sb-overlay {
+  display:none; position:fixed; inset:0;
+  background:rgba(0,0,0,.45); z-index:250;
+}
+.sb-overlay.show { display:block; }
+
+@media (max-width: 768px) {
+  /* Show mobile elements */
+  .mob-menu-btn { display:flex; align-items:center; }
+  .mob-topbar { display:flex; }
+
+  /* App layout — single column */
+  .app { flex-direction:column; padding-top:var(--mob-header); }
+
+  /* Sidebar — slide in from left */
+  .sb {
+    position:fixed; left:-240px; top:0; bottom:0;
+    width:240px; z-index:260; transition:left .25s ease;
+    overflow-y:auto;
+  }
+  .sb.open { left:0; }
+  .sb .sb-top { padding-top:60px; }
+
+  /* Main fills full width */
+  .main { width:100%; overflow:hidden; }
+
+  /* Hide desktop topbar filters on mobile — shown in mob-topbar */
+  .topbar { display:none; }
+
+  /* Content area — single column */
+  .content { flex-direction:column; }
+
+  /* List panel — full width */
+  .list { width:100% !important; padding:10px; }
+
+  /* Cards — single column on narrow, 2 col on wider mobile */
+  .cards { grid-template-columns:1fr 1fr; gap:8px; }
+  @media (max-width:480px) {
+    .cards { grid-template-columns:1fr; }
+  }
+
+  /* Detail panel — hidden by default, shown as overlay when tool selected */
+  .det {
+    position:fixed !important;
+    inset:0 !important;
+    width:100% !important;
+    top:var(--mob-header) !important;
+    transform:translateX(100%);
+    transition:transform .25s ease;
+    z-index:150;
+    border-left:none !important;
+    overflow-y:auto;
+  }
+  .det.mob-open {
+    transform:translateX(0);
+  }
+
+  /* Hide resize handle on mobile */
+  .det-rz { display:none !important; }
+
+  /* Deep views */
+  .dv { top:var(--mob-header) !important; }
+
+  /* Back button on detail panel */
+  .mob-det-back {
+    display:flex; align-items:center; gap:6px;
+    padding:10px 14px 6px;
+    font-size:13px; font-weight:500; color:var(--ac);
+    cursor:pointer; border-bottom:1px solid var(--border);
+    background:var(--sb);
+    position:sticky; top:0; z-index:10;
+  }
+  .mob-det-back-hide { display:none; }
+
+  /* Search in mob topbar */
+  .mob-search {
+    flex:1; padding:6px 10px 6px 28px; font-size:12px;
+    border:1px solid var(--border); border-radius:20px;
+    background:var(--hv); color:var(--tx); outline:none;
+    max-width:200px;
+  }
+  .mob-search-wrap { position:relative; flex:1; max-width:200px; }
+  .mob-search-icon { position:absolute; left:9px; top:50%; transform:translateY(-50%); font-size:12px; color:var(--mu); }
+}
+
+@media (min-width:769px) {
+  /* Desktop — hide mobile elements */
+  .mob-menu-btn { display:none !important; }
+  .mob-topbar { display:none !important; }
+  .mob-det-back { display:none !important; }
+}
 </style>
 </head>
 <body>
+<!-- Mobile elements -->
+<button class="mob-menu-btn" id="mob-menu-btn" onclick="toggleSidebar()">☰</button>
+<div class="mob-topbar" id="mob-topbar">
+  <span class="tt" id="mob-top-title">Todas</span>
+  <div class="mob-search-wrap">
+    <span class="mob-search-icon">🔍</span>
+    <input class="mob-search" type="text" id="mob-search" placeholder="Buscar..."/>
+  </div>
+  <div class="ctrls">
+    <button class="ctrl" id="mob-btn-dark" onclick="toggleDark()">🌙</button>
+    <button class="ctrl" id="mob-btn-lang" onclick="toggleLang()">EN</button>
+  </div>
+</div>
+<div class="sb-overlay" id="sb-overlay" onclick="closeSidebar()"></div>
 <div class="app" id="app">
   <!-- SIDEBAR -->
   <div class="sb" id="sb">
@@ -199,6 +328,7 @@ body{font-family:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;ba
     <div class="content">
       <div class="list" id="list"></div>
       <div class="det" id="det" style="width:310px">
+        <div class="mob-det-back mob-det-back-hide" id="mob-det-back" onclick="closeMobDetail()">← Voltar</div>
         <div class="det-rz" id="det-rz" title="Arraste para redimensionar"></div>
         <div class="de"><div class="dei">👆</div><div class="det2" id="click-hint">Clique em uma ferramenta para ver os detalhes</div></div>
       </div>
