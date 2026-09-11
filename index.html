@@ -1911,7 +1911,433 @@ MÉTRICA CENTRAL
 A taxa de completude do Golden Path (percentagem de usuários que chegam ao final do fluxo principal sem abandono) é frequentemente a métrica mais importante de um produto — mais que DAU, MAU ou NPS. Um produto com Golden Path fluido tende a ter boas métricas de retenção e satisfação.` }
     ]
   }
+,
+  "eliminacao-bloqueio": {
+    intro: `A Eliminação de Bloqueio Mental não é uma ferramenta com forma definida — é uma prática de preparação para a criatividade. Ela parte de um diagnóstico preciso: quando uma equipe não consegue gerar ideias originais, o problema raramente é falta de criatividade. O problema quase sempre é algum bloqueio que impede o pensamento criativo de fluir.
 
+Bloqueios mentais em contextos de design são documentados pela literatura de metodologia de projeto (Como Se Cria, Löbach/Baxter/Bomfim) como a principal causa de sessões de ideação que produzem apenas variações do óbvio. Identificar e remover esse bloqueio antes de começar é o que separa uma sessão de ideação produtiva de uma que gera mais do mesmo.`,
+    sections: [
+      { title: "Os 3 tipos de bloqueio e como reconhecê-los",
+        body: `BLOQUEIOS PERCEPTIVOS
+Dificuldade de enxergar o problema de um ângulo diferente do habitual. Sintoma: a equipe continua gerando variações da mesma solução, sem conseguir sair do paradigma dominante. Causa comum: "sempre foi assim" ou "a concorrência faz dessa forma".
+
+Técnica desbloqueadora: perguntas de mudança de perspectiva radical. "Se você fosse o usuário mais diferente possível de você, o que esperaria?" "Se este produto existisse em outro país ou cultura, como seria?" "Se você tivesse que proibir a solução óbvia por lei, o que faria?"
+
+BLOQUEIOS CULTURAIS E EMOCIONAIS
+Medo de errar, medo de parecer ridículo, excesso de autocrítica antes mesmo de verbalizar a ideia. Sintoma: silêncio, participação baixa, ideias muito "seguras", pessoas que pedem desculpas antes de sugerir algo.
+
+Técnica desbloqueadora: anonimato (brainwriting), exercícios absurdos que igualizam o grupo (ninguém sabe fazer a resposta "certa" de um exercício absurdo), declaração explícita de que não existe ideia errada nesta fase.
+
+BLOQUEIOS DE HÁBITO
+Usar sempre o mesmo caminho de solução porque "funcionou da última vez". Sintoma: toda ideia gerada se encaixa no mesmo padrão de solução (ex: "adicionar mais funcionalidades", "mudar a cor", "criar uma versão premium").
+
+Técnica desbloqueadora: restrições artificiais. "Resolva com apenas uma ação do usuário." "Resolva sem tela." "Resolva sem funcionários." As restrições impossíveis forçam o pensamento a novos caminhos.` },
+      { title: "Exercícios práticos de desbloqueio",
+        body: `ASSOCIAÇÃO LIVRE (5 minutos)
+O facilitador diz uma palavra aleatória. Cada participante escreve 5 palavras associadas. Depois, alguém tenta conectar as palavras geradas ao problema do projeto. Exemplo: palavra "oceano" → profundidade, onda, pressão, sal, invisível → "o problema do usuário é invisível para a empresa" → insight sobre pesquisa de campo.
+
+DESENHO RÁPIDO (30 segundos por esboço)
+Cada participante desenha 8 conceitos do produto em 8 minutos (Crazy 8's) mas começando com as ideias mais absurdas possíveis. O absurdo no início desbloqueie o pragmatismo prematuro.
+
+PERGUNTAS PROVOCATIVAS
+Série de perguntas que removem as premissas do problema:
+→ "E se fosse gratuito?"
+→ "E se fosse proibido por lei?"
+→ "E se o usuário fosse um extraterrestre?"
+→ "E se você tivesse que resolver em 24 horas?"
+→ "E se você não pudesse usar tecnologia?"
+
+TROCA DE PAPÉIS
+Cada participante adota a perspectiva de um stakeholder diferente do seu: o desenvolvedor pensa como o usuário, o gestor pensa como o técnico de suporte, o designer pensa como o jurídico. A fricção de perspectivas desbloqueie pontos cegos.` },
+      { title: "Quando usar na prática de design",
+        body: `ANTES DE QUALQUER SESSÃO DE IDEAÇÃO
+Sempre. A eliminação de bloqueio é o aquecimento que precede qualquer método — Biônica, Sinética, SCAMPER, Brainwriting, Crazy 8's. Uma sessão de ideação que começa sem aquecimento tende a produzir as 5-10 ideias mais óbvias nos primeiros 10 minutos e depois travar.
+
+QUANDO A EQUIPE ESTÁ "TRAVADA"
+Se um projeto está em loop, sempre voltando para as mesmas soluções, um exercício de desbloqueio antes da próxima sessão pode ser mais valioso que qualquer nova metodologia.
+
+QUANDO HÁ MUITO EGO NA SALA
+Em equipes com hierarquia forte ou pessoas muito assertivas, o bloqueio emocional é alto. Exercícios que equalizam e anonimizam (brainwriting, perguntas absurdas) criam um ambiente temporariamente seguro para ideias improváveis.
+
+CUIDADO: Não confundir desbloqueio com o método de ideação
+O desbloqueio é a preparação — não a ideação em si. Após o aquecimento, é necessário passar para um método estruturado (Biônica, Sinética, Matriz Morfológica, SCAMPER etc.) que canalize a criatividade desbloqueada em direção ao problema real.` }
+    ]
+  },
+
+  "bionica": {
+    intro: `A Biônica (ou Biomimética) é a disciplina que estuda os sistemas naturais para desenvolver soluções de design análogas. O nome vem do grego "bios" (vida) + "technikos" (técnico) — literalmente, a tecnologia da vida.
+
+O princípio fundamental é simples e revolucionário: a natureza passou por aproximadamente 3,8 bilhões de anos de pesquisa e desenvolvimento, testando soluções sob as leis implacáveis da física e da termodinâmica. Toda estrutura que sobreviveu a esse processo é, por definição, eficiente. A biônica não tenta reproduzir a estética da natureza — tenta entender e adaptar os princípios de engenharia que estão por trás dela.
+
+A distinção crucial é entre forma e princípio. Copiar a forma de uma borboleta é decoração. Entender como as escamas da borboleta refletem luz sem pigmento — e aplicar esse princípio para criar displays que funcionam sem luz de fundo — é biônica.`,
+    sections: [
+      { title: "Os 3 modos de uso propostos por Ramos (1993)",
+        body: `1. BIÔNICA PARA DEFINIR O PROBLEMA
+Às vezes, observar um sistema natural revela necessidades ou oportunidades de design que ainda não foram percebidas. O pesquisador não tem um problema definido — ele explora a natureza e pergunta: "que problema humano este princípio natural poderia resolver?"
+
+Exemplo: a observação de como as plantas de regiões áridas coletam água do nevoeiro levou à descoberta de uma necessidade não atendida — coletar água do ar em regiões sem chuva. Depois veio a solução de design: superfícies com texturas que imitam as estruturas da planta.
+
+2. BIÔNICA PARA GERAR CONCEITO
+Partindo de um problema já definido, o designer busca na natureza um sistema análogo que resolve algo funcionalmente parecido. Esta é a aplicação mais comum em processos de design de produto.
+
+Pergunta-chave: "Qual sistema natural resolve um problema funcionalmente similar ao meu?" Não: "Qual animal tem a forma mais parecida com o produto que estou projetando?"
+
+3. BIÔNICA PARA VALIDAR E OTIMIZAR
+Depois de uma solução esboçada, o designer a compara com análogas naturais para refinar. A solução já existe — a natureza serve de referência para melhorá-la.
+
+Exemplo: um engenheiro projeta uma estrutura de suporte, depois descobre que as trabeculações do osso humano (o padrão interno de "vigas" microscópicas) usam menos material para a mesma resistência — e usa esse princípio para redesenhar a estrutura.` },
+      { title: "Como extrair o princípio de solução (não a forma)",
+        body: `O erro mais comum na biônica é parar na analogia visual: "a concha parece um capacete, vou fazer o capacete com formato de concha." Isso é estilismo, não biônica.
+
+A biônica real pergunta: como a concha distribui forças de impacto? Resposta: através de uma estrutura laminada em camadas de direções alternadas, onde cada camada absorve um tipo diferente de tensão. Esse é o princípio de solução — e ele pode ser aplicado a um capacete sem que o capacete pareça uma concha.
+
+PROTOCOLO DE EXTRAÇÃO DO PRINCÍPIO:
+1. Descreva a função do sistema natural em termos abstratos (não "a teia de aranha é resistente", mas "a teia distribui tensão ao longo de uma rede de filamentos radiais e concêntricos")
+2. Identifique o mecanismo: o que faz essa função acontecer? (geometria, material, processo?)
+3. Traduza para linguagem de engenharia/design: qual seria o equivalente industrial?
+4. Verifique se o princípio é adaptável às suas restrições de fabricação e materiais
+
+FILTRAGEM ANTES DA APLICAÇÃO:
+Nem toda solução natural é industrialmente aplicável. A seda de aranha é o material mais resistente por peso da natureza — mas produzir seda em escala industrial foi tentado por décadas sem sucesso comercial. A biônica útil considera viabilidade desde o início.` },
+      { title: "Exemplos canônicos e lições",
+        body: `VELCRO — George de Mestral (1941-1955)
+Mestral voltava de uma caminhada com seu cão coberto de carrapichos. Ao invés de se irritar, observou ao microscópio: cada carrapicho tinha centenas de ganchinhos que se prendiam aos fios curvos do pelo. 14 anos de desenvolvimento depois, o Velcro foi patenteado. Princípio extraído: gancho rígido + laço flexível = adesão mecânica reversível.
+
+TREM-BALA SHINKANSEN — Eiji Nakatsu (1996)
+O trem causava explosões de ar ao sair de túneis, gerando reclamações de ruído. O engenheiro Nakatsu, um observador de pássaros, percebeu que o martim-pescador mergulha na água sem respingo — graças ao formato do bico que transita suavemente entre dois meios de densidades diferentes. O bico inspirou o novo nariz do trem: 15% mais rápido, 30% menos energia, sem explosões sonoras.
+
+EASTGATE CENTRE — Mick Pearce (1996)
+Complexo comercial no Zimbábue sem ar-condicionado central. O arquiteto Pearce estudou os cupinzeiros, que mantêm temperatura interna constante de 31°C mesmo com variação externa de 3°C a 42°C. O princípio: sistema de chaminés que regulam tiragem de ar conforme a temperatura. Resultado: 90% menos energia que edifícios comparáveis.` }
+    ]
+  },
+
+  "sinetica": {
+    intro: `A Sinética é uma das técnicas de ideação mais sofisticadas da história do design — e uma das menos usadas, exatamente por exigir um facilitador experiente para extrair seu valor completo.
+
+O nome vem do grego "synektikos" — aquele que une coisas não relacionadas. Esse é o coração do método: a criatividade surge quando conectamos domínios que normalmente não se tocam. O que parece absurdo à primeira vista frequentemente esconde a solução mais elegante.
+
+William Gordon, que sistematizou a técnica, partia de uma observação sobre o processo criativo de inventores e artistas: os momentos de insight raramente vinham de raciocínio linear. Eles vinham de analogias inesperadas — um problema visto pelo ângulo errado, que revelava a solução que o ângulo certo escondia.`,
+    sections: [
+      { title: "Os 4 tipos de analogia em detalhe",
+        body: `ANALOGIA PESSOAL
+O participante se imagina sendo fisicamente o objeto ou elemento do problema. Não "o que eu faria se tivesse que usar este produto" — mas "se EU FOSSE este produto, o que eu sentiria? O que eu pediria?"
+
+Potência: remove a distância entre designer e objeto, gerando insights empáticos que nenhuma análise externa produziria. Limitação: requer disposição para o "ridículo" — pessoas mais rígidas resistem à técnica.
+
+Exemplo prático: "Se eu fosse a embalagem de ketchup, o que sentiria sendo guardada de cabeça para cima na geladeira por meses?" → "Sentiria que meu produto está sempre no fundo, difícil de sair" → insight para inverter a embalagem, com a tampa na base.
+
+ANALOGIA DIRETA
+Comparação objetiva com um sistema real de outro domínio (natureza, tecnologia, outros setores). Mais fácil de facilitar, menos profunda que a pessoal.
+
+Não é biônica (que é sistemática e focada em natureza) — é mais livre, pode vir de qualquer área. "Como um jogo de xadrez resolve o problema de tomada de decisão com informação incompleta?"
+
+ANALOGIA SIMBÓLICA
+Criação de uma frase-símbolo de 2-3 palavras que captura o paradoxo central do problema. A frase deve ser poeticamente contraditória, não uma descrição do produto.
+
+Exemplos de frases simbólicas poderosas:
+→ "Força gentil" (para um produto de acessibilidade)
+→ "Solidão conectada" (para um produto de saúde mental)
+→ "Caos organizado" (para um sistema de gestão de projetos criativos)
+→ "Invisibilidade protetora" (para um sistema de segurança)
+
+A frase é depois desdobrada: o que seria uma "força gentil" concretamente? Como isso se traduz em interface, material, interação?
+
+ANALOGIA FANTÁSTICA
+Remove completamente as restrições da realidade física, legal ou econômica. "E se a gravidade não existisse para esse produto?" "E se o usuário fosse imortal?" "E se o produto pudesse ler pensamentos?"
+
+O objetivo não é gerar uma solução fantástica — é usar o impossível como alavanca para depois "trazer de volta" ao viável. O salto imaginativo frequentemente aterra em um ponto diferente (e melhor) do que o ponto de partida.` },
+      { title: "O ciclo completo da Sinética",
+        body: `Gordon propõe um ciclo específico para aplicar a Sinética em grupo:
+
+FASE 1 — TORNAR O ESTRANHO FAMILIAR
+Antes de gerar analogias, o grupo precisa entender o problema profundamente. Isso parece óbvio, mas muitos grupos pulam para a solução antes de ter realmente compreendido o problema. Nesta fase, o facilitador conduz perguntas que aprofundam a compreensão: "O que seria o sucesso absoluto aqui?" "Quem é mais afetado por este problema e por quê?"
+
+FASE 2 — TORNAR O FAMILIAR ESTRANHO
+Aqui entram as analogias. O familiar (o problema que todos conhecem) é "alienado" — visto como se fosse desconhecido, através das lentes da analogia. O facilitador conduz o grupo pelas 4 formas de analogia, registrando as associações sem julgamento.
+
+FASE 3 — DETECTAR PONTOS DE TENSÃO
+Nos dados gerados pelas analogias, o facilitador identifica os "pontos de tensão" — momentos onde a analogia revela algo que contradiz a abordagem atual do problema. Esses pontos são os potenciais insights.
+
+FASE 4 — TRAZER DE VOLTA
+O insight simbólico ou fantástico é trazido de volta ao domínio real. "Como isso se traduz em um produto viável?" "Que parte dessa analogia fantasiosa é de fato realizável com a tecnologia atual?" Esta fase é onde muitos grupos falham — ficam na analogia e esquecem de voltar.` },
+      { title: "Erros comuns e como evitar",
+        body: `ERRO 1 — Parar na analogia
+A Sinética só tem valor quando a ideia simbólica vira solução concreta. Grupos que adoram a fase de analogias mas resistem à "tradução" de volta ao problema real produzem reuniões criativas e inúteis.
+
+ERRO 2 — Julgar a analogia na hora que ela é dita
+"Isso não tem nada a ver com o nosso problema." Essa reação mata a técnica. Qualquer analogia pode conter um insight — a conexão pode não ser óbvia no momento em que é proposta.
+
+ERRO 3 — Usar só analogia direta
+A analogia direta é a mais fácil e a menos poderosa. Facilidades como "é como um aplicativo de música" ou "funciona como um semáforo" raramente geram insights surpreendentes. Empurre o grupo para a analogia pessoal e simbólica.
+
+ERRO 4 — Confundir Sinética com brainstorming
+Sinética não é brainstorming com metáforas. É um processo estruturado com fases específicas, onde as analogias são trabalhadas em profundidade — não jogadas rapidamente como em uma chuva de ideias.
+
+QUANDO A SINÉTICA É MAIS PODEROSA:
+→ Quando o problema já recebeu as "soluções óbvias" e elas não funcionaram
+→ Quando a equipe está bloqueada num paradigma de solução específico
+→ Quando o problema tem dimensão emocional forte (produtos de saúde, acessibilidade, relação humana)` }
+    ]
+  },
+
+  "matriz-morfologica": {
+    intro: `A Matriz Morfológica, também chamada de Caixa de Zwicky em homenagem ao seu criador Fritz Zwicky, é um método de geração de ideias fundamentalmente diferente das técnicas baseadas em associação livre ou analogia. Ela é analítica antes de ser criativa: primeiro mapeia sistematicamente todas as dimensões do problema, depois usa a combinação entre dimensões para revelar soluções inesperadas.
+
+Fritz Zwicky era um astrônomo do Caltech que aplicou o método para mapear todo o espaço de possíveis corpos celulares no universo — uma ambição caracteristicamente suíça de completude sistemática. O insight que ele exportou para o design: em qualquer sistema complexo, o número de combinações possíveis entre seus componentes é radicalmente maior que o número de soluções que seriam geradas intuitivamente.
+
+Na prática do design de produto, a Matriz Morfológica é especialmente poderosa quando combinada com a Análise Funcional — que fornece as variáveis (subfunções do produto) que alimentam a matriz.`,
+    sections: [
+      { title: "Como construir uma matriz eficaz",
+        body: `DEFINIR AS VARIÁVEIS (linhas da matriz)
+As variáveis são as dimensões independentes do produto que podem variar. Elas podem vir de:
+→ Análise Funcional: quais são as subfunções que o produto precisa realizar?
+→ Atributos do produto: forma, material, cor, mecanismo, processo de fabricação, ergonomia
+→ Requisitos do usuário: as dimensões que o usuário mais valoriza
+
+Boa prática: 4 a 7 variáveis. Menos de 4 gera poucas combinações. Mais de 7 torna a análise inviável.
+
+GERAR SOLUÇÕES PARA CADA VARIÁVEL (colunas da matriz)
+Para cada variável, gere o maior número possível de soluções alternativas. Inclua soluções existentes, soluções improváveis e soluções ainda não testadas. A abundância de opções em cada linha é o que torna a combinação poderosa.
+
+Boa prática: 3 a 6 soluções por variável. Com 5 variáveis × 4 soluções = 1024 combinações possíveis.
+
+COMBINAR (percorrer a matriz)
+Escolha uma solução de cada linha e combine — isso forma um "conceito de produto". Percorra a matriz sistematicamente, mas também experimente combinações aparentemente improváveis. Frequentemente são essas que revelam as soluções mais originais.
+
+O que fazer com combinações impossíveis?
+Nem toda combinação é viável — algumas são físicamente impossíveis, outras economicamente inviáveis. Filtre as combinações em 3 grupos:
+→ Viáveis agora: vão para avaliação e protótipo
+→ Viáveis no futuro: documentar para roadmap de produto
+→ Inviáveis: descartar, mas registrar por quê (para referência futura)` },
+      { title: "Relação com a Análise Funcional",
+        body: `A Análise Funcional (ou Análise do Valor) é uma abordagem sistemática para decompor um produto em suas funções elementares. Quando aplicada antes da Matriz Morfológica, ela fornece variáveis que são genuinamente independentes entre si — o que torna as combinações mais robustas.
+
+Exemplo de como a Análise Funcional alimenta a Matriz:
+
+PRODUTO: Cadeira de escritório
+FUNÇÕES (identificadas pela Análise Funcional):
+F1 = Suportar o peso do usuário
+F2 = Distribuir pressão na região lombar
+F3 = Permitir ajuste de altura
+F4 = Facilitar movimento lateral
+F5 = Transportar/reposicionar no espaço
+
+VARIÁVEIS NA MATRIZ MORFOLÓGICA:
+→ F1: estrutura de suporte (4 patas, pedestal central, membrana tensionada, base flutuante)
+→ F2: tipo de encosto (rígido fixo, almofada, articulado, ausente)
+→ F3: mecanismo de altura (a gás, parafuso, trilho, pneumático)
+→ F4: sistema de rodas (rodízios comuns, rodízios direcionais, sem rodas, rolamentos esféricos)
+→ F5: peso total (< 5kg, 5-10kg, > 10kg)
+
+Cruzando as opções: "membrana tensionada + articulado + pneumático + rodízios direcionais + < 5kg" → conceito de cadeira ultraminimalista e fluida que nunca foi desenvolvida pelos concorrentes que olhavam apenas para cadeiras existentes.` },
+      { title: "Quando usar e quando não usar",
+        body: `QUANDO A MATRIZ BRILHA:
+→ Redesign de produto com estrutura funcional conhecida
+→ Quando a equipe está "viciada" em uma solução e precisa enxergar alternativas
+→ Para explorar o espaço de solução de forma sistemática antes de comprometer com um conceito
+→ Quando há stakeholders que precisam ver que "todas as opções foram consideradas" — a matriz é uma evidência visual disso
+
+LIMITAÇÕES REAIS:
+→ Para problemas muito abstratos ou emergentes, sem variáveis discretas definidas, a matriz é impraticável — não há o que combinar
+→ Pode gerar uma falsa sensação de completude: "analisamos todas as combinações" quando na verdade o espaço de possibilidades é maior do que a matriz captura
+→ A qualidade da matriz depende diretamente da qualidade das variáveis escolhidas — variáveis mal definidas geram combinações inúteis
+
+COMPLEMENTARIDADE COM OUTROS MÉTODOS:
+A Matriz Morfológica funciona melhor como segundo método, não como primeiro. Use Sinética, Biônica ou SCAMPER para gerar o insight inicial, depois a Matriz para explorar sistematicamente as variações desse insight. Ou use a Análise Funcional para definir as variáveis e a Matriz para explorá-las.` }
+    ]
+  },
+
+  "brainwriting": {
+    intro: `O Brainwriting 635 é a resposta estruturada a um problema bem documentado do brainstorming tradicional: em qualquer grupo com hierarquia ou personalidades dominantes, as ideias que chegam primeiro (geralmente as mais óbvias) tendem a capturar a atenção do grupo, e as ideias das pessoas mais quietas raramente chegam a ser ditas.
+
+O método foi desenvolvido como variação do brainstorming verbal de Alex Osborn (1953), substituindo "falar" por "escrever" e "rodada única" por "rodadas sequenciais onde cada pessoa constrói sobre as ideias anteriores". O resultado é um processo simultaneamente mais democrático (todos contribuem ao mesmo tempo), mais produtivo (sem tempo perdido em conversas paralelas) e mais cumulativo (ideias se constroem umas sobre as outras).
+
+O nome 635 é o coração do método: 6 pessoas, 3 ideias, 5 minutos. A matemática é sedutora: em teoria, 6 rodadas de 6 pessoas com 3 ideias cada = 108 ideias. Na prática, algumas ideias se repetem, mas o volume gerado é consistentemente maior que em brainstorming verbal.`,
+    sections: [
+      { title: "Por que o silêncio é a força do método",
+        body: `Em brainstorming verbal, existem dois problemas psicológicos bem documentados:
+
+BLOQUEIO DE PRODUÇÃO
+Quando alguém está falando, os outros param de gerar ideias para ouvir — e frequentemente perdem a ideia que estavam pensando. Em um grupo de 6 pessoas, apenas 1 fala por vez, o que significa que 5 pessoas estão em modo passivo na maior parte do tempo.
+
+No Brainwriting, todos escrevem simultaneamente. Não há momento passivo — cada pessoa está sempre ou gerando ideias ou lendo e se inspirando nas ideias do colega.
+
+AVALIAÇÃO PREMATURA
+Em brainstorming verbal, as ideias são expostas imediatamente ao julgamento do grupo — incluindo a linguagem corporal e as reações faciais. Uma sobrancelha erguida basta para inibir o próximo.
+
+No Brainwriting, as ideias viajam na folha — sem tom de voz, sem expressão facial, sem "dono" óbvio enquanto circulam. O julgamento acontece só no final, quando todas as ideias já estão registradas.
+
+O EFEITO DE CONSTRUÇÃO CUMULATIVA
+Quando você recebe a folha do colega e lê as 3 ideias dele antes de escrever as suas, acontece algo que o brainstorming verbal raramente produz: você gera ideias que são variações ou combinações das ideias alheias, não apenas ideias independentes. Isso cria uma rede de ideias interconectadas que é mais rica que a soma das partes.` },
+      { title: "Variações e adaptações do método",
+        body: `BRAINWRITING DIGITAL
+Para equipes remotas, ferramentas como Miro, FigJam ou até Google Docs permitem adaptar o método. Cada pessoa tem uma coluna ou área; um timer compartilhado sinaliza as rodadas; as folhas são "passadas" movendo a área para a próxima pessoa.
+
+Atenção: no digital, as ideias ficam visíveis para todos ao mesmo tempo — o que pode introduzir o problema de avaliação prematura que o papel evita. Considere ocultar as colunas até o final de cada rodada.
+
+BRAINWRITING ASSÍNCRONO
+Para equipes em fusos diferentes ou com agenda difícil de alinhar, o método pode ser adaptado de forma assíncrona: cada pessoa recebe a folha digital por e-mail ou ferramenta, tem X horas para escrever suas 3 ideias, e passa adiante. Perde o ritmo do timer, mas mantém a lógica cumulativa.
+
+BRAINWRITING COM ESTÍMULOS VISUAIS
+Antes de começar as rodadas, o facilitador coloca imagens, objetos ou referências na mesa. Cada pessoa começa olhando para um estímulo diferente, e eles podem circular junto com as folhas. Usado especialmente em projetos de design de produto onde estímulos visuais são mais naturais que texto.
+
+VARIAÇÃO DO NÚMERO
+O 635 não é um número sagrado. 4 pessoas × 3 ideias × 4 minutos também funciona (48 ideias). O que importa é: silêncio, simultaneidade e circulação das folhas.` },
+      { title: "Como facilitar uma sessão bem-sucedida",
+        body: `PREPARAÇÃO (10 minutos antes)
+→ Prepare as folhas: divida em grade de 6 linhas × 3 colunas (6 rodadas × 3 ideias por rodada)
+→ Escreva o desafio de forma clara no topo de cada folha — exatamente igual em todas
+→ Prepare o timer (visível para todos — projetar é melhor que o celular pessoal)
+→ Organize os lugares em círculo ou ao redor de uma mesa
+
+BRIEFING (5 minutos)
+→ Explique o desafio claramente (não mais que 2 minutos)
+→ Explique a mecânica: 3 ideias em 5 minutos, silêncio absoluto, passa para o lado direito
+→ Permita perguntas de clareza sobre o desafio — não sobre o método
+→ Diga explicitamente: "Não existe ideia errada. Quantidade é o objetivo agora."
+
+DURANTE AS RODADAS
+→ Mantenha o silêncio — qualquer conversa quebra o estado criativo do grupo
+→ Se alguém terminar antes dos 5 minutos, peça que revise as ideias já escritas ou que escreva variações
+→ Sinalizar claramente "PASSE" no fim de cada rodada (sino, palavra de ordem, visual)
+
+PÓS-SESSÃO (20-30 minutos)
+→ Todas as folhas espalhadas na mesa ou fixadas na parede
+→ Leitura silenciosa individual (5 min): cada um lê e marca o que achou mais interessante
+→ Apresentação rápida: cada um apresenta a ideia que mais gostou (não necessariamente a sua)
+→ Agrupamento em clusters temáticos
+→ Votação para priorização (dot voting ou método de priorização do grupo)` }
+    ]
+  },
+
+  "scamper": {
+    intro: `O SCAMPER é uma das técnicas de ideação mais acessíveis e imediatamente aplicáveis do arsenal do designer. Ao contrário de métodos que exigem sessões longas ou facilitação especializada, o SCAMPER pode ser aplicado individualmente em 20 minutos, em cima de qualquer produto ou serviço existente.
+
+O método foi criado por Bob Eberle nos anos 1970 como uma reorganização mnemônica de uma lista de perguntas provocativas que Alex Osborn havia desenvolvido décadas antes — mas que eram difíceis de lembrar e aplicar de forma sistemática. Eberle as organizou no acrônimo SCAMPER, tornando o método memorizável e portátil.
+
+A premissa fundamental: nenhum produto surgiu do nada. Todo produto é uma recombinação, modificação ou eliminação de algo que já existia. O SCAMPER torna esse processo inconsciente em um processo consciente e sistemático — forçando o designer a olhar para um produto existente por 7 ângulos diferentes.`,
+    sections: [
+      { title: "Cada letra em profundidade",
+        body: `S — SUBSTITUIR
+Perguntas: O que pode ser trocado? Material, processo, local, pessoa, componente, regra?
+Profundidade: Pense em substituições nos 3 níveis — superficial (trocar a cor), funcional (trocar o mecanismo) e sistêmica (trocar o modelo de negócio). As substituições sistêmicas são as mais transformadoras.
+
+C — COMBINAR
+Perguntas: O que pode ser fundido? Duas funções em uma? Dois produtos em um? Dois serviços?
+Profundidade: Combinações poderosas frequentemente vêm de domínios distantes — não "garrafa + tampa", mas "garrafa + filtro" ou "garrafa + aquecedor". Quanto maior a distância entre os domínios combinados, maior o potencial de originalidade.
+
+A — ADAPTAR
+Perguntas: O que existe em outro contexto que resolve algo parecido? Que produto, de outra indústria, enfrenta o mesmo problema fundamental?
+Profundidade: Esta letra é uma versão simplificada da Sinética (analogia direta). "Como os sistemas de navegação aérea resolvem o problema de orientação em espaços sem marcações visuais?" → insights para design de ambientes hospitalares.
+
+M — MODIFICAR / MAGNIFICAR / MINIFICAR
+Perguntas: O que pode ser aumentado, diminuído, exagerado, distorcido, reordenado, acelerado, desacelerado?
+Profundidade: Pense em modificações no tempo (mais rápido, mais lento), no espaço (maior, menor, diferente forma), na intensidade (mais forte, mais suave) e na frequência (mais vezes, menos vezes).
+
+P — PROPOR OUTRO USO
+Perguntas: Como isso poderia servir para algo completamente diferente do original? Que outros mercados poderiam usar isso?
+Profundidade: Esta pergunta frequentemente revela o maior potencial de inovação. O Post-it surgiu de um adesivo "fraco demais" — que era inútil para seu uso original mas perfeito para marcar páginas.
+
+E — ELIMINAR
+Perguntas: O que posso remover? Qual componente é supérfluo? O que acontece se eu simplificar radicalmente?
+Profundidade: Eliminar é frequentemente mais difícil de propor em grupo (porque parece "destruir" o que existe) mas é onde surgem as simplificações mais elegantes. "O que seria este produto se removêssemos tudo que não é estritamente necessário?"
+
+R — REVERTER / REARRANJAR
+Perguntas: O que acontece se eu inverter a lógica? Se o cliente virar o fornecedor? Se o início virar o fim? Se o problema virar a solução?
+Profundidade: Reversões sistêmicas geram disrupções. Uber reverteu quem busca quem no transporte. Airbnb reverteu quem é anfitrião e quem é hóspede. Netflix reverteu quem decide o horário da programação.` },
+      { title: "SCAMPER para serviços vs. produtos",
+        body: `O SCAMPER foi criado para produtos físicos, mas se aplica com pequenas adaptações a serviços:
+
+S — Substituir: trocar canal (presencial → digital → híbrido), trocar prestador (humano → automatizado → co-criado com o cliente)
+
+C — Combinar: combinar dois serviços em uma experiência integrada (ex: consulta médica + entrega de medicamento no mesmo ato)
+
+A — Adaptar: "Como outro setor resolveu o problema de filas?" → sistema de senha eletrônica do banco adaptado para clínicas
+
+M — Modificar: "O que acontece se a consulta médica durar 5 minutos? E se durar 2 horas?" Explorar os extremos revela o que é realmente essencial no serviço.
+
+P — Propor outro uso: um serviço de atendimento de emergência de TI poderia ser usado para treinamento em simulação de crise?
+
+E — Eliminar: "O que acontece se removermos a triagem?" "E se o formulário de cadastro tiver 3 campos em vez de 20?" Cada eliminação revela o que é realmente necessário.
+
+R — Reverter: "E se o usuário avaliasse o atendente antes do atendimento, não depois?" "E se o suporte técnico fosse iniciado pelo sistema, não pelo usuário?"` }
+    ]
+  },
+
+  "seis-chapeus": {
+    intro: `Os Seis Chapéus do Pensamento, criados pelo psicólogo maltês Edward de Bono e publicados originalmente em 1985, são uma das intervenções mais elegantes já desenvolvidas para melhorar a qualidade de reuniões e processos decisórios em grupo.
+
+O problema que de Bono identificou é tão antigo quanto as reuniões: quando pessoas com perspectivas, especialidades e egos diferentes tentam resolver um problema juntas, elas frequentemente estão "pensando em modos diferentes ao mesmo tempo". O analista está levantando dados, o otimista está defendendo o projeto, o crítico está listando riscos, o criativo está propondo alternativas — e em vez de construírem um sobre o outro, eles se contradizem, se interrompem e brigam por atenção.
+
+A solução de de Bono é elegantemente simples: em vez de pedir que as pessoas "saiam dos seus papéis" (impossível), peça que TODOS usem o mesmo papel ao mesmo tempo. Quando o grupo inteiro está no "chapéu preto", todos estão sendo críticos juntos — sem que nenhum precise defender sua posição crítica contra os outros. Quando o grupo muda para o "chapéu amarelo", todos são otimistas juntos. O resultado é uma discussão mais fluida, mais completa e com muito menos conflito de ego.`,
+    sections: [
+      { title: "Os 6 chapéus em profundidade",
+        body: `CHAPÉU BRANCO ⚪ — Dados e informações objetivas
+"O que sabemos? O que precisamos descobrir? Que dados existem?"
+O chapéu branco é neutro e objetivo — sem opinião, sem intuição. É o modo científico puro: o que os dados dizem? Que informações estão disponíveis? Que informações estão faltando e precisamos buscar?
+
+Armadilha: pessoas que "vestem o chapéu branco" mas apresentam dados selecionados que favorecem sua posição. O chapéu branco inclui dados que contradizem nossa posição tanto quanto os que a confirmam.
+
+CHAPÉU VERMELHO 🔴 — Emoção e intuição
+"O que sinto sobre isso? Qual é a minha reação visceral?"
+O vermelho é o único chapéu que não precisa de justificativa racional. "Sinto que esse projeto vai dar errado" é uma contribuição válida — sem precisar provar com dados. Isso é valioso porque intuições às vezes capturam padrões que a análise ainda não conseguiu articular.
+
+Armadilha: pessoas que nunca "vestem o vermelho" porque sentem que emoções são inapropriadas em contexto profissional. A intuição coletiva de uma equipe experiente é um dado importante.
+
+CHAPÉU PRETO ⚫ — Crítica lógica e cautela
+"Quais são os riscos? Por que isso pode não funcionar? Que problemas podemos enfrentar?"
+O chapéu mais valioso e o mais mal usado. Frequentemente, a pessoa "crítica" do grupo usa o chapéu preto o tempo todo, o que cria resistência aos seus argumentos. Quando TODOS estão no chapéu preto juntos, a crítica é recebida como construção coletiva, não como oposição individual.
+
+CHAPÉU AMARELO 🟡 — Otimismo lógico
+"Quais são os benefícios? Por que pode funcionar? Qual o valor potencial?"
+Complementar ao preto — não é otimismo ingênuo ("vai dar certo com certeza!") mas otimismo fundamentado: "aqui estão as razões pelas quais isso pode funcionar". Importante para contrabalancear o chapéu preto e evitar que a cautela vire paralisia.
+
+CHAPÉU VERDE 🟢 — Criatividade e alternativas
+"Que outras possibilidades existem? Que ideias novas surgem? Como podemos fazer diferente?"
+O chapéu verde é o espaço das propostas criativas. Aqui não há julgamento — o objetivo é gerar, não avaliar. Frequentemente vem após o preto e o amarelo, quando o grupo já tem clareza sobre os problemas e benefícios da abordagem atual.
+
+CHAPÉU AZUL 🔵 — Metacognição e processo
+"Como vamos pensar sobre isso? Que chapéu vem a seguir? O que resumimos até agora?"
+O chapéu azul é o facilitador — controla o processo, define a ordem dos chapéus, resume as conclusões de cada fase. É o único chapéu que pode ser usado durante todo o processo (pelo facilitador) enquanto os outros alternam.` },
+      { title: "Sequências de chapéus para diferentes objetivos",
+        body: `A ordem dos chapéus não é fixa — o facilitador (azul) escolhe a sequência mais adequada para o objetivo da reunião.
+
+PARA AVALIAR UMA PROPOSTA EXISTENTE:
+Branco → Amarelo → Preto → Verde → Vermelho → Azul
+(Começa pelos fatos, vai para benefícios, depois riscos, depois alternativas, fecha com intuição e síntese)
+
+PARA GERAR E SELECIONAR IDEIAS:
+Verde → Amarelo → Preto → Vermelho → Azul
+(Começa com geração sem julgamento, avalia benefícios, depois riscos, intuição e síntese)
+
+PARA TOMAR UMA DECISÃO DIFÍCIL:
+Branco → Preto → Amarelo → Verde → Vermelho → Azul
+(Começa pelos dados, vai para os riscos, depois os benefícios, alternativas não consideradas, intuição final e decisão)
+
+PARA RESOLVER UM CONFLITO:
+Vermelho → Branco → Verde → Amarelo → Preto → Azul
+(Começa deixando as emoções saírem sem julgamento, depois busca dados objetivos, alternativas, benefícios, riscos e síntese)
+
+TEMPO POR CHAPÉU:
+Em reuniões de 60-90 minutos: 5-10 minutos por chapéu. O azul (facilitar) não tem tempo fixo. A tentação de ficar muito tempo no verde (ideias) ou no preto (críticas) deve ser gerenciada pelo facilitador.` },
+      { title: "Por que é diferente do debate tradicional",
+        body: `Em um debate tradicional, cada pessoa assume uma posição e a defende. O CEO defende o projeto. O financeiro aponta os riscos. O técnico questiona a viabilidade. A reunião vira uma negociação de poder, não uma busca por verdade.
+
+Nos Seis Chapéus, ninguém defende posição. Todos exploram juntos cada dimensão do problema. O CEO que sempre foi o "otimista" é forçado a pensar criticamente quando o grupo está no chapéu preto. O financeiro que sempre foi o "crítico" é forçado a buscar benefícios quando o grupo está no chapéu amarelo.
+
+Este "forçamento de perspectiva" tem dois efeitos:
+1. Revela aspectos que cada pessoa normalmente ignora (o otimista raramente pensa nos riscos com a mesma seriedade que pensa nos benefícios)
+2. Reduz o conflito de ego — ninguém está "perdendo" quando muda de chapéu, está apenas mudando o modo de pensar coletivo
+
+DE BONO SOBRE A DIFERENÇA:
+"No debate ocidental, o valor está em provar que o outro está errado. No pensamento paralelo (chapéus), o valor está em mapear o terreno completo antes de decidir."
+
+LIMITAÇÕES REAIS:
+→ Exige facilitador experiente — sem facilitar bem, o grupo "escorrega" de volta para o debate
+→ Não funciona bem em grupos onde há desconfiança fundamental entre os membros — o método resolve conflitos de perspectiva, não conflitos de interesse
+→ Pode parecer artificial e forçado nas primeiras vezes — é normal, passa com a prática` }
+    ]
+  }
 };
 const DEEP_EXAMPLES = {
   "blueprint": [
