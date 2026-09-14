@@ -281,6 +281,35 @@ body{font-family:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;ba
   .mob-topbar { display:none !important; }
   .mob-det-back { display:none !important; }
 }
+
+/* ── MODELS SECTION ──────────────────────────────────────── */
+.models-view{flex:1;overflow-y:auto;padding:16px;background:var(--bg)}
+.models-search-wrap{position:relative;margin-bottom:16px}
+.models-search{width:100%;padding:9px 12px 9px 34px;font-size:13px;border:1px solid var(--border);border-radius:10px;background:var(--card);color:var(--tx);outline:none}
+.models-search:focus{border-color:var(--ac)}
+.models-search-icon{position:absolute;left:11px;top:50%;transform:translateY(-50%);font-size:14px;color:var(--mu)}
+.models-count{font-size:11px;color:var(--mu);margin-bottom:16px}
+.cat-accordion{margin-bottom:8px;border:1px solid var(--border);border-radius:10px;overflow:hidden;background:var(--card)}
+.cat-accordion-hd{display:flex;align-items:center;gap:8px;padding:12px 14px;cursor:pointer;user-select:none;transition:background .15s}
+.cat-accordion-hd:hover{background:var(--hv)}
+.cat-accordion-icon{font-size:16px}
+.cat-accordion-label{font-size:13px;font-weight:600;color:var(--tx);flex:1}
+.cat-accordion-count{font-size:11px;color:var(--mu);background:var(--hv);padding:2px 7px;border-radius:8px;border:1px solid var(--border)}
+.cat-accordion-arrow{font-size:11px;color:var(--mu);transition:transform .2s}
+.cat-accordion-arrow.open{transform:rotate(90deg)}
+.cat-accordion-body{display:none;padding:10px 12px 12px;border-top:1px solid var(--border);background:var(--bg)}
+.cat-accordion-body.open{display:block}
+.form-cards{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+@media(max-width:600px){.form-cards{grid-template-columns:1fr}}
+.form-card{background:var(--card);border:1px solid var(--border);border-radius:9px;padding:12px;display:flex;flex-direction:column;gap:8px;transition:border-color .15s}
+.form-card:hover{border-color:var(--ac)}
+.form-card-num{font-size:10px;font-weight:700;color:var(--mu);letter-spacing:.5px}
+.form-card-title{font-size:12px;font-weight:600;color:var(--tx);line-height:1.35}
+.form-card-desc{font-size:11px;color:var(--sub);line-height:1.45;flex:1}
+.form-card-meta{font-size:10px;color:var(--mu)}
+.form-card-btn{display:block;width:100%;padding:7px;font-size:11px;font-weight:600;background:var(--ac);color:#fff;border:none;border-radius:7px;cursor:pointer;text-align:center;text-decoration:none;transition:background .15s}
+.form-card-btn:hover{background:#2360CC}
+.models-empty{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 20px;color:var(--mu);gap:8px;font-size:13px}
 </style>
 </head>
 <body>
@@ -327,6 +356,14 @@ body{font-family:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;ba
     </div>
     <div class="content">
       <div class="list" id="list"></div>
+      <div class="models-view" id="models-view" style="display:none">
+        <div class="models-search-wrap">
+          <span class="models-search-icon">🔍</span>
+          <input class="models-search" id="models-search" type="text" placeholder="Buscar formulário..." oninput="renderModels()"/>
+        </div>
+        <div class="models-count" id="models-count"></div>
+        <div id="models-body"></div>
+      </div>
       <div class="det" id="det" style="width:310px">
         <div class="mob-det-back mob-det-back-hide" id="mob-det-back" onclick="closeMobDetail()">← Voltar</div>
         <div class="det-rz" id="det-rz" title="Arraste para redimensionar"></div>
@@ -2779,6 +2816,11 @@ const TOOLS = [
 ];
 
 // ── CONFIG ──────────────────────────────────────────────
+
+// ── MODELS DATA ─────────────────────────────────────────────
+const FORMS_DATA = [{"num": "01", "title": "Levantamento de Necessidades de Sistema", "desc": "Entender como o usuário usa ou gostaria de usar sistemas digitais institucionais", "meta": "6 seções · 15 perguntas · 15–20 min", "url": "https://docs.google.com/forms/d/e/1FAIpQLSei2NXwSih4IIxbGBSY4lDozqJx_3kNO3sVvmti2D2jpq2HMg/viewform"}, {"num": "02", "title": "Avaliação de Experiência com Serviço Existente", "desc": "entender o que funciona, o que falha e o que melhorar num serviço já existente", "meta": "6 seções | 15 perguntas | 15–20 minutos", "url": "https://docs.google.com/forms/d/e/1FAIpQLSdxEONOJOSNBmQtH9f6Vo1636RkApZxmfjGZXqFM0aZ_O1U3Q/viewform"}, {"num": "03", "title": "Descoberta de Comportamento e Rotina", "desc": "entender o dia a dia do usuário e identificar oportunidades de design", "meta": "6 seções | 15 perguntas | 15–20 minutos", "url": "https://docs.google.com/forms/d/e/1FAIpQLSerfczanqivHvkLELC24yyFgyL1IkC_qgVj7vSNFTbv2fvieA/viewform"}, {"num": "04", "title": "Validação de Conceito ou Protótipo", "desc": "entender se uma ideia faz sentido para os usuários antes de desenvolver", "meta": "6 seções | 15 perguntas | 10–15 minutos", "url": "https://docs.google.com/forms/d/e/1FAIpQLScCBDcXtROrPshCt6LnfMTk3hR1Q_Ur5s4M2FdZyCw8O64mNQ/viewform"}, {"num": "05", "title": "Entrevista de Saída", "desc": "entender por que alguém parou de usar um serviço ou produto", "meta": "6 seções | 15 perguntas | 10–15 minutos", "url": "https://docs.google.com/forms/d/e/1FAIpQLSdCABiifqrZvnK6G4948zPhYsUoBl0tgeKNfg5td37gq358aQ/viewform"}, {"num": "06", "title": "Levantamento de Requisitos de Serviço Público", "desc": "mapear o que o cidadão precisa de um serviço governamental ou institucional", "meta": "5 seções | 15 perguntas | 15–20 minutos", "url": "https://docs.google.com/forms/d/e/1FAIpQLSc-WJZ_9_xuBO9XXpjEDYMVKwx0pdPB7VHZWidUdBifMEZFyQ/viewform"}, {"num": "07", "title": "Mapeamento de Processos Internos", "desc": "entender como funcionários executam suas tarefas reais — incluindo o que não está no manual", "meta": "5 seções | 15 perguntas | 15–20 minutos", "url": "https://docs.google.com/forms/d/e/1FAIpQLSf57iMTRIrZekfExRRcilomqMCybJg-524BcUhyYWslabixiQ/viewform"}, {"num": "08", "title": "Diagnóstico de Gargalos Operacionais", "desc": "identificar onde os processos travam, por que travam e qual o impacto", "meta": "5 seções | 15 perguntas | 15–20 minutos", "url": "https://docs.google.com/forms/d/e/1FAIpQLSeV1PM1xi1br2bN4mekgXfC7JlnLkMU-5VnTd3N1aHy_rUKrQ/viewform"}, {"num": "09", "title": "Levantamento de Necessidades de Capacitação", "desc": "entender que treinamentos os servidores e colaboradores realmente precisam", "meta": "5 seções | 15 perguntas | 15–20 minutos", "url": "https://docs.google.com/forms/d/e/1FAIpQLSd4PUFkPQ7760h-kdIYTjnRwl16E0Gof7r5Ou-VprQQ3MLuSg/viewform"}, {"num": "10", "title": "Avaliação de Sistema Institucional", "desc": "entender a experiência de uso de sistemas internos da instituição", "meta": "5 seções | 15 perguntas | 15–20 minutos", "url": "https://docs.google.com/forms/d/e/1FAIpQLScJy4XEMB_0eA9puYbd3aTbofW_WP5jzK_a7vQHyl1RTTGH4g/viewform"}, {"num": "11", "title": "Levantamento de Requisitos de Negócio", "desc": "entender objetivos, restrições e contexto antes de iniciar um projeto", "meta": "5 seções | 15 perguntas | 15–20 minutos", "url": "https://docs.google.com/forms/d/e/1FAIpQLSccMOFJODdOjGGFV0tchRzjrfcjFJQZynut8eMPqCd7kOM1Pg/viewform"}, {"num": "12", "title": "Entrevista com Stakeholder Estratégico", "desc": "mapear expectativas, medos e critérios de sucesso de quem decide", "meta": "5 seções | 15 perguntas | 15–20 minutos", "url": "https://docs.google.com/forms/d/e/1FAIpQLSdj2CIUFX_brDqff8oJYqkZ6q0c8d1nlk9f7bKkRcq35Zvnig/viewform"}, {"num": "13", "title": "Descoberta de Oportunidade de Inovação", "desc": "identificar áreas de melhoria ou novos serviços a partir de quem opera", "meta": "5 seções | 13 perguntas | 15–20 minutos", "url": "https://docs.google.com/forms/d/e/1FAIpQLSd7i6UUznL7sy1toUS4cMI0W6-3qAYG9g0TFyxLBNNzXb_MnA/viewform"}, {"num": "14", "title": "Diagnóstico de Cultura Organizacional", "desc": "entender como as pessoas percebem o ambiente e os processos da organização", "meta": "5 seções | 15 perguntas | 15–20 minutos", "url": "https://docs.google.com/forms/d/e/1FAIpQLScTJZ5NdMlHbTCoB4FJELH3L7BwqTcGCcj04Gj3YytohyrrqA/viewform"}, {"num": "15", "title": "Levantamento de Necessidades de Aprendizado", "desc": "entender como e o que alunos ou servidores precisam aprender", "meta": "5 seções | 15 perguntas | 15–20 minutos", "url": "https://docs.google.com/forms/d/e/1FAIpQLSfg4aIV92Na74T1w5Co9P--soSAcNUcfraZHFFPiow_1-JWkQ/viewform"}, {"num": "16", "title": "Avaliação de Experiência com Plataforma EAD", "desc": "mapear a experiência de uso de sistemas de ensino à distância", "meta": "5 seções | 15 perguntas | 15–20 minutos", "url": "https://docs.google.com/forms/d/e/1FAIpQLSfrvLL5tqbAwDid8yLruhacEw2YfXyIxLYiXj4yTrKOSnpq6g/viewform"}, {"num": "17", "title": "Entrevista com Docente ou Facilitador", "desc": "entender as dificuldades e necessidades de quem ensina ou facilita", "meta": "5 seções | 15 perguntas | 15–20 minutos", "url": "https://docs.google.com/forms/d/e/1FAIpQLSev4kKC1pnOa5KJgyyorSFD0wMiohJJL-53sFH8yzVbLQ9Jxw/viewform"}, {"num": "18", "title": "Mapeamento da Jornada do Paciente", "desc": "entender a experiência completa de quem usa um serviço de saúde", "meta": "5 seções | 13 perguntas | 15–20 minutos", "url": "https://docs.google.com/forms/d/e/1FAIpQLSdtGMwUwPZGN-PBo4hNVB6i_4mOKLz71vOv45JjCm8n9r1_tQ/viewform"}, {"num": "19", "title": "Levantamento de Barreiras de Acesso a Serviços", "desc": "identificar o que impede as pessoas de acessar serviços que precisam", "meta": "5 seções | 13 perguntas | 15–20 minutos", "url": "https://docs.google.com/forms/d/e/1FAIpQLSev4kKC1pnOa5KJgyyorSFD0wMiohJJL-53sFH8yzVbLQ9Jxw/viewform"}, {"num": "20", "title": "Entrevista de Descoberta de Produto", "desc": "entender o problema que um produto digital deveria resolver antes de qualquer desenvolvimento", "meta": "5 seções | 15 perguntas | 15–20 minutos", "url": "https://docs.google.com/forms/d/e/1FAIpQLSdtGMwUwPZGN-PBo4hNVB6i_4mOKLz71vOv45JjCm8n9r1_tQ/viewform"}, {"num": "21", "title": "Diagnóstico de Chamados Recorrentes", "desc": "entender por que os mesmos problemas aparecem repetidamente no suporte de TI", "meta": "5 seções | 15 perguntas | 15–20 minutos", "url": "https://docs.google.com/forms/d/e/1FAIpQLSdPWW2v4eg1As3QLsq0MSzgePgSDTTLgbGBdSCBJzgm6q6TMg/viewform"}, {"num": "22", "title": "Avaliação de Satisfação com o Suporte de TI", "desc": "mapear a experiência de quem abre chamados e aguarda atendimento", "meta": "5 seções | 14 perguntas | 10–15 minutos", "url": "https://docs.google.com/forms/d/e/1FAIpQLSff4_MOFDUxvJ2bS8f9G9pqcxjX7w4ZiU8Tn6MJfv-INjenOw/viewform"}, {"num": "23", "title": "Levantamento de Necessidades de Infraestrutura", "desc": "entender o que falta em termos de equipamento, rede e sistemas", "meta": "5 seções | 15 perguntas | 15–20 minutos", "url": "https://docs.google.com/forms/d/e/1FAIpQLSegvCmRb7AD8B0Bn-ESDvVryQ19ncRjQwwAeCPE8f43OQkLnw/viewform"}, {"num": "24", "title": "Entrevista Pós-Implantação de Sistema", "desc": "entender como foi a adoção de um novo sistema após o lançamento", "meta": "5 seções | 15 perguntas | 15–20 minutos", "url": "https://docs.google.com/forms/d/e/1FAIpQLSewnkB5gApAPocgnb_vRYzAfeViTLpIL3rcTguZ5DZBqzQANQ/viewform"}, {"num": "25", "title": "Levantamento de Indicadores Relevantes", "desc": "entender quais métricas os gestores realmente usam para tomar decisões", "meta": "5 seções | 15 perguntas | 15–20 minutos", "url": "https://docs.google.com/forms/d/e/1FAIpQLSc8FotZGEcbE8UGtNgI8w5uLtbIMzBIoR2MJX4VeSj73OJCng/viewform"}, {"num": "26", "title": "Diagnóstico de Comunicação entre Equipes", "desc": "mapear onde a informação trava, se perde ou chega distorcida", "meta": "5 seções | 14 perguntas | 15–20 minutos", "url": "https://docs.google.com/forms/d/e/1FAIpQLSc8FotZGEcbE8UGtNgI8w5uLtbIMzBIoR2MJX4VeSj73OJCng/viewform"}, {"num": "27", "title": "Entrevista de Priorização de Projetos", "desc": "entender critérios e conflitos na hora de decidir o que fazer primeiro", "meta": "5 seções | 14 perguntas | 15–20 minutos", "url": "https://docs.google.com/forms/d/e/1FAIpQLSfe6ujvJPP3UmRXkI_qMztn_5rXIvZpTYhnlm3Et1eVw1FrGQ/viewform"}, {"num": "28", "title": "Mapeamento de Riscos Percebidos", "desc": "identificar o que as pessoas temem que possa dar errado num projeto", "meta": "5 seções | 14 perguntas | 15–20 minutos", "url": "https://docs.google.com/forms/d/e/1FAIpQLSdaAkh5TRtZv2uK3Ed726SL8yqFmn0a-XXB8KjxHMbbe8Kk1Q/viewform"}, {"num": "29", "title": "Entrevista de Benchmark com Usuário Avançado", "desc": "entender como usuários experientes usam o produto e o que ainda falta", "meta": "5 seções | 14 perguntas | 15–20 minutos", "url": "https://docs.google.com/forms/d/e/1FAIpQLSc031aVBa0IdMJ9M8BNRaoBxolgxbx9o0zrcUkKPlAVAnEqdQ/viewform"}, {"num": "30", "title": "Levantamento de Preferências de Interface", "desc": "mapear como o usuário navega, o que espera encontrar e onde se perde", "meta": "5 seções | 14 perguntas | 15–20 minutos", "url": "https://docs.google.com/forms/d/e/1FAIpQLSewKruKXfKHmKC_a0QofQ7FXHmUKempQc4bKM5TY1u13oeCkw/viewform"}, {"num": "31", "title": "Descoberta de Necessidades de Acessibilidade", "desc": "entender as barreiras que pessoas com deficiência encontram nos sistemas", "meta": "5 seções | 13 perguntas | 15–20 minutos", "url": "https://docs.google.com/forms/d/e/1FAIpQLSd2vkTpmUNk6uWHBEULdaOzQfJcFIIES8-bLrgavEaycaJvyA/viewform"}, {"num": "32", "title": "Entrevista sobre Adoção de Nova Funcionalidade", "desc": "entender por que uma feature lançada não está sendo usada", "meta": "5 seções | 12 perguntas | 10–15 minutos", "url": "https://docs.google.com/forms/d/e/1FAIpQLSccVQBOxRokjiJFW-lYRx2dhGCL7JZC_oiPZTou6x6CXXRBmA/viewform"}, {"num": "33", "title": "Levantamento de Demandas da Comunidade Acadêmica", "desc": "entender o que alunos, professores e técnicos precisam da universidade", "meta": "5 seções | 14 perguntas | 15–20 minutos", "url": "https://docs.google.com/forms/d/e/1FAIpQLSdFmuignrRqn2e7ZDf_0-WE7Cv12muKMT1oh4diS8384dChpw/viewform"}, {"num": "34", "title": "Entrevista com Usuário de Serviço Social", "desc": "mapear a experiência de quem acessa benefícios ou assistência", "meta": "5 seções | 13 perguntas | 15–20 minutos", "url": "https://docs.google.com/forms/d/e/1FAIpQLSetoLLV703lNL014Pyfc0sPBcIrIgocBwEV-8_TlofPm9wVGQ/viewform"}, {"num": "35", "title": "Diagnóstico de Barreiras à Participação", "desc": "entender por que pessoas não participam de processos decisórios", "meta": "5 seções | 12 perguntas | 15–20 minutos", "url": "https://docs.google.com/forms/d/e/1FAIpQLSfRVAz5lGkXNiaD494_D9PC_Y73YZcq5kYEmbxWuBkIgeJPjg/viewform"}, {"num": "36", "title": "Mapeamento de Retrabalho", "desc": "identificar onde o trabalho precisa ser refeito e por quê", "meta": "5 seções | 13 perguntas | 15–20 minutos", "url": "https://docs.google.com/forms/d/e/1FAIpQLSedx1NyOyypGNm1iWtnmvavEawsjvW8qlwebhyoUjwJBOljng/viewform"}, {"num": "37", "title": "Entrevista de Handoff entre Equipes", "desc": "entender o que se perde quando uma tarefa passa de uma área para outra", "meta": "5 seções | 13 perguntas | 15–20 minutos", "url": "https://docs.google.com/forms/d/e/1FAIpQLSfUm0Q1LqNoYEWltG3h-qZwOrCzKn3piq7wrlASZKpLXX8neQ/viewform"}, {"num": "38", "title": "Levantamento de Procedimentos Informais", "desc": "descobrir as gambiarras e processos não documentados que sustentam a operação", "meta": "5 seções | 13 perguntas | 15–20 minutos", "url": "https://docs.google.com/forms/d/e/1FAIpQLSd0_SGUfCTQ0ZL81ap1jgvlcOLO4g4aBwY1apdppkscYac90w/viewform"}, {"num": "39", "title": "Diagnóstico de Sobrecarga de Trabalho", "desc": "mapear onde e por que certas pessoas acumulam mais demanda do que conseguem entregar", "meta": "5 seções | 13 perguntas | 15–20 minutos", "url": "https://docs.google.com/forms/d/e/1FAIpQLSetmFXhqBhgq-CkFSFrjVMbcguBRiRYNtcyGgCh-q0POSDUSQ/viewform"}, {"num": "40", "title": "Entrevista sobre Resistência à Mudança Digital", "desc": "entender por que pessoas resistem a adotar novos sistemas ou processos digitais", "meta": "5 seções | 14 perguntas | 15–20 minutos", "url": "https://docs.google.com/forms/d/e/1FAIpQLSerjumCgDbT-Enja2KkQ-sDgJM_NAN2dG5FPWR4phfNRe5aPg/viewform"}];
+const FORMS_CATS = [{"id": "ux", "icon": "🔬", "label": "Pesquisa com Usuário / UX", "forms": ["01", "02", "03", "04", "05"]}, {"id": "publico", "icon": "🏛️", "label": "Serviço Público / Institucional", "forms": ["06", "07", "08", "09", "10"]}, {"id": "negocio", "icon": "💼", "label": "Negócio e Estratégia", "forms": ["11", "12", "13", "14"]}, {"id": "educacao", "icon": "🎓", "label": "Educação e Formação", "forms": ["15", "16", "17"]}, {"id": "saude", "icon": "🏥", "label": "Saúde e Bem-estar", "forms": ["18", "19"]}, {"id": "produto", "icon": "🛠️", "label": "Produto Digital", "forms": ["20", "29", "30", "31", "32"]}, {"id": "ti", "icon": "🔧", "label": "Suporte e TI", "forms": ["21", "22", "23", "24"]}, {"id": "gestao", "icon": "📊", "label": "Gestão e Planejamento", "forms": ["25", "26", "27", "28"]}, {"id": "comunidade", "icon": "🤝", "label": "Comunidade e Participação", "forms": ["33", "34", "35"]}, {"id": "processos", "icon": "🔄", "label": "Processos e Qualidade", "forms": ["36", "37", "38", "39"]}, {"id": "digital", "icon": "🌐", "label": "Transformação Digital", "forms": ["40"]}];
+
 const TC={metodologia:"#7C3AED",metodo:"#059669",ferramenta:"#2563EB",artefato:"#D97706",tecnica:"#DC2626"};
 const TBL={metodologia:"#EDE9FE",metodo:"#D1FAE5",ferramenta:"#DBEAFE",artefato:"#FEF3C7",tecnica:"#FEE2E2"};
 const TBD={metodologia:"#3B1D8F",metodo:"#064E3B",ferramenta:"#1E3A8A",artefato:"#78350F",tecnica:"#7F1D1D"};
@@ -2900,6 +2942,8 @@ function renderNav(){
   html+=`<div class="nd"></div>`;
   html+=navItem('fav','⭐',t().fav,favs.length);
   html+=navItem('rec','🕐',t().rec,'');
+  html+=`<div class="nd"></div>`;
+  html+=`<div class="ni${activeCat==='models'?' on':''}" onclick="setCat('models')">📋 Modelos<span class="nb">${FORMS_DATA.length}</span></div>`;
   nav.innerHTML=html;
 }
 function navItem(id,icon,label,count){
@@ -2910,8 +2954,15 @@ function setCat(id){
   activeCat=id;
   document.getElementById('deep-tool').style.display='none';
   document.getElementById('deep-ex').style.display='none';
-  renderNav();renderList();
-  var label=id==='all'?t().all:id==='fav'?t().fav:id==='rec'?t().rec:t().CL[id]||id;
+  var isModels=id==='models';
+  document.getElementById('list').style.display=isModels?'none':'';
+  document.getElementById('det').style.display=isModels?'none':'';
+  var mv=document.getElementById('models-view');
+  if(mv){mv.style.display=isModels?'flex':'';}
+  if(isModels){renderModels();}
+  renderNav();
+  if(!isModels) renderList();
+  var label=id==='all'?t().all:id==='fav'?t().fav:id==='rec'?t().rec:id==='models'?'Modelos':t().CL[id]||id;
   document.getElementById('top-title').textContent=label;
   var mt=document.getElementById('mob-top-title');
   if(mt) mt.textContent=label;
@@ -3262,6 +3313,60 @@ function closeMobDetail(){
   if(back) back.classList.add('mob-det-back-hide');
   selId=null;
   renderList();
+}
+
+
+function renderModels(){
+  const q=(document.getElementById('models-search').value||'').toLowerCase();
+  let total=0;
+  const fmap={};
+  FORMS_DATA.forEach(f=>{fmap[f.num]=f;});
+
+  let html='';
+  let anyCatVisible=false;
+
+  FORMS_CATS.forEach(cat=>{
+    const filtered=cat.forms
+      .map(n=>fmap[n])
+      .filter(f=>f && (!q || f.title.toLowerCase().includes(q) || f.desc.toLowerCase().includes(q)));
+    if(!filtered.length) return;
+    total+=filtered.length;
+    anyCatVisible=true;
+    const isOpen=q || cat.id===openCat;
+    html+=`<div class="cat-accordion" id="acc-${cat.id}">
+      <div class="cat-accordion-hd" onclick="toggleCat('${cat.id}')">
+        <span class="cat-accordion-icon">${cat.icon}</span>
+        <span class="cat-accordion-label">${cat.label}</span>
+        <span class="cat-accordion-count">${filtered.length}</span>
+        <span class="cat-accordion-arrow${isOpen?' open':''}">▶</span>
+      </div>
+      <div class="cat-accordion-body${isOpen?' open':''}">
+        <div class="form-cards">
+          ${filtered.map(f=>`
+            <div class="form-card">
+              <div class="form-card-num">FORMULÁRIO ${f.num}</div>
+              <div class="form-card-title">${f.title}</div>
+              <div class="form-card-desc">${f.desc}</div>
+              <div class="form-card-meta">${f.meta}</div>
+              <a class="form-card-btn" href="${f.url}" target="_blank">Abrir no Google Forms ↗</a>
+            </div>`).join('')}
+        </div>
+      </div>
+    </div>`;
+  });
+
+  if(!anyCatVisible){
+    html='<div class="models-empty"><span style="font-size:28px">🔍</span>Nenhum formulário encontrado.</div>';
+  }
+
+  document.getElementById('models-body').innerHTML=html;
+  document.getElementById('models-count').textContent=total+' formulários';
+}
+
+let openCat='ux';
+function toggleCat(id){
+  if(openCat===id){openCat='';}else{openCat=id;}
+  renderModels();
 }
 
 // ── INIT ─────────────────────────────────────────────────
