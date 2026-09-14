@@ -310,6 +310,28 @@ body{font-family:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;ba
 .form-card-btn{display:block;width:100%;padding:7px;font-size:11px;font-weight:600;background:var(--ac);color:#fff;border:none;border-radius:7px;cursor:pointer;text-align:center;text-decoration:none;transition:background .15s}
 .form-card-btn:hover{background:#2360CC}
 .models-empty{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 20px;color:var(--mu);gap:8px;font-size:13px}
+
+/* ── MODELS ACCORDION (inside deep view) ─────────────────── */
+.ma-wrap{margin-top:8px}
+.ma-cat{margin-bottom:6px;border:1px solid var(--border);border-radius:10px;overflow:hidden}
+.ma-cat-hd{display:flex;align-items:center;gap:8px;padding:11px 14px;cursor:pointer;background:var(--card);user-select:none;transition:background .15s}
+.ma-cat-hd:hover{background:var(--hv)}
+.ma-cat-label{font-size:13px;font-weight:600;color:var(--tx);flex:1}
+.ma-cat-badge{font-size:11px;color:var(--mu);background:var(--hv);padding:2px 8px;border-radius:8px;border:1px solid var(--border)}
+.ma-cat-arrow{font-size:10px;color:var(--mu);transition:transform .2s}
+.ma-cat-arrow.open{transform:rotate(90deg)}
+.ma-cat-body{display:none;padding:12px;background:var(--bg);border-top:1px solid var(--border)}
+.ma-cat-body.open{display:block}
+.ma-cards{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+@media(max-width:500px){.ma-cards{grid-template-columns:1fr}}
+.ma-card{background:var(--card);border:1px solid var(--border);border-radius:9px;padding:12px;display:flex;flex-direction:column;gap:6px}
+.ma-card:hover{border-color:var(--ac)}
+.ma-card-num{font-size:10px;font-weight:700;color:var(--mu);letter-spacing:.5px;text-transform:uppercase}
+.ma-card-title{font-size:12px;font-weight:600;color:var(--tx);line-height:1.35}
+.ma-card-desc{font-size:11px;color:var(--sub);line-height:1.45;flex:1}
+.ma-card-meta{font-size:10px;color:var(--mu)}
+.ma-card-btn{display:block;width:100%;padding:7px;font-size:11px;font-weight:600;background:var(--ac);color:#fff;border:none;border-radius:7px;cursor:pointer;text-align:center;text-decoration:none;margin-top:2px;transition:background .15s}
+.ma-card-btn:hover{background:#2360CC}
 </style>
 </head>
 <body>
@@ -786,181 +808,8 @@ A memória é seletiva. Você vai lembrar do que confirmou suas crenças, não d
 
 ERRO 5 — Entrevistar no ambiente errado
 Uma entrevista sobre uso de app feita em sala de reunião é diferente de uma feita com a pessoa usando o app no contexto real. O ambiente importa.` },
-      { title: "📋 Modelos para usar em campo",
-        body: `Formulário criado para aplicar diretamente com usuários — abre no Google Forms, as respostas vão automaticamente para o Google Sheets.
-
-FORMULÁRIO 01 — Levantamento de Necessidades de Sistema
-Objetivo: entender como o usuário usa ou gostaria de usar sistemas digitais institucionais.
-6 seções · 15 perguntas · 15–20 minutos
-
-🔗 Abrir formulário: https://docs.google.com/forms/d/e/1FAIpQLSei2NXwSih4IIxbGBSY4lDozqJx_3kNO3sVvmti2D2jpq2HMg/viewform
-
-FORMULÁRIO 02 — Avaliação de Experiência com Serviço Existente
-→ Para entender o que funciona, o que falha e o que melhorar num serviço já existente
-→ 6 seções | 15 perguntas | 15–20 minutos
-→ Link: https://docs.google.com/forms/d/e/1FAIpQLSdxEONOJOSNBmQtH9f6Vo1636RkApZxmfjGZXqFM0aZ_O1U3Q/viewform
-FORMULÁRIO 03 — Descoberta de Comportamento e Rotina
-→ Para entender o dia a dia do usuário e identificar oportunidades de design
-→ 6 seções | 15 perguntas | 15–20 minutos
-→ Link: https://docs.google.com/forms/d/e/1FAIpQLSerfczanqivHvkLELC24yyFgyL1IkC_qgVj7vSNFTbv2fvieA/viewform
-FORMULÁRIO 04 — Validação de Conceito ou Protótipo
-→ Para entender se uma ideia faz sentido para os usuários antes de desenvolver
-→ 6 seções | 15 perguntas | 10–15 minutos
-→ Link: https://docs.google.com/forms/d/e/1FAIpQLScCBDcXtROrPshCt6LnfMTk3hR1Q_Ur5s4M2FdZyCw8O64mNQ/viewform
-FORMULÁRIO 05 — Entrevista de Saída
-→ Para entender por que alguém parou de usar um serviço ou produto
-→ 6 seções | 15 perguntas | 10–15 minutos
-→ Link: https://docs.google.com/forms/d/e/1FAIpQLSdCABiifqrZvnK6G4948zPhYsUoBl0tgeKNfg5td37gq358aQ/viewform
-FORMULÁRIO 06 — Levantamento de Requisitos de Serviço Público
-→ Para mapear o que o cidadão precisa de um serviço governamental ou institucional
-→ 5 seções | 15 perguntas | 15–20 minutos
-→ Link: https://docs.google.com/forms/d/e/1FAIpQLSc-WJZ_9_xuBO9XXpjEDYMVKwx0pdPB7VHZWidUdBifMEZFyQ/viewform
-FORMULÁRIO 07 — Mapeamento de Processos Internos
-→ Para entender como funcionários executam suas tarefas reais — incluindo o que não está no manual
-→ 5 seções | 15 perguntas | 15–20 minutos
-→ Link: https://docs.google.com/forms/d/e/1FAIpQLSf57iMTRIrZekfExRRcilomqMCybJg-524BcUhyYWslabixiQ/viewform
-FORMULÁRIO 08 — Diagnóstico de Gargalos Operacionais
-→ Para identificar onde os processos travam, por que travam e qual o impacto
-→ 5 seções | 15 perguntas | 15–20 minutos
-→ Link: https://docs.google.com/forms/d/e/1FAIpQLSeV1PM1xi1br2bN4mekgXfC7JlnLkMU-5VnTd3N1aHy_rUKrQ/viewform
-FORMULÁRIO 09 — Levantamento de Necessidades de Capacitação
-→ Para entender que treinamentos os servidores e colaboradores realmente precisam
-→ 5 seções | 15 perguntas | 15–20 minutos
-→ Link: https://docs.google.com/forms/d/e/1FAIpQLSd4PUFkPQ7760h-kdIYTjnRwl16E0Gof7r5Ou-VprQQ3MLuSg/viewform
-FORMULÁRIO 10 — Avaliação de Sistema Institucional
-→ Para entender a experiência de uso de sistemas internos da instituição
-→ 5 seções | 15 perguntas | 15–20 minutos
-→ Link: https://docs.google.com/forms/d/e/1FAIpQLScJy4XEMB_0eA9puYbd3aTbofW_WP5jzK_a7vQHyl1RTTGH4g/viewform
-FORMULÁRIO 11 — Levantamento de Requisitos de Negócio
-→ Para entender objetivos, restrições e contexto antes de iniciar um projeto
-→ 5 seções | 15 perguntas | 15–20 minutos
-→ Link: https://docs.google.com/forms/d/e/1FAIpQLSccMOFJODdOjGGFV0tchRzjrfcjFJQZynut8eMPqCd7kOM1Pg/viewform
-FORMULÁRIO 12 — Entrevista com Stakeholder Estratégico
-→ Para mapear expectativas, medos e critérios de sucesso de quem decide
-→ 5 seções | 15 perguntas | 15–20 minutos
-→ Link: https://docs.google.com/forms/d/e/1FAIpQLSdj2CIUFX_brDqff8oJYqkZ6q0c8d1nlk9f7bKkRcq35Zvnig/viewform
-FORMULÁRIO 13 — Descoberta de Oportunidade de Inovação
-→ Para identificar áreas de melhoria ou novos serviços a partir de quem opera
-→ 5 seções | 13 perguntas | 15–20 minutos
-→ Link: https://docs.google.com/forms/d/e/1FAIpQLSd7i6UUznL7sy1toUS4cMI0W6-3qAYG9g0TFyxLBNNzXb_MnA/viewform
-FORMULÁRIO 14 — Diagnóstico de Cultura Organizacional
-→ Para entender como as pessoas percebem o ambiente e os processos da organização
-→ 5 seções | 15 perguntas | 15–20 minutos
-→ Link: https://docs.google.com/forms/d/e/1FAIpQLScTJZ5NdMlHbTCoB4FJELH3L7BwqTcGCcj04Gj3YytohyrrqA/viewform
-FORMULÁRIO 15 — Levantamento de Necessidades de Aprendizado
-→ Para entender como e o que alunos ou servidores precisam aprender
-→ 5 seções | 15 perguntas | 15–20 minutos
-→ Link: https://docs.google.com/forms/d/e/1FAIpQLSfg4aIV92Na74T1w5Co9P--soSAcNUcfraZHFFPiow_1-JWkQ/viewform
-FORMULÁRIO 16 — Avaliação de Experiência com Plataforma EAD
-→ Para mapear a experiência de uso de sistemas de ensino à distância
-→ 5 seções | 15 perguntas | 15–20 minutos
-→ Link: https://docs.google.com/forms/d/e/1FAIpQLSfrvLL5tqbAwDid8yLruhacEw2YfXyIxLYiXj4yTrKOSnpq6g/viewform
-FORMULÁRIO 17 — Entrevista com Docente ou Facilitador
-→ Para entender as dificuldades e necessidades de quem ensina ou facilita
-→ 5 seções | 15 perguntas | 15–20 minutos
-→ Link: https://docs.google.com/forms/d/e/1FAIpQLSev4kKC1pnOa5KJgyyorSFD0wMiohJJL-53sFH8yzVbLQ9Jxw/viewform
-FORMULÁRIO 18 — Mapeamento da Jornada do Paciente
-→ Para entender a experiência completa de quem usa um serviço de saúde
-→ 5 seções | 13 perguntas | 15–20 minutos
-→ Link: https://docs.google.com/forms/d/e/1FAIpQLSdtGMwUwPZGN-PBo4hNVB6i_4mOKLz71vOv45JjCm8n9r1_tQ/viewform
-FORMULÁRIO 19 — Levantamento de Barreiras de Acesso a Serviços
-→ Para identificar o que impede as pessoas de acessar serviços que precisam
-→ 5 seções | 13 perguntas | 15–20 minutos
-→ Link: https://docs.google.com/forms/d/e/1FAIpQLSev4kKC1pnOa5KJgyyorSFD0wMiohJJL-53sFH8yzVbLQ9Jxw/viewform
-FORMULÁRIO 20 — Entrevista de Descoberta de Produto
-→ Para entender o problema que um produto digital deveria resolver antes de qualquer desenvolvimento
-→ 5 seções | 15 perguntas | 15–20 minutos
-→ Link: https://docs.google.com/forms/d/e/1FAIpQLSdtGMwUwPZGN-PBo4hNVB6i_4mOKLz71vOv45JjCm8n9r1_tQ/viewform
-
-FORMULÁRIO 19 — Levantamento de Barreiras de Acesso a Serviços
-→ Para identificar o que impede as pessoas de acessar serviços que precisam
-→ 5 seções | 13 perguntas | 15–20 minutos
-→ Link: https://docs.google.com/forms/d/e/1FAIpQLSeXPlTr3flJOHE0ZCSuxIjYtDCkwzgbaR_fjpm-wrCxHCrJKg/viewform
-
-FORMULÁRIO 20 — Entrevista de Descoberta de Produto
-→ Para entender o problema que um produto digital deveria resolver antes de qualquer desenvolvimento
-→ 5 seções | 15 perguntas | 15–20 minutos
-→ Link: https://docs.google.com/forms/d/e/1FAIpQLSciQ-h7SQadr2qKcIyvD2uavkxA0DVz7_ZKJYRnlVIBmse7ng/viewform
-FORMULÁRIO 21 — Diagnóstico de Chamados Recorrentes
-→ Para entender por que os mesmos problemas aparecem repetidamente no suporte de TI
-→ 5 seções | 15 perguntas | 15–20 minutos
-→ Link: https://docs.google.com/forms/d/e/1FAIpQLSdPWW2v4eg1As3QLsq0MSzgePgSDTTLgbGBdSCBJzgm6q6TMg/viewform
-FORMULÁRIO 22 — Avaliação de Satisfação com o Suporte de TI
-→ Para mapear a experiência de quem abre chamados e aguarda atendimento
-→ 5 seções | 14 perguntas | 10–15 minutos
-→ Link: https://docs.google.com/forms/d/e/1FAIpQLSff4_MOFDUxvJ2bS8f9G9pqcxjX7w4ZiU8Tn6MJfv-INjenOw/viewform
-FORMULÁRIO 23 — Levantamento de Necessidades de Infraestrutura
-→ Para entender o que falta em termos de equipamento, rede e sistemas
-→ 5 seções | 15 perguntas | 15–20 minutos
-→ Link: https://docs.google.com/forms/d/e/1FAIpQLSegvCmRb7AD8B0Bn-ESDvVryQ19ncRjQwwAeCPE8f43OQkLnw/viewform
-FORMULÁRIO 24 — Entrevista Pós-Implantação de Sistema
-→ Para entender como foi a adoção de um novo sistema após o lançamento
-→ 5 seções | 15 perguntas | 15–20 minutos
-→ Link: https://docs.google.com/forms/d/e/1FAIpQLSewnkB5gApAPocgnb_vRYzAfeViTLpIL3rcTguZ5DZBqzQANQ/viewform
-FORMULÁRIO 25 — Levantamento de Indicadores Relevantes
-→ Para entender quais métricas os gestores realmente usam para tomar decisões
-→ 5 seções | 15 perguntas | 15–20 minutos
-→ Link: https://docs.google.com/forms/d/e/1FAIpQLSc8FotZGEcbE8UGtNgI8w5uLtbIMzBIoR2MJX4VeSj73OJCng/viewform
-FORMULÁRIO 26 — Diagnóstico de Comunicação entre Equipes
-→ Para mapear onde a informação trava, se perde ou chega distorcida
-→ 5 seções | 14 perguntas | 15–20 minutos
-→ Link: https://docs.google.com/forms/d/e/1FAIpQLSc8FotZGEcbE8UGtNgI8w5uLtbIMzBIoR2MJX4VeSj73OJCng/viewform
-FORMULÁRIO 27 — Entrevista de Priorização de Projetos
-→ Para entender critérios e conflitos na hora de decidir o que fazer primeiro
-→ 5 seções | 14 perguntas | 15–20 minutos
-→ Link: https://docs.google.com/forms/d/e/1FAIpQLSfe6ujvJPP3UmRXkI_qMztn_5rXIvZpTYhnlm3Et1eVw1FrGQ/viewform
-FORMULÁRIO 28 — Mapeamento de Riscos Percebidos
-→ Para identificar o que as pessoas temem que possa dar errado num projeto
-→ 5 seções | 14 perguntas | 15–20 minutos
-→ Link: https://docs.google.com/forms/d/e/1FAIpQLSdaAkh5TRtZv2uK3Ed726SL8yqFmn0a-XXB8KjxHMbbe8Kk1Q/viewform
-FORMULÁRIO 29 — Entrevista de Benchmark com Usuário Avançado
-→ Para entender como usuários experientes usam o produto e o que ainda falta
-→ 5 seções | 14 perguntas | 15–20 minutos
-→ Link: https://docs.google.com/forms/d/e/1FAIpQLSc031aVBa0IdMJ9M8BNRaoBxolgxbx9o0zrcUkKPlAVAnEqdQ/viewform
-FORMULÁRIO 30 — Levantamento de Preferências de Interface
-→ Para mapear como o usuário navega, o que espera encontrar e onde se perde
-→ 5 seções | 14 perguntas | 15–20 minutos
-→ Link: https://docs.google.com/forms/d/e/1FAIpQLSewKruKXfKHmKC_a0QofQ7FXHmUKempQc4bKM5TY1u13oeCkw/viewform
-FORMULÁRIO 31 — Descoberta de Necessidades de Acessibilidade
-→ Para entender as barreiras que pessoas com deficiência encontram nos sistemas
-→ 5 seções | 13 perguntas | 15–20 minutos
-→ Link: https://docs.google.com/forms/d/e/1FAIpQLSd2vkTpmUNk6uWHBEULdaOzQfJcFIIES8-bLrgavEaycaJvyA/viewform
-FORMULÁRIO 32 — Entrevista sobre Adoção de Nova Funcionalidade
-→ Para entender por que uma feature lançada não está sendo usada
-→ 5 seções | 12 perguntas | 10–15 minutos
-→ Link: https://docs.google.com/forms/d/e/1FAIpQLSccVQBOxRokjiJFW-lYRx2dhGCL7JZC_oiPZTou6x6CXXRBmA/viewform
-FORMULÁRIO 33 — Levantamento de Demandas da Comunidade Acadêmica
-→ Para entender o que alunos, professores e técnicos precisam da universidade
-→ 5 seções | 14 perguntas | 15–20 minutos
-→ Link: https://docs.google.com/forms/d/e/1FAIpQLSdFmuignrRqn2e7ZDf_0-WE7Cv12muKMT1oh4diS8384dChpw/viewform
-FORMULÁRIO 34 — Entrevista com Usuário de Serviço Social
-→ Para mapear a experiência de quem acessa benefícios ou assistência
-→ 5 seções | 13 perguntas | 15–20 minutos
-→ Link: https://docs.google.com/forms/d/e/1FAIpQLSetoLLV703lNL014Pyfc0sPBcIrIgocBwEV-8_TlofPm9wVGQ/viewform
-FORMULÁRIO 35 — Diagnóstico de Barreiras à Participação
-→ Para entender por que pessoas não participam de processos decisórios
-→ 5 seções | 12 perguntas | 15–20 minutos
-→ Link: https://docs.google.com/forms/d/e/1FAIpQLSfRVAz5lGkXNiaD494_D9PC_Y73YZcq5kYEmbxWuBkIgeJPjg/viewform
-FORMULÁRIO 36 — Mapeamento de Retrabalho
-→ Para identificar onde o trabalho precisa ser refeito e por quê
-→ 5 seções | 13 perguntas | 15–20 minutos
-→ Link: https://docs.google.com/forms/d/e/1FAIpQLSedx1NyOyypGNm1iWtnmvavEawsjvW8qlwebhyoUjwJBOljng/viewform
-FORMULÁRIO 37 — Entrevista de Handoff entre Equipes
-→ Para entender o que se perde quando uma tarefa passa de uma área para outra
-→ 5 seções | 13 perguntas | 15–20 minutos
-→ Link: https://docs.google.com/forms/d/e/1FAIpQLSfUm0Q1LqNoYEWltG3h-qZwOrCzKn3piq7wrlASZKpLXX8neQ/viewform
-FORMULÁRIO 38 — Levantamento de Procedimentos Informais
-→ Para descobrir as gambiarras e processos não documentados que sustentam a operação
-→ 5 seções | 13 perguntas | 15–20 minutos
-→ Link: https://docs.google.com/forms/d/e/1FAIpQLSd0_SGUfCTQ0ZL81ap1jgvlcOLO4g4aBwY1apdppkscYac90w/viewform
-FORMULÁRIO 39 — Diagnóstico de Sobrecarga de Trabalho
-→ Para mapear onde e por que certas pessoas acumulam mais demanda do que conseguem entregar
-→ 5 seções | 13 perguntas | 15–20 minutos
-→ Link: https://docs.google.com/forms/d/e/1FAIpQLSetmFXhqBhgq-CkFSFrjVMbcguBRiRYNtcyGgCh-q0POSDUSQ/viewform
-FORMULÁRIO 40 — Entrevista sobre Resistência à Mudança Digital
-→ Para entender por que pessoas resistem a adotar novos sistemas ou processos digitais
-→ 5 seções | 14 perguntas | 15–20 minutos
-→ Link: https://docs.google.com/forms/d/e/1FAIpQLSerjumCgDbT-Enja2KkQ-sDgJM_NAN2dG5FPWR4phfNRe5aPg/viewform` }
+      { title: "📋 Modelos prontos para usar em campo",
+        body: `__MODELS_ACCORDION__` }
     ]
   },
 
@@ -3108,7 +2957,7 @@ function openDeepTool(id){
     </div>
     <div class="dbody">
       <div class="di">${escHtml(dc.intro)}</div>
-      ${sectionsHtml}
+      ${sectionsHtml.replace('__MODELS_ACCORDION__', renderModelsAccordion())}
       <div class="notes-section">
         <div class="notes-header">
           <span class="notes-title">✏️ ${t().notes}</span>
@@ -3367,6 +3216,51 @@ let openCat='ux';
 function toggleCat(id){
   if(openCat===id){openCat='';}else{openCat=id;}
   renderModels();
+}
+
+
+function renderModelsAccordion(){
+  const fmap={};
+  FORMS_DATA.forEach(f=>{fmap[f.num]=f;});
+  let out='<div class="ma-wrap">';
+  FORMS_CATS.forEach((cat,ci)=>{
+    const forms=cat.forms.map(n=>fmap[n]).filter(Boolean);
+    if(!forms.length) return;
+    const isFirst=ci===0;
+    out+=`<div class="ma-cat" id="mac-${cat.id}">
+      <div class="ma-cat-hd" onclick="toggleMaCat('${cat.id}')">
+        <span>${cat.icon}</span>
+        <span class="ma-cat-label">${cat.label}</span>
+        <span class="ma-cat-badge">${forms.length} modelo${forms.length>1?'s':''}</span>
+        <span class="ma-cat-arrow${isFirst?' open':''}" id="maa-${cat.id}">▶</span>
+      </div>
+      <div class="ma-cat-body${isFirst?' open':''}" id="mab-${cat.id}">
+        <div class="ma-cards">
+          ${forms.map(f=>`
+            <div class="ma-card">
+              <div class="ma-card-num">FORMULÁRIO ${f.num}</div>
+              <div class="ma-card-title">${f.title}</div>
+              <div class="ma-card-desc">${f.desc}</div>
+              <div class="ma-card-meta">${f.meta}</div>
+              <a class="ma-card-btn" href="${f.url}" target="_blank">Abrir no Google Forms ↗</a>
+            </div>`).join('')}
+        </div>
+      </div>
+    </div>`;
+  });
+  out+='</div>';
+  return out;
+}
+
+function toggleMaCat(id){
+  const body=document.getElementById('mab-'+id);
+  const arrow=document.getElementById('maa-'+id);
+  if(!body) return;
+  const isOpen=body.classList.contains('open');
+  // close all
+  document.querySelectorAll('.ma-cat-body').forEach(el=>el.classList.remove('open'));
+  document.querySelectorAll('.ma-cat-arrow').forEach(el=>el.classList.remove('open'));
+  if(!isOpen){body.classList.add('open');arrow.classList.add('open');}
 }
 
 // ── INIT ─────────────────────────────────────────────────
