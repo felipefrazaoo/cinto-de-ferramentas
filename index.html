@@ -379,10 +379,6 @@ body{font-family:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;ba
     <div class="content">
       <div class="list" id="list"></div>
       <div class="models-view" id="models-view" style="display:none">
-        <div class="models-search-wrap">
-          <span class="models-search-icon">🔍</span>
-          <input class="models-search" id="models-search" type="text" placeholder="Buscar formulário..." oninput="renderModels()"/>
-        </div>
         <div class="models-count" id="models-count"></div>
         <div id="models-body"></div>
       </div>
@@ -807,9 +803,7 @@ ERRO 4 — Não gravar (ou não transcrever)
 A memória é seletiva. Você vai lembrar do que confirmou suas crenças, não do que as desafiou. Grave sempre que possível, com permissão.
 
 ERRO 5 — Entrevistar no ambiente errado
-Uma entrevista sobre uso de app feita em sala de reunião é diferente de uma feita com a pessoa usando o app no contexto real. O ambiente importa.` },
-      { title: "📋 Modelos prontos para usar em campo",
-        body: `__MODELS_ACCORDION__` }
+Uma entrevista sobre uso de app feita em sala de reunião é diferente de uma feita com a pessoa usando o app no contexto real. O ambiente importa.` }
     ]
   },
 
@@ -2907,6 +2901,11 @@ function renderDetail(){
           </div>
         `:`<button class="aet" onclick="startAddEx()">${t().addEx}</button>`}
       </div>
+      ${selId==='entrevista-profundidade'?`
+      <div class="dsec">
+        <div class="dst">📋 MODELOS PARA USAR EM CAMPO</div>
+        ${renderModelsAccordion()}
+      </div>`:''}
       <div class="da">
         <button class="btn ba" onclick="openClaude('${tool.id}')">${t().claude}</button>
         <button class="btn bf${isFav?' on':''}" onclick="toggleFav('${tool.id}')">${isFav?'⭐ '+t().saved:'☆ '+t().saveFav}</button>
