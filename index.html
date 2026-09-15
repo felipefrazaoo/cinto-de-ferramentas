@@ -291,7 +291,7 @@ body{font-family:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;ba
 }
 
 /* ── MODELS SECTION ──────────────────────────────────────── */
-.models-view{display:none;flex:1;overflow-y:auto;padding:16px;background:var(--bg)}
+.models-view{display:none;position:absolute;inset:0;overflow-y:auto;padding:16px;background:var(--bg);z-index:50}
 .models-search-wrap{position:relative;margin-bottom:16px}
 .models-search{width:100%;padding:9px 12px 9px 34px;font-size:13px;border:1px solid var(--border);border-radius:10px;background:var(--card);color:var(--tx);outline:none}
 .models-search:focus{border-color:var(--ac)}
@@ -419,10 +419,7 @@ body{font-family:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;ba
     </div>
     <div class="content">
       <div class="list" id="list"></div>
-      <div class="models-view" id="models-view" style="display:none">
-        <div class="models-count" id="models-count"></div>
-        <div id="models-body"></div>
-      </div>
+      
       <div class="det" id="det" style="width:310px">
         <div class="mob-det-back mob-det-back-hide" id="mob-det-back" onclick="closeMobDetail()">← Voltar</div>
         <div class="det-rz" id="det-rz" title="Arraste para redimensionar"></div>
@@ -431,6 +428,10 @@ body{font-family:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;ba
     </div>
   </div>
 </div>
+<div class="models-view" id="models-view" style="display:none">
+        <div class="models-count" id="models-count"></div>
+        <div id="models-body"></div>
+      </div>
 <!-- DEEP VIEWS (absolute overlay) -->
 <div class="dv" id="deep-tool" style="display:none"></div>
 <div class="dv" id="deep-ex" style="display:none"></div>
