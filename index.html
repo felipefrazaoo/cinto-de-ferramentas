@@ -78,6 +78,8 @@ body{font-family:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;ba
 .step{display:flex;gap:7px;margin-bottom:6px;align-items:flex-start}
 .sn{width:18px;height:18px;border-radius:50%;background:var(--ac);color:#fff;font-size:9px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
 .st{font-size:11px;color:var(--pr);line-height:1.5}
+.exi-link{cursor:pointer!important}
+.exi-link:hover{border-color:var(--ac)!important;background:var(--hv)!important}
 .exi{background:var(--pn);border:1px solid var(--border);border-radius:7px;padding:9px 11px;margin-bottom:5px}
 .exn{font-size:10px;font-weight:600;color:var(--ac);margin-bottom:3px}
 .ext{font-size:11px;color:var(--pr);line-height:1.5}
@@ -3052,6 +3054,12 @@ function renderDetail(){
   const isFav=favs.includes(tool.id);
   const stepItems=(tool.steps[lang]||[]).map((s,i)=>`<div class="step"><div class="sn">${i+1}</div><div class="st">${s}</div></div>`).join('');
   const exItems=(tool.examples||[]).map((ex,i)=>{
+    const dx=dex&&dex[i];
+    if(dx){
+      return`<div class="exi exi-link" onclick="openDeepEx('${tool.id}',${i})" title="Ver caso completo"><div class="exn">Exemplo ${i+1} <span style="color:var(--ac);font-size:10px;font-weight:600">↗ ver caso</span></div><div class="ext">${escHtml(ex)}</div></div>`;
+    }
+    return`<div class="exi"><div class="exn">Exemplo ${i+1}</div><div class="ext">${escHtml(ex)}</div></div>`;
+  }).join('');exItems=(tool.examples||[]).map((ex,i)=>{
     const dx=dex&&dex[i];
     return`<div class="exi"><div class="exn">Exemplo ${i+1}</div><div class="ext">${escHtml(ex)}</div>${dx?`<span class="exm" onclick="openDeepEx('${tool.id}',${i})">${t().learnEx}</span>`:''}</div>`;
   }).join('');
