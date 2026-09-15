@@ -3044,6 +3044,7 @@ function selectTool(id){
 
 function renderDetail(){
   const det=document.getElementById('det');
+  det.style.display='';
   const tool=getSelected();
   if(!tool){
     det.innerHTML=`<div class="mob-det-back mob-det-back-hide" onclick="closeMobDetail()">← Voltar</div><div class="det-rz" id="det-rz" title="Arraste para redimensionar"></div><div class="de"><div class="dei">👆</div><div class="det2">${t().click}</div></div>`;
