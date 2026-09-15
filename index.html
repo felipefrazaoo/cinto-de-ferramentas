@@ -2922,6 +2922,7 @@ function renderDetail(){
   }).join('');
   const whoChips=(tool.who||[]).map(w=>`<span class="wc">${w}</span>`).join('');
   
+  det.style.display='';
   det.innerHTML=`
     <div class="mob-det-back" onclick="closeMobDetail()">← Voltar para lista</div>
     <div class="det-rz" id="det-rz" title="Arraste para redimensionar"></div>
