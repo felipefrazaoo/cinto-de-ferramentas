@@ -250,8 +250,22 @@ body{font-family:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;ba
   /* Hide resize handle on mobile */
   .det-rz { display:none !important; }
 
-  /* Deep views */
-  .dv { top:var(--mob-header) !important; }
+  /* Deep views — must be above det panel (z-150) and mob-topbar (z-200) */
+  .dv {
+    position:fixed !important;
+    inset:0 !important;
+    top:var(--mob-header) !important;
+    z-index:190 !important;
+  }
+
+  /* Models view on mobile */
+  .models-view {
+    position:fixed !important;
+    inset:0 !important;
+    top:var(--mob-header) !important;
+    z-index:140;
+    overflow-y:auto;
+  }
 
   /* Back button on detail panel */
   .mob-det-back {
@@ -2800,6 +2814,13 @@ function setCat(id){
   var isModels=id==='models';
   document.getElementById('list').style.display=isModels?'none':'';
   document.getElementById('det').style.display=isModels?'none':'';
+  // On mobile, also ensure det doesn't float above models
+  if(isMobile()){
+    var det=document.getElementById('det');
+    if(isModels){
+      det.classList.remove('mob-open');
+    }
+  }
   var mv=document.getElementById('models-view');
   if(mv){mv.style.display=isModels?'flex':'';}
   if(isModels){renderModels();}
@@ -3053,9 +3074,21 @@ function openDeepEx(toolId,exIdx){
       <div class="exb exlrn"><div class="exbt"><span>🎯</span>${t().lrn}</div><div class="exbb">${escHtml(ex.learning)}</div></div>
     </div>`;
   dv.style.display='flex';dv.style.flexDirection='column';dv.scrollTop=0;
+  // On mobile, also scroll deep view to top and ensure it's visible
+  if(isMobile()){
+    dv.scrollTop=0;
+    // make sure the detail panel doesn't show through
+    document.getElementById('det').style.zIndex='140';
+  }
 }
 
-function closeDeep(id){document.getElementById(id).style.display='none';}
+function closeDeep(id){
+  document.getElementById(id).style.display='none';
+  // Restore det z-index on mobile
+  if(isMobile()){
+    document.getElementById('det').style.zIndex='150';
+  }
+}
 
 // ── ACTIONS ──────────────────────────────────────────────
 function startAddEx(){addingEx=true;renderDetail();}
