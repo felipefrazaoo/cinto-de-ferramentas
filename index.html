@@ -346,6 +346,39 @@ body{font-family:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;ba
 .ma-card-meta{font-size:10px;color:var(--mu)}
 .ma-card-btn{display:block;width:100%;padding:7px;font-size:11px;font-weight:600;background:var(--ac);color:#fff;border:none;border-radius:7px;cursor:pointer;text-align:center;text-decoration:none;margin-top:2px;transition:background .15s}
 .ma-card-btn:hover{background:#2360CC}
+
+/* ── SHADOWING CANVAS ────────────────────────────────────── */
+.sh-canvas{margin-top:4px}
+.sh-canvas-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;flex-wrap:wrap;gap:6px}
+.sh-canvas-title{font-size:13px;font-weight:700;color:var(--tx)}
+.sh-meta{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:10px}
+.sh-meta-field{display:flex;flex-direction:column;gap:3px}
+.sh-meta-label{font-size:10px;font-weight:600;color:var(--mu);text-transform:uppercase;letter-spacing:.4px}
+.sh-meta-input{padding:6px 8px;font-size:11px;font-family:inherit;border:1px solid var(--border);border-radius:7px;background:var(--hv);color:var(--tx);outline:none}
+.sh-meta-input:focus{border-color:var(--ac)}
+.sh-blocks{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:10px}
+@media(max-width:500px){.sh-blocks{grid-template-columns:1fr}}
+.sh-block{background:var(--card);border:1px solid var(--border);border-radius:9px;overflow:hidden}
+.sh-block-hd{padding:8px 10px;display:flex;align-items:center;gap:6px;border-bottom:1px solid var(--border);background:var(--hv)}
+.sh-block-icon{font-size:13px}
+.sh-block-label{font-size:11px;font-weight:700;color:var(--tx)}
+.sh-block-ta{width:100%;min-height:90px;padding:8px 10px;font-size:11px;font-family:inherit;line-height:1.6;border:none;background:var(--card);color:var(--tx);resize:vertical;outline:none;box-sizing:border-box}
+.sh-block-ta::placeholder{color:var(--mu);font-style:italic}
+.sh-actions{display:flex;gap:6px;flex-wrap:wrap}
+.sh-btn-save{flex:1;min-width:140px;padding:9px;font-size:12px;font-weight:600;background:#059669;color:#fff;border:none;border-radius:8px;cursor:pointer;transition:background .15s}
+.sh-btn-save:hover{background:#047857}
+.sh-btn-save:disabled{background:var(--mu);cursor:not-allowed}
+.sh-btn-new{padding:9px 14px;font-size:12px;font-weight:500;background:var(--hv);color:var(--sub);border:1px solid var(--border);border-radius:8px;cursor:pointer}
+.sh-btn-sheet{padding:8px 12px;font-size:11px;font-weight:500;color:#059669;border:1px solid rgba(5,150,105,.3);border-radius:8px;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:4px;background:var(--hv)}
+.sh-sessions{margin-top:10px;padding-top:10px;border-top:1px solid var(--border)}
+.sh-sessions-title{font-size:10px;font-weight:700;color:var(--mu);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+.sh-session-item{display:flex;align-items:center;gap:8px;padding:7px 10px;background:var(--hv);border:1px solid var(--border);border-radius:7px;margin-bottom:4px;font-size:11px;color:var(--sub);cursor:pointer}
+.sh-session-item:hover{border-color:var(--ac);color:var(--ac)}
+.sh-session-dot{width:6px;height:6px;border-radius:50%;background:#059669;flex-shrink:0}
+.sh-session-dot.draft{background:#F59E0B}
+.sh-feedback{font-size:11px;text-align:center;padding:7px 10px;border-radius:7px;margin-top:6px}
+.sh-feedback.ok{background:rgba(5,150,105,.1);color:#059669}
+.sh-feedback.err{background:rgba(220,38,38,.1);color:#DC2626}
 </style>
 </head>
 <body>
@@ -2927,6 +2960,11 @@ function renderDetail(){
         <div class="dst">📋 MODELOS PARA USAR EM CAMPO</div>
         ${renderModelsAccordion()}
       </div>`:''}
+      ${selId==='shadowing'?`
+      <div class="dsec">
+        <div class="dst">🎯 CANVAS DE SHADOWING</div>
+        ${renderShadowingCanvas()}
+      </div>`:''}
       <div class="da">
         <button class="btn ba" onclick="openClaude('${tool.id}')">${t().claude}</button>
         <button class="btn bf${isFav?' on':''}" onclick="toggleFav('${tool.id}')">${isFav?'⭐ '+t().saved:'☆ '+t().saveFav}</button>
@@ -3293,6 +3331,148 @@ function toggleMaCat(id){
   document.querySelectorAll('.ma-cat-body').forEach(el=>el.classList.remove('open'));
   document.querySelectorAll('.ma-cat-arrow').forEach(el=>el.classList.remove('open'));
   if(!isOpen){body.classList.add('open');arrow.classList.add('open');}
+}
+
+
+// ── SHADOWING CANVAS ────────────────────────────────────────
+const SH_SHEET_URL = 'https://docs.google.com/spreadsheets/d/1PxwYaE2UQHln-lSPDvRuAkAZ8687OheCWPzS-z84-V0/edit';
+
+function shGetSessions(){
+  try{return JSON.parse(localStorage.getItem('sh_sessions')||'[]');}catch{return[];}
+}
+function shSaveSessions(s){localStorage.setItem('sh_sessions',JSON.stringify(s));}
+
+function renderShadowingCanvas(){
+  const sessions=shGetSessions();
+  const recent=sessions.slice(-3).reverse();
+
+  const recentHtml=recent.length>0?
+    '<div class="sh-sessions">'+
+    '<div class="sh-sessions-title">Últimas sessões salvas</div>'+
+    recent.map(function(s){
+      return '<div class="sh-session-item" onclick="shLoadSession(&quot;'+s.id+'&quot;)">'+
+        '<span class="sh-session-dot'+(s.status==='Rascunho'?' draft':'')+'"></span>'+
+        '<span style="flex:1"><strong>'+(s.projeto||'Sem projeto')+'</strong> · '+(s.participante||'?')+' · '+s.data+'</span>'+
+        '<span style="color:var(--mu)">'+s.status+'</span>'+
+        '</div>';
+    }).join('')+
+    '</div>'
+    :'';
+
+  return '<div class="sh-canvas">'+
+    '<div class="sh-canvas-header">'+
+      '<span class="sh-canvas-title">Preencha durante ou após a observação</span>'+
+      '<a class="sh-btn-sheet" href="'+SH_SHEET_URL+'" target="_blank">📊 Ver planilha ↗</a>'+
+    '</div>'+
+    '<div class="sh-meta">'+
+      '<div class="sh-meta-field"><label class="sh-meta-label">Projeto</label><input class="sh-meta-input" id="sh-projeto" placeholder="Ex: Portal Discente UEMA"/></div>'+
+      '<div class="sh-meta-field"><label class="sh-meta-label">Pesquisador</label><input class="sh-meta-input" id="sh-pesquisador" placeholder="Seu nome"/></div>'+
+      '<div class="sh-meta-field"><label class="sh-meta-label">Código do Participante</label><input class="sh-meta-input" id="sh-participante" placeholder="Ex: P01"/></div>'+
+      '<div class="sh-meta-field"><label class="sh-meta-label">Cargo / Função</label><input class="sh-meta-input" id="sh-cargo" placeholder="Ex: Técnico Administrativo"/></div>'+
+      '<div class="sh-meta-field"><label class="sh-meta-label">Local</label><input class="sh-meta-input" id="sh-local" placeholder="Ex: CTIC — sala de suporte"/></div>'+
+      '<div class="sh-meta-field"><label class="sh-meta-label">Duração (min)</label><input class="sh-meta-input" id="sh-duracao" type="number" placeholder="45"/></div>'+
+    '</div>'+
+    '<div class="sh-blocks">'+
+      '<div class="sh-block"><div class="sh-block-hd"><span class="sh-block-icon">📍</span><span class="sh-block-label">01 · Contexto</span></div>'+
+        '<textarea class="sh-block-ta" id="sh-b01" placeholder="Ambiente, equipamentos visíveis, quem mais está presente, hora do dia..."></textarea></div>'+
+      '<div class="sh-block"><div class="sh-block-hd"><span class="sh-block-icon">🔄</span><span class="sh-block-label">02 · Sequência de Ações</span></div>'+
+        '<textarea class="sh-block-ta" id="sh-b02" placeholder="O que a pessoa fez, em que ordem, quanto tempo cada etapa, quais ferramentas usou..."></textarea></div>'+
+      '<div class="sh-block"><div class="sh-block-hd"><span class="sh-block-icon">⚡</span><span class="sh-block-label">03 · Momentos Críticos</span></div>'+
+        '<textarea class="sh-block-ta" id="sh-b03" placeholder="Onde hesitou, pediu ajuda, desviou do processo oficial, usou gambiarras..."></textarea></div>'+
+      '<div class="sh-block"><div class="sh-block-hd"><span class="sh-block-icon">💬</span><span class="sh-block-label">04 · Citações Relevantes</span></div>'+
+        '<textarea class="sh-block-ta" id="sh-b04" placeholder="O que disse em voz alta, reações emocionais observadas..."></textarea></div>'+
+      '<div class="sh-block"><div class="sh-block-hd"><span class="sh-block-icon">🔀</span><span class="sh-block-label">05 · Gaps (Dito vs Feito)</span></div>'+
+        '<textarea class="sh-block-ta" id="sh-b05" placeholder="O que disse que faria vs o que realmente fez. Contradições observadas..."></textarea></div>'+
+      '<div class="sh-block"><div class="sh-block-hd"><span class="sh-block-icon">💡</span><span class="sh-block-label">06 · Insights e Próximos Passos</span></div>'+
+        '<textarea class="sh-block-ta" id="sh-b06" placeholder="O que surpreendeu, hipóteses levantadas, o que investigar mais..."></textarea></div>'+
+    '</div>'+
+    '<div class="sh-actions">'+
+      '<button class="sh-btn-save" id="sh-btn-save" onclick="shSaveSession()">💾 Salvar sessão</button>'+
+      '<button class="sh-btn-new" onclick="shNewSession()">+ Nova</button>'+
+    '</div>'+
+    '<div id="sh-feedback"></div>'+
+    recentHtml+
+    '</div>';
+}
+
+function shNewSession(){
+  ['sh-projeto','sh-pesquisador','sh-participante','sh-cargo','sh-local','sh-duracao',
+   'sh-b01','sh-b02','sh-b03','sh-b04','sh-b05','sh-b06'].forEach(function(id){
+    var el=document.getElementById(id);
+    if(el) el.value='';
+  });
+  var fb=document.getElementById('sh-feedback');
+  if(fb) fb.innerHTML='';
+}
+
+function shLoadSession(id){
+  var sessions=shGetSessions();
+  var s=sessions.find(function(x){return x.id===id;});
+  if(!s)return;
+  var map={
+    'sh-projeto':s.projeto,'sh-pesquisador':s.pesquisador,
+    'sh-participante':s.participante,'sh-cargo':s.cargo,
+    'sh-local':s.local,'sh-duracao':s.duracao,
+    'sh-b01':s.contexto,'sh-b02':s.acoes,'sh-b03':s.momentos,
+    'sh-b04':s.citacoes,'sh-b05':s.gaps,'sh-b06':s.insights
+  };
+  Object.keys(map).forEach(function(k){
+    var el=document.getElementById(k);
+    if(el) el.value=map[k]||'';
+  });
+}
+
+async function shSaveSession(){
+  var btn=document.getElementById('sh-btn-save');
+  var fb=document.getElementById('sh-feedback');
+  if(btn){btn.disabled=true;btn.textContent='Salvando...';}
+
+  var now=new Date();
+  var data=now.toLocaleDateString('pt-BR');
+  var hora=now.toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'});
+  var id='SH-'+Date.now();
+
+  var session={
+    id:id, data:data,
+    projeto: (document.getElementById('sh-projeto')||{}).value||'',
+    pesquisador: (document.getElementById('sh-pesquisador')||{}).value||'',
+    participante: (document.getElementById('sh-participante')||{}).value||'',
+    cargo: (document.getElementById('sh-cargo')||{}).value||'',
+    local: (document.getElementById('sh-local')||{}).value||'',
+    duracao: (document.getElementById('sh-duracao')||{}).value||'',
+    contexto: (document.getElementById('sh-b01')||{}).value||'',
+    acoes: (document.getElementById('sh-b02')||{}).value||'',
+    momentos: (document.getElementById('sh-b03')||{}).value||'',
+    citacoes: (document.getElementById('sh-b04')||{}).value||'',
+    gaps: (document.getElementById('sh-b05')||{}).value||'',
+    insights: (document.getElementById('sh-b06')||{}).value||'',
+    status:'Completo', criadoEm:data+' '+hora
+  };
+
+  var sessions=shGetSessions();
+  sessions.push(session);
+  shSaveSessions(sessions);
+
+  var row=[
+    session.id,session.data,session.projeto,session.pesquisador,
+    session.participante,session.cargo,session.local,session.duracao,
+    session.contexto,session.acoes,session.momentos,session.citacoes,
+    session.gaps,session.insights,session.status,session.criadoEm
+  ].map(function(v){return (v||'').replace(/\t/g,' ').replace(/\n/g,' | ');});
+
+  var tsv=row.join('\t');
+  var copied=false;
+  try{await navigator.clipboard.writeText(tsv);copied=true;}catch(e){}
+
+  if(fb){
+    fb.className='sh-feedback ok';
+    fb.innerHTML=copied
+      ? '✅ Sessão salva! Dados copiados — cole na <a href="'+SH_SHEET_URL+'" target="_blank" style="color:#059669">planilha ↗</a> na próxima linha.'
+      : '✅ Sessão salva localmente. <a href="'+SH_SHEET_URL+'" target="_blank" style="color:#059669">Abrir planilha ↗</a>';
+  }
+
+  if(btn){btn.disabled=false;btn.textContent='💾 Salvar sessão';}
+  setTimeout(function(){renderDetail();},800);
 }
 
 // ── INIT ─────────────────────────────────────────────────
