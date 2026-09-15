@@ -2979,6 +2979,7 @@ function setCat(id){
   var isModels=id==='models';
   document.getElementById('list').style.display=isModels?'none':'';
   document.getElementById('det').style.display=isModels?'none':'';
+  if(!isModels) document.getElementById('det').style.display='';
   if(isMobile() && isModels){
     document.getElementById('det').classList.remove('mob-open');
   }
@@ -3037,6 +3038,12 @@ function selectTool(id){
   addingEx=false;
   recent=[id,...recent.filter(x=>x!==id)].slice(0,10);
   saveRecent();
+  // Hide models-view if showing
+  var mv=document.getElementById('models-view');
+  if(mv) mv.style.display='none';
+  // Show list and det
+  document.getElementById('list').style.display='';
+  document.getElementById('det').style.display='';
   renderList();
   renderDetail();
   openMobDetail();
