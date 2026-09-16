@@ -226,7 +226,7 @@ body{font-family:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;ba
   .list { width:100% !important; padding:10px; }
 
   /* Cards — single column on narrow, 2 col on wider mobile */
-  .cards { grid-template-columns:1fr 1fr; gap:8px; }
+  .cards { grid-template-columns:1fr 1fr; gap:8px; width:100%; }
   @media (max-width:480px) {
     .cards { grid-template-columns:1fr; }
   }
@@ -250,22 +250,8 @@ body{font-family:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;ba
   /* Hide resize handle on mobile */
   .det-rz { display:none !important; }
 
-  /* Deep views — must be above det panel (z-150) and mob-topbar (z-200) */
-  .dv {
-    position:fixed !important;
-    inset:0 !important;
-    top:var(--mob-header) !important;
-    z-index:190 !important;
-  }
-
-  /* Models view on mobile */
-  .models-view {
-    position:fixed !important;
-    inset:0 !important;
-    top:var(--mob-header) !important;
-    z-index:140;
-    overflow-y:auto;
-  }
+  /* Deep views — z-index only, position already absolute from base CSS */
+  .dv { z-index:190 !important; }
 
   /* Back button on detail panel */
   .mob-det-back {
@@ -297,7 +283,7 @@ body{font-family:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;ba
 }
 
 /* ── MODELS SECTION ──────────────────────────────────────── */
-.models-view{flex:1;overflow-y:auto;padding:16px;background:var(--bg)}
+.models-view{display:none;overflow-y:auto;padding:16px;background:var(--bg);position:absolute;inset:0;z-index:50}
 .models-search-wrap{position:relative;margin-bottom:16px}
 .models-search{width:100%;padding:9px 12px 9px 34px;font-size:13px;border:1px solid var(--border);border-radius:10px;background:var(--card);color:var(--tx);outline:none}
 .models-search:focus{border-color:var(--ac)}
