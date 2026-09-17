@@ -1571,6 +1571,110 @@ O comportamento dos usuários muda. Personas criadas há mais de 2 anos sem revi
 
 ERRO 5 — Criar uma persona para cada stakeholder feliz
 "Marketing quer a persona A, o CEO quer a persona B, TI quer a persona C." Personas que existem para fazer todo mundo feliz internamente não servem para guiar o design. Priorize.` }
+      ,{ title: "📌 EXEMPLO 1 — Airbnb: anfitriões ansiosos vs. experientes",
+        body: `A pesquisa de personas do Airbnb revelou que tratar todo anfitrião como um único usuário genérico estava fazendo a plataforma perder pessoas logo na primeira experiência de hospedagem.
+
+CONTEXTO
+O Airbnb crescia rapidamente e precisava aumentar o número de anfitriões ativos na plataforma. A equipe de produto tratava "anfitrião" como um único tipo de usuário, com uma única jornada de onboarding.
+
+PROBLEMA IDENTIFICADO
+A taxa de abandono era alta logo nas primeiras semanas após o cadastro. A hipótese inicial era que o processo de cadastro tinha muitas etapas — mas os dados de uso não confirmavam isso sozinho.
+
+PROCESSO
+A equipe conduziu entrevistas em profundidade com dezenas de anfitriões em diferentes estágios. Ao analisar os padrões, não por demografia, mas por comportamento e estado emocional, dois clusters muito distintos emergiram: anfitriões ansiosos (na primeira hospedagem, cheios de dúvidas sobre segurança, preço e o que fazer se algo desse errado) e anfitriões experientes (já confiantes, buscando otimizar ganhos e automatizar tarefas).
+
+Essas duas personas tinham necessidades quase opostas na mesma etapa do produto: um precisava de tranquilização e suporte passo a passo; o outro precisava de ferramentas avançadas e menos fricção.
+
+SOLUÇÃO DESENVOLVIDA
+Onboarding diferenciado por perfil comportamental: para o anfitrião ansioso, mensagens de apoio, checklist de segurança e contato facilitado com suporte; para o experiente, atalhos, precificação dinâmica e menos telas de confirmação.
+
+RESULTADO
+Ao desenhar para as duas personas separadamente em vez de uma média genérica entre elas, o Airbnb conseguiu reduzir o abandono na primeira experiência de hospedagem, sem comprometer a eficiência para quem já sabia usar a plataforma.
+
+APLICAÇÃO PARA A CTIC/UEMA
+Um servidor recém-contratado usando um sistema institucional pela primeira vez tem necessidades muito diferentes de um servidor veterano. Um único fluxo de onboarding "médio" para os dois normalmente não serve bem a nenhum dos dois.` }
+      ,{ title: "📌 EXEMPLO 2 — Hospital: a mãe com filho com febre às 3h",
+        body: `Uma única persona, construída a partir de entrevistas reais, revelou que o problema de um sistema de agendamento hospitalar não era falta de horários — era incerteza emocional.
+
+CONTEXTO
+Um hospital investia em um sistema de agendamento de consultas pediátricas, mas a central de emergência continuava recebendo ligações de pais para casos que não eram emergências reais.
+
+PROBLEMA IDENTIFICADO
+A equipe de produto assumia que o problema era falta de horários disponíveis no sistema de agendamento online.
+
+PROCESSO
+Entrevistas com pais que haviam ligado recentemente para a emergência revelaram um padrão comportamental muito específico, sintetizado na persona "mãe com filho com febre às 3h da manhã": ela não estava procurando um horário de consulta — estava procurando alguém que dissesse se aquilo era grave ou não, naquele exato momento.
+
+A persona deixou claro: o objetivo dela não era "agendar uma consulta". Era "reduzir a incerteza imediatamente".
+
+SOLUÇÃO DESENVOLVIDA
+Um canal de triagem rápida por chat, disponível 24h, com respostas orientativas simples ("procure a emergência agora" ou "pode aguardar a consulta de amanhã"), separado do fluxo normal de agendamento.
+
+RESULTADO
+Redução de ligações desnecessárias à central de emergência, porque o novo canal resolvia a real necessidade por trás do comportamento — incerteza, não falta de agenda.
+
+APLICAÇÃO PARA A CTIC/UEMA
+Quando um servidor abre um chamado urgente fora do prazo normal, ele muitas vezes não quer "abrir um chamado" — quer saber se aquilo é grave e o que fazer agora. A persona ajuda a enxergar essa diferença.` }
+      ,{ title: "📌 EXEMPLO 3 — GOV.UK: o menor denominador de habilidade digital",
+        body: `O time de design do governo digital britânico adota uma persona deliberadamente exigente: aquela com menos familiaridade com tecnologia — e desenha para ela primeiro.
+
+CONTEXTO
+O GOV.UK atende toda a população do Reino Unido, de jovens muito familiarizados com tecnologia a idosos que usam a internet apenas ocasionalmente.
+
+PROBLEMA IDENTIFICADO
+Um serviço público não pode se dar ao luxo de excluir quem tem menos familiaridade digital — diferente de um app de consumo, onde é aceitável focar só no usuário "médio" ou avançado.
+
+PROCESSO
+A equipe formalizou como princípio de design construir a persona do usuário com menor letramento digital e testar cada novo serviço com pessoas reais desse perfil antes do lançamento — não depois.
+
+SOLUÇÃO DESENVOLVIDA
+Linguagem simples obrigatória em todos os serviços, sem jargão técnico ou administrativo, fluxos lineares sem decisões ambíguas, e testes de usabilidade recorrentes com esse grupo específico como critério de aprovação do serviço.
+
+RESULTADO
+Serviços que funcionam bem para o usuário menos experiente tendem a funcionar bem para todos os outros também — o oposto raramente é verdade.
+
+APLICAÇÃO PARA A CTIC/UEMA
+Sistemas institucionais atendem desde estudantes recém-chegados até servidores próximos da aposentadoria. Desenhar pensando primeiro em quem tem menos familiaridade com tecnologia tende a criar sistemas mais robustos para todo mundo.` }
+      ,{ title: "📌 EXEMPLO 4 — Netflix: personas de humor, não de pessoa",
+        body: `A Netflix descobriu que a mesma pessoa se comporta como "personas" diferentes dependendo do momento do dia — e passou a desenhar para estados, não apenas para indivíduos fixos.
+
+CONTEXTO
+A recomendação de conteúdo da Netflix inicialmente tentava prever o que "aquele usuário" gostaria de assistir, com base no histórico acumulado da pessoa.
+
+PROBLEMA IDENTIFICADO
+Recomendações baseadas apenas no histórico geral do usuário frequentemente erravam o alvo — a mesma pessoa que assistia documentários sérios às 19h assistia comédias leves às 22h.
+
+PROCESSO
+Em vez de tratar cada usuário como uma persona fixa e única, a equipe passou a considerar "personas de humor": diferentes estados de disposição que a mesma pessoa assume em momentos diferentes do dia e da semana.
+
+SOLUÇÃO DESENVOLVIDA
+Sistema de recomendação sensível ao contexto (horário, dia da semana, padrão recente de sessões curtas ou longas), sugerindo conteúdos compatíveis com o estado provável da pessoa naquele momento, não apenas com seu perfil histórico geral.
+
+RESULTADO
+Recomendações mais relevantes percebidas pelos usuários, e maior tempo de engajamento por sessão.
+
+APLICAÇÃO PARA A CTIC/UEMA
+Um mesmo servidor pode usar o sistema de chamados de forma muito diferente às 8h de uma segunda-feira (planejando a semana) e às 17h de uma sexta-feira (resolvendo algo urgente antes de sair). Vale considerar que o "estado" do usuário muda, não só o perfil dele.` }
+      ,{ title: "📌 EXEMPLO 5 — CTIC/UEMA: servidor técnico vs. usuário externo",
+        body: `Ao construir personas internas, a CTIC descobriu que tratava dois grupos com necessidades opostas como se fossem o mesmo tipo de usuário.
+
+CONTEXTO
+A CTIC desenvolvia interfaces de sistemas internos pensando em um único perfil de usuário — geralmente alguém com familiaridade técnica razoável, próximo do próprio time de TI.
+
+PROBLEMA IDENTIFICADO
+Sistemas usados tanto por servidores técnicos (de outras áreas de TI da universidade) quanto por usuários externos (docentes, estudantes, terceirizados) recebiam reclamações opostas: uns achavam o sistema "básico demais", outros achavam "confuso e cheio de termos técnicos".
+
+PROCESSO
+Entrevistas curtas com os dois grupos revelaram personas com objetivos e vocabulário completamente diferentes: o servidor técnico queria eficiência e atalhos, e já entendia termos como "ticket", "SLA" e "chamado"; o usuário externo queria clareza passo a passo e não reconhecia nenhum desses termos — para ele, era só "pedir ajuda".
+
+SOLUÇÃO DESENVOLVIDA
+Dois modos de interface para sistemas de maior uso externo: uma visão simplificada, em linguagem cotidiana, para o usuário externo, e uma visão avançada, com mais controle e vocabulário técnico, para o servidor de TI.
+
+RESULTADO
+Redução de reclamações dos dois lados, porque cada grupo passou a interagir com uma versão pensada para o vocabulário e objetivo dele, em vez de uma média desconfortável para ambos.
+
+APLICAÇÃO PARA A CTIC/UEMA
+Antes de desenhar qualquer tela de sistema institucional, vale perguntar: este sistema serve times técnicos e usuários externos ao mesmo tempo? Se sim, provavelmente precisa de mais de uma persona — e possivelmente mais de uma interface.` }
     ]
   },
 
@@ -1636,6 +1740,110 @@ COMO FERRAMENTA DE WORKSHOP
 
 ATENÇÃO
 Um Mapa de Empatia criado sem pesquisa de campo é um mapa de suposições — não de empatia. Sempre deixe claro o que vem de dados reais e o que são hipóteses a validar.` }
+      ,{ title: "📌 EXEMPLO 1 — Startup de saúde mental: 'não se sentir sozinho'",
+        body: `O Mapa de Empatia revelou que o vocabulário de marketing da própria startup ("terapia", "tratamento") afastava exatamente as pessoas que ela tentava ajudar.
+
+CONTEXTO
+Uma startup de saúde mental via baixa conversão em sua campanha de aquisição, mesmo com alto volume de acessos à página inicial vindos de anúncios pagos.
+
+PROBLEMA IDENTIFICADO
+A equipe de marketing assumia que o problema era o preço do serviço ou a falta de confiança na marca, ainda pouco conhecida.
+
+PROCESSO
+Um Mapa de Empatia construído a partir de entrevistas com usuários reais que haviam abandonado o cadastro revelou, no quadrante DIZ E FAZ, que muitos evitavam ativamente a palavra "terapia" ao descrever o que procuravam — diziam coisas como "só queria alguém pra conversar" ou "não queria me sentir tão sozinho". No quadrante PENSA E SENTE, apareceu vergonha e medo de rótulo, não falta de dinheiro.
+
+SOLUÇÃO DESENVOLVIDA
+Reformulação de toda a comunicação da página inicial e dos anúncios, trocando linguagem clínica ("tratamento", "terapia") por linguagem emocional mais próxima do que os próprios usuários diziam sentir ("você não precisa passar por isso sozinho").
+
+RESULTADO
+Aumento na taxa de conversão da página inicial, sem qualquer mudança no preço ou no produto em si — apenas na linguagem, alinhada ao que o Mapa de Empatia havia revelado.
+
+APLICAÇÃO PARA A CTIC/UEMA
+Comunicações institucionais que usam termos técnicos internos ("ticket", "protocolo", "SLA") podem afastar servidores que só querem "ajuda com um problema". Vale mapear o vocabulário real que as pessoas usam, não o vocabulário interno da equipe de TI.` }
+      ,{ title: "📌 EXEMPLO 2 — App de transporte: o medo não era o preço",
+        body: `Um Mapa de Empatia construído com passageiras revelou que a maior barreira de uso não era financeira, mas a insegurança sobre a identidade do motorista.
+
+CONTEXTO
+Um aplicativo de transporte por aplicativo investigava por que uma parcela significativa de usuárias cadastradas usava o serviço raramente, mesmo com preços competitivos.
+
+PROBLEMA IDENTIFICADO
+A hipótese inicial da equipe comercial era sensibilidade a preço — a solução cogitada era criar mais promoções e descontos.
+
+PROCESSO
+Entrevistas mapeadas em um Mapa de Empatia mostraram, no quadrante PENSA E SENTE, um padrão recorrente de ansiedade: "será que é seguro entrar no carro de um estranho à noite?". No quadrante VÊ, muitas relataram checar repetidamente placa, modelo do carro e foto do motorista antes de embarcar, mesmo já tendo essas informações no app.
+
+O medo real não era o preço da corrida — era não se sentir segura o suficiente para confiar na informação exibida.
+
+SOLUÇÃO DESENVOLVIDA
+Reforço visual da verificação de identidade do motorista (selo mais visível de "documento verificado"), opção de compartilhar a corrida em tempo real com um contato de confiança, e botão de emergência mais acessível na tela principal durante a viagem.
+
+RESULTADO
+Aumento no uso recorrente entre o público que antes evitava o serviço à noite, sem qualquer alteração de preço.
+
+APLICAÇÃO PARA A CTIC/UEMA
+Ao investigar baixa adesão a um sistema institucional, vale checar se a barreira real é prática (preço, tempo) ou emocional (medo de errar, vergonha de pedir ajuda, insegurança) — o Mapa de Empatia é a ferramenta certa para essa distinção.` }
+      ,{ title: "📌 EXEMPLO 3 — EAD: abandono não era falta de tempo",
+        body: `O Mapa de Empatia revelou que a principal causa de evasão em um curso EAD era vergonha de não entender o conteúdo sem poder perguntar — não falta de tempo, como o discurso dos próprios alunos sugeria.
+
+CONTEXTO
+Uma instituição de ensino a distância enfrentava alta taxa de evasão em cursos online, mesmo com conteúdo considerado de boa qualidade pela equipe pedagógica.
+
+PROBLEMA IDENTIFICADO
+Pesquisas de saída (survey simples ao cancelar) mostravam consistentemente "falta de tempo" como motivo mais citado — e a instituição já vinha tentando resolver isso com lembretes e flexibilização de prazos, sem sucesso.
+
+PROCESSO
+Um Mapa de Empatia construído a partir de entrevistas mais profundas com ex-alunos revelou uma camada abaixo da resposta superficial: no quadrante OUVE, apareciam comentários de colegas de turma presencial sobre "não entender nada de EAD"; no quadrante PENSA E SENTE, vergonha de fazer perguntas "básicas" num fórum público onde a resposta ficaria visível para todos.
+
+"Falta de tempo" era, na prática, uma resposta socialmente mais aceitável do que admitir "fiquei perdido e tive vergonha de perguntar".
+
+SOLUÇÃO DESENVOLVIDA
+Canal de dúvidas privado e assíncrono entre aluno e tutor, sem exposição pública, além de pequenos vídeos de reforço opcionais para os pontos mais citados como confusos, sem que o aluno precisasse admitir publicamente a dificuldade.
+
+RESULTADO
+Redução na taxa de evasão nos módulos onde o canal privado foi testado, mesmo sem qualquer mudança nos prazos ou na carga horária do curso.
+
+APLICAÇÃO PARA A CTIC/UEMA
+Quando servidores ou estudantes dizem "não tive tempo" para usar um sistema ou seguir um tutorial, vale investigar com mais profundidade — pode haver vergonha ou insegurança escondida atrás dessa resposta mais confortável de dar.` }
+      ,{ title: "📌 EXEMPLO 4 — Banco: animado com a possibilidade vs. frustrado com a burocracia",
+        body: `Um único fluxo de abertura de conta gerava emoções opostas dependendo do momento da jornada — e o Mapa de Empatia tornou essa contradição visível.
+
+CONTEXTO
+Um banco digital investigava por que clientes elogiavam a proposta do produto nas pesquisas de marca, mas reclamavam do processo de abertura de conta nas avaliações de app.
+
+PROBLEMA IDENTIFICADO
+A equipe de produto via essas duas percepções como contraditórias e não sabia qual delas representava o cliente "de verdade".
+
+PROCESSO
+Um Mapa de Empatia dividido por etapa da jornada revelou que não havia contradição — havia uma emoção diferente em cada momento. No início do cadastro (quadrante PENSA E SENTE), o cliente estava animado com a possibilidade de ter mais controle financeiro. Na etapa de envio de documentos e validação, a mesma pessoa relatava frustração com a burocracia — pedidos repetidos de documentos já enviados, mensagens de erro pouco claras.
+
+SOLUÇÃO DESENVOLVIDA
+Redesenho apenas da etapa de validação de documentos, mantendo a comunicação animada e simples do início da jornada, com barra de progresso clara e mensagens de erro específicas (dizendo exatamente o que estava errado, não apenas "documento inválido").
+
+RESULTADO
+Melhora na avaliação do app nas lojas de aplicativo, mesmo sem alterar a etapa inicial de cadastro que já era bem avaliada.
+
+APLICAÇÃO PARA A CTIC/UEMA
+A mesma pessoa pode estar satisfeita com um sistema institucional em geral e, ainda assim, frustrada com uma etapa específica dele. Mapear a emoção por etapa da jornada, não a experiência como um todo, ajuda a mirar a correção no lugar certo.` }
+      ,{ title: "📌 EXEMPLO 5 — CTIC/UEMA: a sensação de não ter suporte",
+        body: `Um Mapa de Empatia interno revelou que servidores não reclamavam da tecnologia em si, mas da sensação de estarem sozinhos ao lidar com um problema técnico.
+
+CONTEXTO
+A CTIC recebia avaliações medianas em pesquisas de satisfação sobre seus sistemas internos, mesmo em sistemas que a equipe técnica considerava estáveis e sem bugs relevantes.
+
+PROBLEMA IDENTIFICADO
+A equipe de TI interpretava as notas medianas como indicativo de que os sistemas precisavam de mais funcionalidades ou uma interface mais moderna.
+
+PROCESSO
+Um Mapa de Empatia construído a partir de entrevistas curtas com servidores de diferentes setores revelou, no quadrante PENSA E SENTE, um padrão recorrente: não era o sistema em si que incomodava, mas a sensação de estar sozinho quando algo dava errado — não saber se o chamado havia sido visto, nem quando seria resolvido. No quadrante DIZ E FAZ, muitos relatavam abrir o mesmo chamado duas vezes "para garantir que alguém viu".
+
+SOLUÇÃO DESENVOLVIDA
+Notificações automáticas confirmando o recebimento do chamado e cada mudança de status, sem exigir nenhuma mudança técnica nos sistemas que geravam as reclamações originalmente.
+
+RESULTADO
+Melhora na percepção de suporte reportada em pesquisas seguintes, mesmo com os mesmos sistemas técnicos e os mesmos prazos reais de resolução de antes.
+
+APLICAÇÃO PARA A CTIC/UEMA
+Antes de investir em reescrever ou modernizar um sistema por conta de avaliações medianas, vale mapear se o problema é técnico mesmo ou se é a sensação de estar desacompanhado durante o processo — são soluções muito diferentes.` }
     ]
   },
 
@@ -3144,6 +3352,174 @@ Solução: criação da primeira Carta de Serviços da CTIC, baseada diretamente
 Em organizações públicas, existe enorme quantidade de conhecimento tácito que vive exclusivamente na cabeça das pessoas. Quando essas pessoas saem (aposentadoria, transferência, licença), o serviço para. O Blueprint extrai esse conhecimento e o torna patrimônio organizacional — deixando de depender de indivíduos para se tornar um processo institucional.
 
 A Carta de Serviços nasceu diretamente dos blueprints: é a versão do usuário do blueprint — simplificada, orientada ao que ele precisa saber para solicitar o serviço, sem o detalhamento operacional interno.` }
+  ],
+  "design-thinking": [
+    { id:"dt1", title:"IDEO — Carrinho de supermercado",
+      summary:"Em 5 dias, a IDEO redesenhou o carrinho usando empatia e prototipagem rápida.",
+      context:"A ABC News desafiou a IDEO a redesenhar o carrinho de supermercado em uma semana inteira, ao vivo para TV — um exercício público das 5 fases do Design Thinking.",
+      problem:"O carrinho de supermercado acumulava décadas sem mudanças relevantes. Crianças se machucavam nas bordas, o design era pouco ergonômico e ninguém questionava por que continuava daquele jeito.",
+      process:"Dia 1 — campo: a equipe visitou supermercados, observou compradores em ação e entrevistou funcionários. Descobriram um padrão não óbvio: pais tentavam manter os filhos por perto o tempo todo, e isso conflitava com o formato tradicional do carrinho.\n\nCom esse insight em mãos, a equipe gerou centenas de ideias sem filtro, construiu protótipos com sucata e materiais baratos, e testou tudo dentro da própria loja, ajustando em tempo real com base na reação dos compradores.",
+      solution:"Cestas modulares removíveis (para não precisar empurrar o carrinho inteiro em compras rápidas), uma área frontal segura para crianças ficarem à vista dos pais, e rodas independentes que giram em qualquer direção para maior manobrabilidade.",
+      result:"O processo em si — não necessariamente o carrinho final — virou referência mundial de como aplicar Design Thinking sob pressão de tempo: Empatia, Definição, Ideação, Prototipagem e Teste em 5 dias. Hoje é case obrigatório em cursos de Stanford e Harvard.",
+      learning:"Para a CTIC/UEMA: antes de decidir qual sistema ou funcionalidade construir, a primeira pergunta não deveria ser \"o que a tecnologia permite\", mas sim \"o que os usuários realmente fazem e sentem no dia a dia\"." },
+    { id:"dt2", title:"Bank of America — Keep the Change",
+      summary:"Observar que usuários arredondavam compras mentalmente gerou um produto que atraiu 12 milhões de clientes.",
+      context:"O Bank of America contratou a IDEO para entender, na prática, como as pessoas comuns lidam com dinheiro no dia a dia — não como os bancos assumiam que elas lidavam.",
+      problem:"A maioria dos clientes não poupava regularmente. Os produtos de poupança existentes exigiam disciplina e decisões ativas que as pessoas simplesmente não praticavam na rotina real.",
+      process:"Durante a pesquisa de campo, a equipe observou um comportamento recorrente e não solicitado: muitas pessoas arredondavam mentalmente o valor das compras para cima, como forma informal de controlar o orçamento (\"isso deu uns 20 reais\" quando custou 18,40).\n\nEsse padrão levantou a pergunta que gerou o produto: e se o banco fizesse esse arredondamento automaticamente, guardando a diferença sem exigir nenhuma decisão consciente do cliente?",
+      solution:"Keep the Change: a cada compra com cartão de débito, o valor é arredondado para o dólar cheio e a diferença é transferida automaticamente para a poupança do cliente. Sem configuração, sem esforço, sem lembretes.",
+      result:"Em 2 anos de operação: 2,5 milhões de novas contas correntes abertas e 12 milhões de clientes participando ativamente do programa — um dos lançamentos de maior sucesso na história do banco.",
+      learning:"Em vez de criar um sistema de lembretes ou notificações novo para estudantes ou servidores, observar quando e como as pessoas já tentam resolver o problema sozinhas pode revelar soluções muito mais simples e eficazes." },
+    { id:"dt3", title:"Kaiser Permanente — Handoff de enfermagem",
+      summary:"O problema não era tecnologia — era contexto humano perdido na troca de turno.",
+      context:"A Kaiser Permanente, uma das maiores operadoras de saúde dos EUA, identificou que a troca de turno entre enfermeiros era um dos momentos de maior risco para erros médicos.",
+      problem:"O handoff (repasse de informações) era feito em uma sala separada, longe do paciente, com base em anotações resumidas. A solução óbvia pareceria ser \"melhorar o sistema de prontuário\" — mas seria essa realmente a raiz do problema?",
+      process:"A equipe de design passou dias observando enfermeiros durante trocas de turno reais, sem interferir. Descobriram que o problema central não era tecnológico: era a ausência do contexto humano — o enfermeiro que assumia o paciente não o via, não ouvia sua voz, não captava sinais que só a presença física revela.\n\nO novo processo foi desenhado em conjunto com os próprios enfermeiros, não imposto de cima para baixo.",
+      solution:"Handoff à beira do leito: a troca de informações passou a ser feita ao lado do paciente, com ele presente e participando sempre que possível, em vez de numa sala isolada.",
+      result:"Redução mensurável de erros de medicação após a mudança. O case tornou-se referência de como o Design Thinking redesenha processos em ambientes de alta regulação, onde \"digitalizar mais\" nem sempre é a resposta certa.",
+      learning:"Na CTIC: quando um chamado não se resolve bem, a causa pode ser um handoff malfeito entre equipes — não falta de sistema. Observar o processo inteiro, incluindo os repasses entre pessoas, é sempre o primeiro passo." },
+    { id:"dt4", title:"Apple — iPod",
+      summary:"O iPod foi inventado a partir da experiência desejada, não da tecnologia disponível.",
+      context:"Em 2001, tocadores de MP3 já existiam havia anos, com boa capacidade técnica de armazenamento. Nenhum, porém, havia dominado o mercado de forma clara.",
+      problem:"Os tocadores existentes eram feitos por engenheiros para engenheiros: menus complexos, múltiplos botões, fluxos de navegação confusos. Faltava responder a uma pergunta simples: o que o usuário realmente quer ao ouvir música no dia a dia?",
+      process:"Em vez de partir das especificações técnicas, a equipe de Jobs partiu da experiência desejada: \"mil músicas no bolso\", acesso imediato a qualquer faixa, zero fricção entre a vontade de ouvir e o som tocando. Toda funcionalidade que não contribuía diretamente para essa experiência foi eliminada do produto.",
+      solution:"iPod + iTunes + loja de música online formando um ecossistema integrado. A famosa roda de navegação (scroll wheel) tornou o ato de encontrar uma música quase instintivo, sem precisar de manual.",
+      result:"O iPod redefiniu a indústria fonográfica e pavimentou diretamente o caminho conceitual e comercial para o iPhone, alguns anos depois.",
+      learning:"Para sistemas institucionais da UEMA: antes de especificar uma lista de funcionalidades, a pergunta certa é qual experiência completa o usuário quer ter — e só depois decidir quais telas e botões viabilizam essa experiência." },
+    { id:"dt5", title:"CTIC/UEMA — Reorganização dos serviços digitais",
+      summary:"Aplicar Design Thinking internamente revelou que o problema não era falta de sistemas, mas falta de clareza sobre as dores reais dos usuários.",
+      context:"A CTIC vinha recebendo solicitações constantes de \"novos sistemas\" e \"mais funcionalidades\" de diferentes setores da UEMA, sem um critério claro de priorização — cada área pedia o que achava que precisava, sem validação prévia.",
+      problem:"Investir em desenvolvimento com base apenas no que era pedido, sem entender o problema por trás do pedido, gerava sistemas subutilizados e retrabalho constante.",
+      process:"A equipe aplicou as 5 fases de forma condensada: Empatizar (entrevistas curtas com servidores de diferentes setores sobre o que realmente travava o trabalho deles), Definir (agrupar as dores em padrões, não em pedidos individuais), Idear (gerar alternativas antes de aceitar a primeira solução sugerida), Prototipar (prova de conceito rápida e barata) e Testar (validar com um grupo pequeno antes de expandir).",
+      solution:"Passou a existir um filtro anterior a qualquer desenvolvimento: nenhuma solicitação vira projeto sem antes passar por uma etapa mínima de empatia e definição do problema real.",
+      result:"Redução de retrabalho em projetos que antes eram descartados ou refeitos meses depois de entregues, por terem resolvido o pedido errado.",
+      learning:"O maior ganho não foi nenhum sistema específico — foi mudar a pergunta inicial de \"o que você quer que a gente construa\" para \"qual problema você está tentando resolver\"." }
+  ],
+  "service-design": [
+    { id:"ds1", title:"Mayo Clinic — Experiência do paciente",
+      summary:"A Mayo Clinic tratou a experiência do paciente como um sistema completo, não como qualidade médica isolada.",
+      context:"A Mayo Clinic identificou falhas recorrentes na experiência ao redor do atendimento clínico: esperas mal comunicadas, ambientes confusos, sinalização pouco clara.",
+      problem:"O problema não estava na qualidade médica em si — que já era excelente — mas em tudo que envolvia essa qualidade: o antes, o durante e o depois da consulta.",
+      process:"Equipes multidisciplinares (médicos, designers, arquitetos) observaram pacientes reais ao longo de toda a jornada — desde o estacionamento até a saída do prédio — e mapearam sistematicamente cada ponto de contato, visível e invisível.",
+      solution:"Redesenho de ambientes físicos, nova sinalização, scripts padronizados de comunicação entre equipes, e novos rituais de atendimento pensados para reduzir ansiedade do paciente em cada etapa.",
+      result:"Aumento consistente nos índices de satisfação do paciente ao longo dos anos seguintes. A Mayo Clinic tornou-se referência mundial em experiência do paciente, não apenas em excelência clínica.",
+      learning:"A experiência do estudante na UEMA não começa na sala de aula — começa na fila da secretaria, no site de matrícula, no primeiro e-mail de confirmação. Design de serviço olha para o sistema inteiro." },
+    { id:"ds2", title:"Nubank — Cancelamento que fideliza",
+      summary:"Tornar o cancelamento simples reforçou a confiança mais do que qualquer campanha de retenção.",
+      context:"No setor bancário tradicional, cancelar um produto é propositalmente difícil — cheio de etapas, ligações e tentativas de retenção. O Nubank decidiu fazer o oposto.",
+      problem:"A lógica convencional do mercado diz que dificultar a saída mantém clientes por mais tempo. O Nubank questionou essa premissa diretamente.",
+      process:"A equipe mapeou a jornada completa de cancelamento em bancos tradicionais — cada atrito, cada campo de formulário, cada ligação obrigatória — e depois desenhou o oposto radical desse processo para o próprio produto.",
+      solution:"Cancelamento em três toques dentro do próprio app, sem ligação obrigatória, sem tempo de espera artificial.",
+      result:"Paradoxalmente, facilitar a saída não aumentou o churn na proporção temida — porque usuários que sabem que podem sair a qualquer momento se sentem menos pressionados e mais confiantes para ficar.",
+      learning:"Processos de trancamento de matrícula, cancelamento de disciplina ou desligamento de serviços costumam ser, na UEMA, momentos onde se cria atrito desnecessário achando que isso \"retém\" o usuário." },
+    { id:"ds3", title:"KLM — WhatsApp como canal de serviço",
+      summary:"A KLM foi para onde o passageiro já estava, em vez de tentar levá-lo a um canal novo.",
+      context:"A KLM buscava reduzir a pressão sobre seus call centers e melhorar a experiência do passageiro em momentos críticos de viagem (atrasos, cancelamentos, remarcações).",
+      problem:"Os passageiros alternavam constantemente entre app, site, telefone e balcão físico para resolver um único problema — uma experiência fragmentada e cansativa.",
+      process:"A equipe identificou, a partir de dados de uso real, que o WhatsApp já era o canal de comunicação predominante entre os próprios passageiros. A lógica de design de serviço aplicada foi simples: ir para onde o usuário já está, em vez de pedir que ele mude de hábito.",
+      solution:"Integração completa via WhatsApp para confirmação de reserva, cartão de embarque digital, notificações proativas de mudanças e resolução direta de problemas com um atendente.",
+      result:"Redução significativa na demanda dos call centers e aumento de satisfação — o passageiro passou a receber informações de forma proativa, sem precisar perguntar.",
+      learning:"Em vez de criar mais um portal institucional que ninguém vai lembrar de acessar, a pergunta certa é: qual canal os estudantes e servidores já usam todos os dias?" },
+    { id:"ds4", title:"Cleveland Clinic — Admissão redesenhada pelas emoções",
+      summary:"Mapear as emoções do paciente durante a admissão revelou pontos de ansiedade que nenhum indicador operacional mostrava.",
+      context:"A Cleveland Clinic buscava melhorar a experiência de internação, uma etapa tradicionalmente tratada apenas como processo administrativo.",
+      problem:"Os indicadores operacionais (tempo de espera, taxa de erros no cadastro) estavam dentro da meta, mas a satisfação do paciente com a admissão continuava baixa — havia uma lacuna entre o que era medido e o que era sentido.",
+      process:"A equipe mapeou a jornada de admissão não pelos processos, mas pelo estado emocional do paciente em cada etapa: medo antes de chegar, confusão durante o cadastro, alívio ou frustração ao ser encaminhado ao quarto. Esse \"mapa emocional\" foi sobreposto ao processo operacional já existente.",
+      solution:"Pequenas intervenções pontuais nos momentos de pico de ansiedade identificados: um funcionário dedicado a acompanhar o paciente do balcão até o quarto, explicações verbais simples substituindo formulários extensos, sinalização emocionalmente mais acolhedora.",
+      result:"Melhora na percepção de cuidado relatada pelos pacientes, mesmo sem grandes mudanças nos tempos operacionais medidos anteriormente.",
+      learning:"Indicadores de tempo e eficiência não capturam tudo. Um processo institucional pode estar \"dentro da meta\" e ainda assim gerar ansiedade real em quem o vivencia — vale mapear o estado emocional, não só o operacional." },
+    { id:"ds5", title:"CTIC/UEMA — Primeira Carta de Serviços",
+      summary:"Documentar os serviços do ponto de vista de quem os usa, não de quem os presta, tornou visível o que antes só existia na cabeça de poucos técnicos.",
+      context:"A CTIC nunca havia formalizado, do ponto de vista do usuário, quais serviços de TI oferecia, como solicitá-los e o que esperar de prazo — o conhecimento vivia disperso entre os técnicos mais antigos.",
+      problem:"Servidores e docentes não sabiam claramente o que podiam pedir à CTIC, gerando solicitações informais, prazos incertos e frustração dos dois lados.",
+      process:"A partir do trabalho de mapeamento de serviços (blueprint interno), a equipe reescreveu cada serviço na linguagem do usuário final: o que é, quando pedir, o que preparar antes, quanto tempo leva — eliminando o jargão técnico interno.",
+      solution:"A primeira Carta de Serviços formal da coordenação, publicada e divulgada, cobrindo os principais serviços prestados a docentes, técnicos e estudantes.",
+      result:"Redução de solicitações informais fora do canal correto e maior previsibilidade percebida pelos usuários, mesmo sem alterar os processos internos em si.",
+      learning:"Design de serviço nem sempre exige redesenhar o processo — às vezes o maior ganho está simplesmente em traduzir um serviço que já existe para a linguagem de quem precisa usá-lo." }
+  ],
+  "duplo-diamante": [
+    { id:"dd1", title:"NHS — Comunicação médico-paciente",
+      summary:"O problema não era falta de tecnologia — era linguagem e contexto humano na consulta.",
+      context:"O NHS (sistema de saúde britânico) recebia um volume relevante de reclamações relacionadas à comunicação entre médicos e pacientes.",
+      problem:"Pacientes não entendiam as instruções médicas recebidas e relatavam sensação de que o médico não tinha tempo para explicar com calma.",
+      process:"Fase Discover (descobrir): entrevistas revelaram médicos usando linguagem excessivamente técnica, consultas de cerca de 8 minutos e pacientes ansiosos que não perguntavam por vergonha ou pressa.\n\nFase Define (definir): o problema real não era falta de informação, mas falta de informação no momento certo e no formato certo para ser absorvida.",
+      solution:"Resumos escritos em linguagem simples entregues ao final de cada consulta, vocabulário padronizado entre profissionais, e ligações de follow-up para pacientes de maior risco.",
+      result:"Redução de reinternações evitáveis relacionadas a mau entendimento de instruções — mostrando que digitalizar um processo ruim não o torna melhor, apenas mais rápido.",
+      learning:"Quando um sistema institucional recebe muitas reclamações, a solução não é necessariamente trocar o sistema — pode estar no processo ao redor dele ou na forma como a informação é comunicada." },
+    { id:"dd2", title:"GDS — Renovação de passaporte",
+      summary:"O Governo Digital do Reino Unido simplificou de 37 para 9 etapas antes de sequer pensar em digitalizar.",
+      context:"O Government Digital Service (GDS) recebeu a missão de digitalizar o processo de renovação de passaporte no Reino Unido.",
+      problem:"A tentação natural seria digitalizar o formulário em papel existente exatamente como estava. Mas seria esse o melhor processo possível, só que em tela?",
+      process:"Discover: mapeamento revelou 37 pontos de fricção ao longo do processo completo.\nDefine: análise mostrou que 60% dos problemas vinham de documentação preenchida incorretamente, não de burocracia em si.\nDevelop: múltiplos protótipos de fluxo alternativo foram construídos e comparados.\nDeliver: testes com cidadãos reais antes do lançamento nacional.",
+      solution:"Processo reduzido de 37 para 9 etapas essenciais, com validação de dados antecipada (evitando erros só descobertos no fim) e linguagem simples em cada campo.",
+      result:"90% dos usuários completam o processo sozinhos, sem ajuda — em cerca de 25 minutos, para um processo que antes podia levar horas e múltiplas tentativas.",
+      learning:"Antes de digitalizar qualquer solicitação de documento na UEMA, vale perguntar: quantas etapas o processo atual realmente tem, e quais delas são de fato necessárias — antes de simplesmente \"colocar num formulário online\"." },
+    { id:"dd3", title:"Mobilidade urbana — o problema do app era físico",
+      summary:"O que parecia ser um problema de aplicativo era, na verdade, um problema de segurança no mundo físico.",
+      context:"Uma empresa de mobilidade urbana recebia reclamações constantes sobre o aplicativo e já planejava um redesign completo da interface.",
+      problem:"Quando os usuários dizem que \"o app é ruim\", o que exatamente eles estão sentindo na prática?",
+      process:"Discover: pesquisa de campo revelou que a maior parte da frustração relatada não acontecia dentro da tela — acontecia no ponto físico de espera pelo veículo.\n\nDefine: o problema real, redefinido a partir dos dados, era medo e insegurança ao esperar sozinho, especialmente à noite, e não a usabilidade do aplicativo em si.",
+      solution:"Combinação de pequenas melhorias no app (como localização mais precisa do veículo) com investimento em pontos de espera mais iluminados e totens informativos com tempo de chegada visível de longe.",
+      result:"Aumento de satisfação vindo principalmente da experiência física redesenhada, não das mudanças cosméticas no aplicativo que haviam sido planejadas inicialmente.",
+      learning:"Na CTIC: quando um sistema recebe reclamações recorrentes, a causa raiz pode estar em uma etapa anterior ao sistema, ou na ausência de suporte humano em algum ponto — não necessariamente na tela em si." },
+    { id:"dd4", title:"Banco — o excesso de documentos, não o processo",
+      summary:"Redefinir o problema do 'processo lento' revelou que a real barreira era a quantidade de documentos exigidos, não as etapas do fluxo.",
+      context:"Um banco de médio porte investigava por que a abertura de conta para pequenos empreendedores tinha taxa alta de desistência no meio do processo.",
+      problem:"A hipótese inicial da equipe interna era que o processo tinha etapas demais e devia ser encurtado tecnicamente — reduzir telas, unificar formulários.",
+      process:"Discover: entrevistas com clientes que desistiram mostraram que o número de etapas em si incomodava pouco — o que gerava desistência era a exigência simultânea de múltiplos documentos que o empreendedor não tinha em mãos no momento.\n\nDefine: o problema real foi redefinido de \"processo com muitas etapas\" para \"exigência de documentos concentrada no momento errado\".",
+      solution:"Reorganização do fluxo para pedir cada documento apenas na etapa em que ele é de fato necessário, permitindo que o cliente inicie o cadastro com o que já tem em mãos e complemente depois.",
+      result:"Redução na taxa de abandono do processo, sem reduzir uma única etapa formal — apenas reordenando quando cada exigência aparecia.",
+      learning:"Redefinir o problema (fase Define) é tão importante quanto explorá-lo (fase Discover): a solução óbvia — \"encurtar o processo\" — não era a resposta real para o que estava causando a desistência." },
+    { id:"dd5", title:"Universidade — a matrícula que não reservava vaga",
+      summary:"O verdadeiro problema da matrícula não era a interface do formulário, mas a ausência de reserva de vaga em tempo real.",
+      context:"Uma universidade pública recebia reclamações recorrentes de calouros sobre o processo de matrícula online, atribuídas inicialmente a uma interface confusa.",
+      problem:"A equipe de TI planejava investir em um redesign visual do formulário de matrícula, assumindo que o problema era de usabilidade da tela.",
+      process:"Discover: acompanhamento de famílias durante o processo revelou que o formulário em si era claro — o problema aparecia depois, quando a vaga \"confirmada\" online não era, na prática, garantida no sistema acadêmico.\n\nDefine: o problema real foi redefinido de \"formulário confuso\" para \"ausência de reserva de vaga em tempo real entre os sistemas\".",
+      solution:"Em vez de redesenhar a interface, a equipe priorizou integrar o sistema de matrícula online ao sistema de vagas do sistema acadêmico, para que o formulário só fosse concluído com a vaga já reservada.",
+      result:"Redução significativa nas reclamações de \"matrícula confirmada sem vaga\", resolvendo o problema sem gastar o orçamento planejado inicialmente em redesign visual.",
+      learning:"Antes de investir em melhorar a interface de um sistema da UEMA, vale confirmar — com a fase Discover — se o problema relatado pelos usuários é mesmo de interface, ou se está uma camada abaixo, na integração entre sistemas." }
+  ],
+  "agile-scrum": [
+    { id:"ag1", title:"Detran-SP — Digitalização incremental",
+      summary:"Sprints de 2 semanas reduziram 40% do atendimento presencial em 6 meses.",
+      context:"O Detran-SP tinha dezenas de serviços para digitalizar e cogitava a abordagem tradicional: um grande projeto de cerca de 2 anos, planejado do início ao fim antes de lançar qualquer coisa.",
+      problem:"Como digitalizar processos burocráticos complexos sem gastar anos construindo sistemas que, no fim, ninguém usa como esperado?",
+      process:"Sprint 1: agendamento online básico, apenas o essencial. Sprint 2: confirmação automática por SMS. Sprint 3: opção de cancelamento online. Cada sprint foi testado com usuários reais antes de iniciar o próximo, incorporando os aprendizados imediatamente.",
+      solution:"Serviços digitalizados de forma incremental, com aprendizado real a cada ciclo de duas semanas, em vez de uma grande entrega única no fim de um projeto longo.",
+      result:"Redução de 40% no atendimento presencial em apenas 6 meses — uma fração do tempo que o projeto tradicional levaria só para ser lançado pela primeira vez.",
+      learning:"A digitalização de serviços na UEMA não precisa ser um projeto de 3 anos. Escolher o serviço com maior demanda, resolvê-lo em poucas semanas e avançar a partir do aprendizado costuma gerar resultado mais rápido e mais alinhado à necessidade real." },
+    { id:"ag2", title:"Spotify — Squads e Tribes",
+      summary:"Um modelo que permite centenas de pessoas trabalharem em paralelo sem perder alinhamento.",
+      context:"À medida que o Spotify crescia rapidamente, o modelo de Scrum convencional — com um único backlog e poucas equipes — começou a criar gargalos de dependência entre times.",
+      problem:"Como manter a agilidade e autonomia de uma startup pequena mesmo com centenas de engenheiros e designers trabalhando ao mesmo tempo?",
+      process:"A empresa desenvolveu uma estrutura própria: Squads (equipes pequenas e autônomas, cada uma com uma missão clara de produto), Tribes (agrupamentos de squads com áreas relacionadas), Chapters (comunidades de prática por especialidade técnica, cruzando squads) e Guilds (grupos voluntários de interesse comum, como acessibilidade ou performance).",
+      solution:"Cada Squad tem autonomia para decidir COMO construir dentro de uma missão já definida, eliminando boa parte das dependências e reuniões de alinhamento constantes entre times.",
+      result:"O modelo permitiu ao Spotify escalar de dezenas para centenas de profissionais sem perder a velocidade característica de equipes pequenas — hoje é referência para organizações de todos os tamanhos.",
+      learning:"Times pequenos e autônomos, com uma missão clara em vez de uma lista de tarefas, podem inspirar como a CTIC organiza projetos que acontecem em paralelo, sem depender de reuniões infinitas de alinhamento entre todos." },
+    { id:"ag3", title:"iFood — Cultura de experimentação",
+      summary:"Ciclos curtos para testar hipóteses e aprender com dados reais, em vez de apostar tudo numa grande entrega.",
+      context:"O iFood opera em um mercado extremamente competitivo, onde a velocidade de aprendizado sobre o comportamento do usuário costuma definir quem ganha mercado.",
+      problem:"Como aprender rápido o suficiente quando o comportamento do usuário muda constantemente e a concorrência lança novidades toda semana?",
+      process:"Sprints de 2 semanas sempre começam com uma hipótese clara e mensurável (não apenas uma lista de features a construir). O sprint termina com uma revisão focada no impacto real medido em dados — não na quantidade de tarefas concluídas.",
+      solution:"Novas funcionalidades são lançadas primeiro para um grupo pequeno e controlado de usuários. Se os dados confirmam a hipótese, a funcionalidade escala para todos; se não confirmam, é descartada sem culpa nem grande perda de tempo.",
+      result:"O iFood consegue lançar, medir e descartar funcionalidades em ciclos muito mais curtos do que concorrentes que ainda planejam grandes lançamentos únicos.",
+      learning:"Antes de investir tempo de desenvolvimento em um novo sistema ou funcionalidade na UEMA, vale definir com clareza: qual é a nossa hipótese, como vamos medir se funcionou, e em que momento vamos decidir se continuamos ou descartamos." },
+    { id:"ag4", title:"CTIC/UEMA — Kanban para não paralisar serviços",
+      summary:"Adotar Kanban em vez de sprints fechados permitiu redesenhar sistemas sem interromper o atendimento diário à comunidade acadêmica.",
+      context:"A CTIC precisava evoluir sistemas internos continuamente, mas não podia parar o atendimento a docentes, técnicos e estudantes para \"fechar sprints\" como em uma empresa de produto puro — chamados urgentes chegavam todos os dias, de forma imprevisível.",
+      problem:"Sprints tradicionais de 2 semanas, com escopo fechado no início, entravam em conflito constante com a realidade de um setor de suporte, onde prioridades urgentes surgem a qualquer momento.",
+      process:"A equipe adotou Kanban em vez de Scrum clássico: um quadro visual com colunas de fluxo (a fazer, em andamento, em teste, concluído) e limite de itens simultâneos por coluna, sem ciclos fechados de tempo fixo. Itens urgentes entram no fluxo sem esperar o \"próximo sprint\".",
+      solution:"Fluxo contínuo de trabalho com prioridades reordenadas conforme a urgência real, mantendo visibilidade total do que está em andamento para toda a equipe e para os solicitantes.",
+      result:"Redução de sistemas parcialmente abandonados no meio do desenvolvimento por conta de urgências que antes forçavam a interrupção de sprints inteiros.",
+      learning:"Nem toda equipe precisa de Scrum com sprints fechados — setores de suporte contínuo, como a CTIC, costumam se beneficiar mais de um fluxo visual tipo Kanban, que absorve urgência sem descartar o planejamento." },
+    { id:"ag5", title:"Amazon — Working Backwards",
+      summary:"A Amazon começa todo produto pelo press release do lançamento, antes de escrever uma linha de código.",
+      context:"A Amazon desenvolveu o método Working Backwards para garantir que todo produto interno nascesse a partir do valor real para o cliente, e não da empolgação técnica da equipe.",
+      problem:"Como garantir que todo projeto começa pelo problema certo, e não pela solução que a equipe técnica já queria construir de qualquer forma?",
+      process:"Antes de qualquer linha de código, a equipe responsável escreve um documento chamado PR/FAQ: um press release fictício descrevendo, na linguagem do cliente final, os benefícios do produto como se ele já tivesse sido lançado — seguido de perguntas e respostas antecipando objeções.\n\nSe a equipe não consegue escrever um press release convincente e claro, a conclusão é simples: o produto não deveria ser construído daquele jeito, pelo menos não ainda.",
+      solution:"O PR/FAQ alinha toda a equipe em torno do valor real para o cliente antes de qualquer decisão técnica de arquitetura ou tecnologia ser tomada.",
+      result:"Produtos como Kindle, Alexa e AWS foram desenvolvidos usando essa metodologia — todos nasceram de um documento de valor para o cliente, não de uma especificação técnica.",
+      learning:"Antes de especificar um novo sistema na UEMA, vale tentar escrever o \"anúncio\" dele em uma frase simples e direta para quem vai usar. Se não é possível escrever com clareza o que o usuário ganha, o problema provavelmente ainda não foi bem definido." }
   ]
 };
 const TOOLS = [
@@ -3246,30 +3622,8 @@ const CO=["metodologia","pesquisa","sintese","ideacao","visualizacao","prototipa
 const TXT={
   pt:{app:"Cinto de Ferramentas",sub:"Design · Serviço · UX",search:"Buscar ferramenta...",all:"Todas",fav:"Favoritos",rec:"Recentes",click:"Clique em uma ferramenta para ver os detalhes",who:"Quem aplica",steps:"Passo a passo",exs:"Exemplos reais",addEx:"+ Adicionar exemplo",addTool:"+ Nova ferramenta",saveFav:"Salvar nos favoritos",saved:"Salvo! ⭐",claude:"Aprofundar com Claude ↗",learnT:"📖 Saiba mais — aula completa",learnEx:"🔎 Ver case completo",back:"← Voltar",cancel:"Cancelar",save:"Salvar",dark:"Escuro",light:"Claro",lang:"EN",cnt:"ferramentas",ctx:"Contexto",prob:"O problema",proc:"O processo",sol:"A solução",res:"Resultado",lrn:"Aprendizado-chave",TL:{metodologia:"Metodologia",metodo:"Método",ferramenta:"Ferramenta",artefato:"Artefato",tecnica:"Técnica"},CL:{pesquisa:"Pesquisa",ideacao:"Ideação",sintese:"Síntese",prototipagem:"Prototipagem",visualizacao:"Visualização",avaliacao:"Avaliação",workshop:"Workshop",estrategia:"Estratégia",metodologia:"Metodologias"},FL:{name:"Nome *",type:"Tipo",origin:"Origem",desc:"Descrição",cat:"Categoria",who:"Quem aplica (vírgulas)",steps:"Passo a passo (um por linha)",ex:"Primeiro exemplo",ph:"Descreva um exemplo real..."},modal:"Adicionar nova ferramenta",notes:"Minhas anotações",noteAdd:"+ Adicionar anotação",noteSave:"💾 Salvar anotação",noteCancel:"Cancelar",noteImg:"🖼 Adicionar imagem",noteTitle:"Título (opcional)",noteText:"Escreva sua anotação..."},
   en:{app:"Design Toolkit",sub:"Design · Service · UX",search:"Search tool...",all:"All",fav:"Favorites",rec:"Recent",click:"Click a tool to see details",who:"Who applies",steps:"Step by step",exs:"Real examples",addEx:"+ Add example",addTool:"+ New tool",saveFav:"Save to favorites",saved:"Saved! ⭐",claude:"Go deeper with Claude ↗",learnT:"📖 Learn more — full lesson",learnEx:"🔎 See full case",back:"← Back",cancel:"Cancel",save:"Save",dark:"Dark",light:"Light",lang:"PT",cnt:"tools",ctx:"Context",prob:"The problem",proc:"The process",sol:"The solution",res:"Result",lrn:"Key learning",TL:{metodologia:"Methodology",metodo:"Method",ferramenta:"Tool",artefato:"Artifact",tecnica:"Technique"},CL:{pesquisa:"Research",ideacao:"Ideation",sintese:"Synthesis",prototipagem:"Prototyping",visualizacao:"Visualization",avaliacao:"Evaluation",workshop:"Workshop",estrategia:"Strategy",metodologia:"Methodologies"},FL:{name:"Name *",type:"Type",origin:"Origin",desc:"Description",cat:"Category",who:"Who applies (commas)",steps:"Step by step (one per line)",ex:"First example",ph:"Describe a real example..."},modal:"Add new tool",notes:"My notes",noteAdd:"+ Add note",noteSave:"💾 Save note",noteCancel:"Cancel",noteImg:"🖼 Add image",noteTitle:"Title (optional)",noteText:"Write your note..."},
-  "design-thinking": [
-    {id:"dt1",title:"IDEO — Carrinho de supermercado",summary:"Em 5 dias, a IDEO redesenhou o carrinho usando empatia e prototipagem rápida.",context:"A ABC News desafiou a IDEO a redesenhar o carrinho em uma semana ao vivo para TV.",problem:"O carrinho acumulava décadas sem mudanças. Crianças se machucavam, ergonomia ruim.",process:"Dia 1: campo — visitaram supermercados, observaram compradores, entrevistaram funcionários. Descobriram que pais tentavam manter filhos por perto.\n\nCom os insights, geraram centenas de ideias, construíram protótipos com sucata e testaram dentro da loja.",solution:"Cestas modulares removíveis, área frontal segura para crianças, rodas independentes.",result:"O processo virou referência mundial. Empatia, Definição, Ideação, Prototipagem, Teste. Caso obrigatório em Stanford e Harvard.",learning:"Na CTIC/UEMA: antes de decidir qual sistema usar, a primeira pergunta deve ser o que os usuários realmente fazem e sentem."},
-    {id:"dt2",title:"Bank of America — Keep the Change",summary:"Observar que usuários arredondavam compras mentalmente gerou produto que atraiu 12 milhões de clientes.",context:"O Bank of America contratou a IDEO para entender como pessoas lidam com dinheiro no dia a dia.",problem:"A maioria não poupava regularmente. Produtos existentes exigiam disciplina que as pessoas não exercitavam na prática.",process:"A equipe observou que muitas pessoas arredondavam compras mentalmente para controlar o orçamento.\n\nIsso levou à pergunta: e se o banco fizesse esse arredondamento e guardasse o troco automaticamente?",solution:"Keep the Change: a cada compra com cartão débito, o valor é arredondado e a diferença vai para a poupança. Simples, automático.",result:"Em 2 anos: 2,5 milhões de novas contas correntes e 12 milhões de clientes participando.",learning:"Em vez de criar sistema de lembretes novo, observar quando e como os alunos buscam informação pode revelar soluções muito mais eficientes."},
-    {id:"dt3",title:"Kaiser Permanente — Handoff de enfermagem",summary:"O problema não era tecnologia — era contexto humano.",context:"A Kaiser Permanente identificou que a troca de turno dos enfermeiros era momento crítico de risco.",problem:"O handoff era feito em sala separada. A solução óbvia seria melhorar o sistema — mas seria a raiz do problema?",process:"A equipe passou dias observando enfermeiros. Descobriram que o problema não era tecnologia — era falta de contexto humano.\n\nO processo foi redesenhado com os próprios enfermeiros.",solution:"Handoff à beira do leito: troca de informações ao lado do paciente, com ele presente quando possível.",result:"Redução de erros de medicação. Referência de como DT redesenha processos em ambientes de alta regulação.",learning:"Na CTIC: quando um chamado não se resolve, pode ser handoff mal feito entre equipes. Observar o processo inteiro é o primeiro passo."},
-    {id:"dt4",title:"Apple — iPod",summary:"O iPod foi inventado pela experiência desejada, não pela tecnologia.",context:"Em 2001, tocadores de MP3 já existiam com grandes capacidades técnicas. Nenhum dominava o mercado.",problem:"Os tocadores eram feitos por engenheiros para engenheiros: menus complexos. O que o usuário quer de verdade ao ouvir música?",process:"Jobs partiu da experiência desejada: 1000 músicas no bolso, acesso imediato, sem fricção. Tudo que não contribuía para isso foi eliminado.",solution:"iPod + iTunes + loja online em ecossistema integrado. O scroll wheel tornou a navegação intuitiva.",result:"O iPod redefiniu a indústria da música e foi precursor do iPhone.",learning:"Para sistemas institucionais: antes de especificar funcionalidades, a pergunta certa é qual experiência o usuário quer ter."}
-  ],
-  "design-servico": [
-    {id:"ds1",title:"Mayo Clinic — Experiência do paciente",summary:"A Mayo Clinic tratou a experiência do paciente como sistema completo.",context:"A Mayo Clinic identificou falhas na experiência ao redor do atendimento: esperas mal comunicadas, ambientes confusos.",problem:"O problema não era qualidade médica — era a experiência ao redor dela.",process:"Equipes multidisciplinares observaram pacientes em toda a jornada — do estacionamento à saída. Mapearam todos os pontos de contato.",solution:"Redesenho de ambientes, sinalização, scripts de comunicação e novos rituais de atendimento.",result:"Aumento nos índices de satisfação. A Mayo Clinic tornou-se referência global em experiência do paciente.",learning:"A experiência do estudante na UEMA não começa na sala de aula — começa na fila da secretaria, no site, no primeiro e-mail."},
-    {id:"ds2",title:"Nubank — Cancelamento que fideliza",summary:"Tornar o cancelamento simples reforçou a confiança mais que qualquer campanha de retenção.",context:"No setor bancário, cancelar é propositalmente difícil. O Nubank decidiu fazer o oposto.",problem:"A lógica convencional diz que dificultar a saída mantém clientes. O Nubank questionou isso.",process:"A equipe mapeou toda a jornada de cancelamento — cada atrito, cada frustração. Depois simplificou radicalmente.",solution:"Cancelamento em 3 toques no app, sem ligações, sem espera.",result:"Paradoxalmente, facilitar a saída reduziu o churn. Usuários que sabem que podem sair se sentem menos pressionados.",learning:"Processos de trancamento de matrícula são momentos onde a UEMA costuma criar atrito desnecessário."},
-    {id:"ds3",title:"KLM — WhatsApp como canal de serviço",summary:"A KLM foi onde o passageiro já estava, em vez de criar um canal novo.",context:"A KLM buscava reduzir pressão nos call centers e melhorar a experiência em momentos críticos.",problem:"Passageiros alternavam entre app, site, telefone e balcão. Experiência fragmentada.",process:"A equipe identificou que o WhatsApp já era o canal principal dos passageiros. A lógica: ir onde o usuário está.",solution:"WhatsApp integrado para confirmação, cartão de embarque, notificações e resolução de problemas.",result:"Redução em call centers, aumento de satisfação. O passageiro recebe informações proativamente.",learning:"Em vez de criar portal novo, a pergunta é qual canal os estudantes já usam."}
-  ],
-  "duplo-diamante": [
-    {id:"dd1",title:"NHS — Comunicação médico-paciente",summary:"O problema não era falta de tecnologia — era linguagem e contexto humano.",context:"O NHS identificou reclamações sobre comunicação entre médicos e pacientes.",problem:"Pacientes não entendiam instruções médicas e sentiam que o médico não tinha tempo para explicar.",process:"Fase Discover: entrevistas revelaram médicos com linguagem técnica, 8 minutos por consulta e pacientes ansiosos.\n\nFase Define: o paciente precisa de informação no momento certo, no formato certo.",solution:"Resumos simples entregues ao paciente, linguagem padronizada, follow-up por telefone.",result:"Redução de reinternações evitáveis. Digitalizar um processo ruim não o melhora.",learning:"Quando um sistema recebe reclamações, a solução pode não ser trocar o sistema — pode ser o processo ou a comunicação."},
-    {id:"dd2",title:"GDS — Renovação de passaporte",summary:"O Governo Digital do Reino Unido simplificou de 37 para 9 etapas antes de digitalizar.",context:"O Governo Digital recebeu a missão de digitalizar serviços públicos.",problem:"A tentação era digitalizar o formulário existente. Mas era o melhor processo possível?",process:"Discover: 37 pontos de fricção.\nDefine: 60% dos problemas vinham de documentação incorreta.\nDevelop: protótipos alternativos.\nDeliver: testes com cidadãos reais.",solution:"Processo de 37 para 9 etapas. Validação antecipada. Linguagem simples.",result:"90% completam sem ajuda. 25 minutos para processo que antes levava horas.",learning:"Antes de digitalizar solicitação de documentos na UEMA: quantas etapas tem? Quais são necessárias?"},
-    {id:"dd3",title:"Mobilidade — Problema do app era físico",summary:"O que parecia problema de app era problema físico.",context:"Empresa de mobilidade recebia reclamações sobre o app. Equipe planejava redesign completo.",problem:"Quando as pessoas dizem que o app é ruim, o que realmente está acontecendo?",process:"Discover: pesquisa de campo revelou que a maioria das frustrações não acontecia na tela — acontecia no ponto de parada.\n\nDefine: o problema real era medo e insegurança enquanto esperava à noite.",solution:"Melhorias no app mais pontos com melhor iluminação e totens informativos.",result:"Satisfação aumentou pela experiência física redesenhada junto com o digital.",learning:"Na CTIC: quando um sistema recebe reclamações, a raiz pode estar no processo antes ou na falta de suporte humano."}
-  ],
-  "agile-scrum": [
-    {id:"ag1",title:"Detran-SP — Digitalização incremental",summary:"Sprints de 2 semanas reduziram 40% do atendimento presencial em 6 meses.",context:"O Detran-SP tinha dezenas de serviços para digitalizar. Abordagem tradicional: grande projeto de 2 anos.",problem:"Como digitalizar processos burocráticos sem criar sistemas que ninguém usa?",process:"Sprint 1: agendamento online básico. Sprint 2: confirmação por SMS. Sprint 3: cancelamento online. Cada sprint testado antes do próximo.",solution:"Serviços digitalizados incrementalmente com aprendizado a cada ciclo.",result:"Redução de 40% no atendimento presencial em 6 meses.",learning:"A digitalização de serviços da UEMA não precisa ser projeto de 3 anos. Resolva o serviço com mais demanda em 2 semanas e avance."},
-    {id:"ag2",title:"Spotify — Squads e Tribes",summary:"Modelo que permite centenas de pessoas trabalharem em paralelo sem perder alinhamento.",context:"À medida que o Spotify crescia, o Scrum convencional criava gargalos.",problem:"Como manter agilidade de startup com centenas de engenheiros e designers?",process:"Desenvolveram: Squads (equipes autônomas com missão), Tribes (grupos de squads), Chapters (comunidades por especialidade) e Guilds (grupos voluntários).",solution:"Cada Squad decide o que construir dentro de uma missão clara. Elimina dependências constantes.",result:"Escalou sem perder velocidade. A lição é o princípio — não o modelo exato.",learning:"Times autônomos com missão clara podem guiar como a CTIC organiza projetos paralelos sem reuniões infinitas."},
-    {id:"ag3",title:"iFood — Cultura de experimentação",summary:"O iFood usa ciclos curtos para testar hipóteses e aprender com dados reais.",context:"O iFood opera em mercado competitivo onde velocidade de aprendizado define quem vence.",problem:"Como aprender rápido quando o usuário muda constantemente?",process:"Sprints de 2 semanas começando com hipóteses claras. Termina com revisão de impacto medido — não de outputs entregues.",solution:"Funcionalidades lançadas para grupos pequenos. Se confirma, escala. Se não, descarta.",result:"Lança, mede e descarta funcionalidades em ciclos muito mais curtos que concorrentes.",learning:"Antes de investir em novo sistema: qual é nossa hipótese, como vamos medir e quando vamos decidir?"},
-    {id:"ag4",title:"Amazon — Working Backwards",summary:"A Amazon começa todo produto pelo press release do lançamento.",context:"A Amazon desenvolveu Working Backwards para garantir produtos desenvolvidos a partir do cliente.",problem:"Como garantir que todo projeto começa pelo problema certo?",process:"Antes de qualquer código, a equipe escreve um PR/FAQ: press release fictício descrevendo benefícios para o cliente.\n\nSe não consegue escrever um press release convincente, o produto não deveria ser construído.",solution:"O PR/FAQ alinha a equipe em torno do valor para o cliente antes de qualquer decisão técnica.",result:"Kindle, Alexa e AWS foram desenvolvidos usando Working Backwards.",learning:"Antes de especificar novo sistema na UEMA: tente escrever o anúncio. Se não consegue com clareza, o problema não foi definido ainda."}
-  ]
-
 };
+
 
 // ── STATE ────────────────────────────────────────────────
 let lang='pt', dark=false;
