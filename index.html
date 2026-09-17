@@ -1973,6 +1973,211 @@ Onde há potencial de resistência à mudança? O mapa ajuda a identificar stake
     ]
   },
 
+  "mapa-ecossistema": {
+    intro: `O Ecosystem Map (Mapa de Ecossistema) é uma ferramenta de Design de Serviços usada para visualizar todas as pessoas, organizações, sistemas, canais e outros atores que influenciam ou participam de um serviço.
+
+A ideia central é simples: um serviço nunca acontece sozinho. Quando um aluno solicita um serviço universitário, por exemplo, ele não está simplesmente "usando um sistema". Por trás daquela solicitação podem existir o portal, o sistema acadêmico, a secretaria, o professor, a coordenação, a TI, o banco de dados, o e-mail, um órgão externo — e mais. O Ecosystem Map ajuda justamente a enxergar essa rede inteira de uma vez.
+
+Diferente de um fluxograma, o Ecosystem Map não mostra sequência ("o que acontece primeiro"). Ele mostra relação: quem está envolvido, quem influencia quem, quem depende de quem, o que circula entre eles (informação, dinheiro, autorização, dados).`,
+    sections: [
+      { title: "Que problema ele resolve",
+        body: `O Ecosystem Map serve principalmente para responder uma pergunta: "o que está por trás da experiência do usuário?"
+
+Às vezes o usuário reclama de forma simples — "o sistema da universidade é ruim" — mas ao investigar, o problema pode não estar no sistema em si. Pode estar na secretaria, no processo entre setores, na integração entre sistemas, na falta de clareza sobre responsabilidades, numa regra institucional ou numa dependência externa que ninguém tinha mapeado.
+
+A grande pergunta que abre praticamente todo Ecosystem Map é: "quem ou o que precisa existir para esse serviço funcionar?"` },
+      { title: "Os 6 grandes grupos do ecossistema",
+        body: `USUÁRIOS
+Pessoas que utilizam ou são afetadas pelo serviço: aluno, professor, servidor, pesquisador, candidato, visitante.
+
+ORGANIZAÇÕES E SETORES
+Entidades ou áreas envolvidas: Reitoria, Pró-Reitoria, Secretaria, Coordenação, Departamento, Biblioteca, TI, Financeiro.
+
+SISTEMAS E TECNOLOGIAS
+Tudo que sustenta digitalmente o serviço: sistema acadêmico, sistema de protocolo, portal, aplicativo, banco de dados, e-mail, WhatsApp, API, sistema de pagamento.
+
+CANAIS
+Por onde o serviço acontece ou chega ao usuário: site, aplicativo, telefone, e-mail, WhatsApp, atendimento presencial, chat, balcão.
+
+PARCEIROS E AGENTES EXTERNOS
+Atores fora da organização: bancos, fornecedores, governo, empresas, órgãos reguladores, universidades parceiras, transportadoras.
+
+REGRAS E CONTEXTO
+Nem tudo no ecossistema é uma "pessoa" — existem forças que influenciam o serviço sem serem um ator ativo: legislação, políticas institucionais, LGPD, normas acadêmicas, contratos, orçamento, regulamentações.` },
+      { title: "A alma do mapa: relações, não apenas atores",
+        body: `Um bom Ecosystem Map não é simplesmente "colocar um monte de post-it". Se você colocar 80 entidades num board e ligar tudo com setinhas, cria um espaguete institucional que ninguém consegue ler.
+
+Não basta listar "Aluno", "Secretaria", "TI", "Sistema" soltos. É preciso mostrar o que conecta cada um: o aluno solicita algo da secretaria; a secretaria consulta o sistema; o sistema fornece dados; a TI mantém o sistema. Cada linha do mapa deveria responder: o que passa entre eles? Pode ser informação, dinheiro, solicitação, documento, decisão, autorização, dados ou suporte.
+
+Tipos de relação úteis para diferenciar visualmente:
+→ Relação direta: interação direta entre dois atores.
+→ Relação indireta (linha tracejada): existe influência, mas não interação direta.
+→ Fluxo de informação: informação passa de um lado para o outro.
+→ Dependência (linha grossa): um ator depende fortemente do outro para funcionar.
+→ Influência: um ator afeta o comportamento do outro sem depender diretamente dele.` },
+      { title: "Como construir, passo a passo",
+        body: `ETAPA 1 — Defina o serviço
+Nunca comece amplo demais ("mapa da universidade inteira"). Escolha um recorte específico: "mapa do ecossistema do serviço de solicitação de VPN", por exemplo.
+
+ETAPA 2 — Defina o ator principal
+Pergunte quem está tentando realizar alguma coisa — aluno, servidor, paciente, cidadão — e coloque esse ator em destaque, geralmente no centro do mapa.
+
+ETAPA 3 — Liste os atores (brainstorming, sem desenhar ainda)
+Escreva tudo que vier à mente nas 6 categorias: pessoas, setores, sistemas, externos, regras, canais.
+
+ETAPA 4 — Classifique com uma legenda clara
+Defina cores ou marcadores para cada grupo (usuários, organização, tecnologia, parceiros, reguladores, canais). Não existe padronização universal — o importante é que a legenda seja consistente.
+
+ETAPA 5 — Posicione por camadas
+Centro: o usuário principal. Primeiro nível: atores diretamente relacionados. Segundo nível: atores de suporte (infraestrutura, TI, sistemas). Terceiro nível: ambiente externo (governo, fornecedores, regulação).
+
+ETAPA 6 — Conecte e nomeie as relações
+Para cada linha, pergunte "o que passa entre eles?" e escreva isso na conexão.
+
+ETAPA 7 — Identifique dependências
+Pergunte, para cada ator: "se esse ator desaparecer, o serviço continua funcionando?" Se a resposta for não, você encontrou uma dependência crítica.
+
+ETAPA 8 — Identifique gargalos
+Procure dependências críticas concentradas, sistemas isolados, processos manuais, pontos onde tudo precisa passar por uma única pessoa, e canais redundantes.` },
+      { title: "Da descoberta à oportunidade de design",
+        body: `Depois do mapa pronto, faça uma segunda leitura procurando três coisas:
+
+PONTOS DE DOR — onde existe atraso, retrabalho, erro, espera, duplicidade ou confusão.
+
+DEPENDÊNCIAS — onde uma única pessoa ou sistema concentra responsabilidade demais.
+
+OPORTUNIDADES — onde existe potencial de automatização, integração, simplificação, novo canal ou melhoria de comunicação.
+
+A pergunta de ouro depois do mapa pronto é: "onde está a maior diferença entre como o ecossistema deveria funcionar e como ele funciona hoje?"
+
+Uma técnica poderosa é fazer duas versões do mapa: AS-IS (como o ecossistema funciona hoje, com suas dependências manuais e gargalos) e TO-BE (como você gostaria que funcionasse, já com as melhorias propostas). Isso transforma o Ecosystem Map de uma ferramenta de diagnóstico em uma ferramenta de transformação.` },
+      { title: "Ecosystem Map vs. Journey Map vs. Service Blueprint vs. BPMN",
+        body: `As quatro ferramentas respondem perguntas diferentes e podem — devem — ser usadas juntas:
+
+Journey Map pergunta: como o usuário vivencia o serviço? (foco na experiência, etapa por etapa)
+
+Service Blueprint pergunta: como a organização entrega o serviço? (foco na operação: frontstage, backstage, suporte)
+
+Ecosystem Map pergunta: quem participa e influencia o serviço? (foco nas relações entre todos os atores envolvidos)
+
+BPMN pergunta: qual é a sequência exata desse processo? (foco no fluxo passo a passo, para automatização ou documentação formal)
+
+Uma cadeia metodológica comum: o Ecosystem Map ajuda a entender quem são os atores → o Journey Map aprofunda a experiência do usuário principal → o Service Blueprint detalha a operação por trás dela → o BPMN formaliza os processos que precisam ser automatizados ou documentados.` },
+      { title: "Quando usar e quando não usar",
+        body: `USE QUANDO
+→ O projeto está em fase de Discovery, tentando entender o problema pela primeira vez.
+→ O serviço envolve muitos atores e setores diferentes (típico em projetos de Service Design).
+→ Existem vários sistemas e áreas em jogo (transformação digital).
+→ É um serviço público ou institucional — governos e universidades são ecossistemas complexos por natureza.
+
+NÃO É A MELHOR FERRAMENTA QUANDO
+→ O problema é extremamente simples, com poucos atores óbvios (ex.: "cliente pede, restaurante entrega").
+→ A pergunta central é apenas "qual é a sequência dessas atividades?" — nesse caso, um fluxograma ou BPMN é mais direto.
+
+Vale lembrar: o Ecosystem Map não precisa ser perfeito na primeira versão. É uma ferramenta de Discovery — você faz uma hipótese, monta o mapa, entrevista pessoas, descobre que estava incompleto ou errado, e atualiza. O mapa não é a verdade do ecossistema; é uma representação que vai sendo refinada conforme você aprende.` }
+      ,{ title: "📌 EXEMPLO 1 — Interaction Design Foundation: ecossistema de entrega",
+        body: `Um mapa de ecossistema simples e didático, usado para ensino, mostra como um único pedido de entrega envolve muito mais do que "cliente pede, entregador leva".
+
+CONTEXTO
+A Interaction Design Foundation usa este mapa como material educativo para explicar Ecosystem Mapping a designers iniciantes, usando o cenário de um serviço de entregas.
+
+PROBLEMA IDENTIFICADO
+Ao pensar em "melhorar a entrega", equipes de produto costumam olhar apenas para o app do cliente — ignorando toda a rede de atores que sustenta aquele pedido chegar fisicamente até a porta.
+
+PROCESSO
+O mapa posiciona o Cliente e o Dispositivo do Cliente no centro da primeira camada, junto ao Quiosque (ponto físico de atendimento). Na camada seguinte aparecem o Banco de Dados e a Notificação por E-mail, conectados por linhas tracejadas mostrando dependência de sistema. Numa camada mais externa aparecem os Motoristas Particulares com seu próprio aplicativo, e finalmente a camada de Logística, incluindo transportadoras terceirizadas como FedEx, UPS e USPS.
+
+SOLUÇÃO DESENVOLVIDA
+Ao visualizar essas camadas, fica claro que "melhorar a entrega" pode significar coisas completamente diferentes dependendo de qual camada tem o problema: o app do cliente, o quiosque físico, o aplicativo do motorista, ou a transportadora terceirizada.
+
+RESULTADO
+O mapa evita que times de produto proponham soluções (como "redesenhar o app") para problemas que na verdade estão em outra camada do ecossistema, como atraso da transportadora externa.
+
+APLICAÇÃO PARA A CTIC/UEMA
+Ao investigar reclamações sobre um serviço acadêmico (como emissão de documentos), vale mapear se o gargalo está na camada "sistema" (portal, banco de dados) ou numa camada externa (gráfica, correios, órgão parceiro) — a solução é completamente diferente em cada caso.` }
+      ,{ title: "📌 EXEMPLO 2 — MakeMyTrip: ecossistema de viagens por nível de relevância",
+        body: `A MakeMyTrip (uma das maiores agências de viagens online da Índia) usa um Ecosystem Map com um código de cores simples — direto, indireto, presença mínima — para priorizar onde investir parcerias.
+
+CONTEXTO
+Uma plataforma de viagens online precisa decidir com quais parceiros e serviços investir tempo de integração: seguradoras, hotéis, companhias aéreas, aplicativos de transporte, redes sociais, entre dezenas de outros atores possíveis.
+
+PROBLEMA IDENTIFICADO
+Sem um mapa claro, é fácil investir esforço de integração em parceiros de baixo impacto para a jornada do usuário, enquanto parceiros mais críticos ficam com integrações fracas.
+
+PROCESSO
+O mapa organiza os atores em três anéis (Pessoas, Serviços/Dispositivos, Instituições) e usa cor para marcar relevância: vermelho para "diretamente relacionado a viagem" (passagens, hospedagem, pacotes), azul para "indiretamente relacionado" (WhatsApp, apps de reserva, suporte ao cliente) e cinza para "presença mínima" (bancos, redes sociais, órgãos locais).
+
+SOLUÇÃO DESENVOLVIDA
+Com o mapa colorido, a equipe de produto prioriza integrações profundas com atores vermelhos (diretamente ligados à viagem) e integrações mais leves com os azuis, tratando os cinzas apenas como contexto de fundo.
+
+RESULTADO
+Clareza visual imediata sobre onde concentrar esforço de parceria e desenvolvimento, em vez de tratar todos os 20+ atores do ecossistema com a mesma prioridade.
+
+APLICAÇÃO PARA A CTIC/UEMA
+Nem todo sistema ou parceiro externo de um serviço universitário merece o mesmo nível de investimento em integração. Classificar atores por relevância direta, indireta ou mínima ajuda a decidir onde vale a pena investir tempo de desenvolvimento primeiro.` }
+      ,{ title: "📌 EXEMPLO 3 — Sistema de saúde: o mapa que revelou a lacuna entre paciente e equipe de cuidado",
+        body: `Um Ecosystem Map organizado por fases da jornada do paciente revelou uma lacuna estrutural que nenhuma pesquisa de satisfação isolada havia capturado.
+
+CONTEXTO
+Uma organização de saúde mapeou toda a jornada do paciente — desde encontrar um provedor até o período entre consultas — cruzando atores, ferramentas/canais e necessidades emocionais em cada fase.
+
+PROBLEMA IDENTIFICADO
+As pesquisas de satisfação mostravam notas medianas em momentos específicos (antes e durante a consulta), mas a causa raiz não estava clara a partir dos números isolados.
+
+PROCESSO
+O mapa organizou quatro fases (encontrar um provedor, antes da consulta, durante a consulta, entre/depois da consulta) em anéis concêntricos, com atores (família, amigos, provedor anterior, seguradora), ferramentas/canais (portal do paciente, telefone, site) e necessidades (confiança, organização, tranquilidade) em cada uma. Ao sobrepor as camadas, ficou visível que existiam duas áreas específicas — logo antes e logo depois da consulta — onde praticamente não havia nenhuma interação direta entre paciente e equipe de cuidado.
+
+SOLUÇÃO DESENVOLVIDA
+A organização passou a priorizar exatamente esses dois pontos cegos identificados no mapa: comunicação proativa antes da consulta (preparo, expectativas) e acompanhamento logo depois (dúvidas sobre medicação, próximos passos), em vez de investir igualmente em todas as fases.
+
+RESULTADO
+Investimento direcionado exatamente onde o mapa mostrou ausência de interação — algo que pesquisas de satisfação tradicionais, por fase isolada, não haviam apontado com a mesma clareza visual.
+
+APLICAÇÃO PARA A CTIC/UEMA
+Mapear as fases de um serviço acadêmico (por exemplo, abertura de chamado) por atores, canais e necessidades em cada etapa pode revelar exatamente em qual momento o servidor fica "sem contato" com quem está resolvendo seu problema — não apenas se o atendimento final foi bom ou ruim.` }
+      ,{ title: "📌 EXEMPLO 4 — Seguradora: o ecossistema organizado ao redor de 'paz de espírito'",
+        body: `Uma seguradora reorganizou seu Ecosystem Map ao redor de uma única necessidade emocional central do cliente, em vez de ao redor dos próprios produtos.
+
+CONTEXTO
+Uma empresa de seguros mapeou todo o ecossistema de canais e interações ao longo de quatro grandes fases: conscientização, compra, uso e encerramento do serviço.
+
+PROBLEMA IDENTIFICADO
+Cada área da empresa (marketing, vendas, atendimento, sinistros) tratava sua fase de forma isolada, sem um fio condutor emocional comum entre elas.
+
+PROCESSO
+O mapa foi desenhado em quatro quadrantes (conscientização, compra, uso, encerramento), cada um com seus canais específicos (redes sociais, call center, app, WhatsApp) e necessidades específicas (clareza, confiança, tranquilidade, transparência) — mas todos convergindo para um único núcleo central: "paz de espírito".
+
+SOLUÇÃO DESENVOLVIDA
+Toda decisão de design em qualquer quadrante passou a ser avaliada pela mesma pergunta: isso aumenta ou reduz a sensação de paz de espírito do cliente? Um processo de sinistro mais rápido, por exemplo, é avaliado não apenas pela velocidade, mas por quanto reduz a ansiedade do cliente naquele momento.
+
+RESULTADO
+Alinhamento entre áreas que antes trabalhavam de forma desconectada, porque todas passaram a mirar a mesma necessidade central identificada no mapa, em vez de otimizar cada uma sua própria métrica isolada.
+
+APLICAÇÃO PARA A CTIC/UEMA
+Serviços institucionais também podem ser organizados ao redor de uma necessidade emocional central do usuário (por exemplo, "confiança de que o problema será resolvido"), ajudando diferentes setores da CTIC a alinhar decisões que hoje são tomadas de forma isolada.` }
+      ,{ title: "📌 EXEMPLO 5 — CTIC/UEMA: ecossistema da solicitação de VPN",
+        body: `Aplicar o Ecosystem Map a um serviço técnico interno revelou dependências que nunca haviam sido documentadas formalmente.
+
+CONTEXTO
+A CTIC precisava entender por que solicitações de acesso VPN para colaboradores e prestadores externos demoravam de forma imprevisível, variando de horas a semanas sem padrão claro.
+
+PROBLEMA IDENTIFICADO
+A equipe técnica assumia que o gargalo estava na configuração técnica do servidor VPN em si.
+
+PROCESSO
+O mapa colocou o usuário solicitante no centro, com TI e Segurança como atores diretos de primeiro nível. Ao detalhar as conexões, ficou visível que toda solicitação passava obrigatoriamente por uma aprovação manual de segurança antes de qualquer configuração técnica — e que essa aprovação dependia de uma única pessoa, sem substituto formal definido. O firewall e a política de segurança apareceram como regras de contexto que todo o fluxo precisava respeitar, mas que não estavam documentadas em nenhum sistema.
+
+SOLUÇÃO DESENVOLVIDA
+Documentação formal da política de aprovação, definição de um segundo aprovador substituto para os períodos de ausência do responsável principal, e criação de um checklist único que reunia as exigências de TI e Segurança antes de qualquer solicitação chegar à etapa de configuração técnica.
+
+RESULTADO
+Redução da variação de prazo entre solicitações — o problema nunca esteve na configuração técnica do servidor, mas numa dependência humana única e não documentada, exatamente como o mapa revelou.
+
+APLICAÇÃO PARA A CTIC/UEMA
+Antes de assumir que um atraso é "técnico", vale mapear todo o ecossistema do serviço — muitas vezes o gargalo real está numa aprovação manual, numa regra não escrita ou numa dependência de uma única pessoa, não no sistema em si.` }
+    ]
+  },
+
   "hmw": {
     intro: `O "Como nós poderíamos?" (HMW — How Might We?) é uma técnica de reformulação de problemas que parece simples e é transformadora. Ela transforma problemas e insights de pesquisa em convites para a criação.
 
@@ -3535,6 +3740,7 @@ const TOOLS = [
   {id:"blueprint",type:"artefato",category:"visualizacao",custom:false,name:{pt:"Blueprint de Serviço",en:"Service Blueprint"},origin:"G. Lynn Shostack — Harvard Business Review (1984)",desc:{pt:"Mapa visual que mostra a experiência do cliente + toda a operação interna em camadas: evidências físicas, ações do cliente, linha de frente, bastidores e sistemas de suporte. Revela onde os problemas realmente estão.",en:"Visual map showing customer experience + all internal operations in layers: physical evidence, customer actions, front stage, backstage and support systems. Reveals where problems really are."},steps:{pt:["Defina o serviço, o escopo e o usuário a mapear","Mapeie as evidências físicas (o que o cliente toca/vê)","Mapeie as ações do cliente passo a passo","Trace a Linha de Visibilidade (visível / invisível)","Mapeie ações da linha de frente (funcionários visíveis)","Mapeie bastidores, processos de suporte e sistemas"],en:["Define the service, scope and user to map","Map physical evidence","Map customer actions step by step","Draw the Line of Visibility","Map front stage actions","Map backstage and support systems"]},examples:["UPA: paciente reclama de espera — Blueprint revelou que o prontuário travava a triagem. Solução foi no sistema, não no treinamento.","INSS: 'atendente mal comunicativo' — Blueprint revelou que CNIS e Receita não conversavam em tempo real.","Starbucks: barista precisava de 6 sistemas diferentes para processar 1 pedido personalizado.","Matrícula escolar: o sistema online não reservava a vaga — apenas gerava um protocolo.","CTIC/UEMA: 40% dos serviços dependiam de conhecimento tácito de técnicos específicos."],who:["Service Designer","UX Designer","Gestor de Operações","Product Manager"]},
   {id:"jornada-usuario",type:"artefato",category:"visualizacao",custom:false,name:{pt:"Jornada do Usuário",en:"User Journey Map"},origin:"Experience Design — adaptado de Experiential Marketing / anos 1990–2000",desc:{pt:"Mapa sequencial das experiências, emoções e pontos de contato do usuário ao longo do tempo. Pode mostrar a situação atual (as-is) ou a experiência futura desejada (to-be).",en:"Sequential map of user experiences, emotions and touchpoints over time. Can show current (as-is) or desired future (to-be) experience."},steps:{pt:["Defina a persona e o cenário específico a mapear","Liste cada etapa que o usuário percorre da ponta à ponta","Registre o que ele pensa e sente em cada etapa","Identifique os pontos de contato (canais, interfaces, pessoas)","Marque pontos de atrito 🔴 e momentos de valor 🟢","Identifique oportunidades de melhoria em cada atrito"],en:["Define persona and specific scenario","List each step end-to-end","Record thoughts and feelings at each step","Identify touchpoints","Mark friction 🔴 and value 🟢 moments","Identify improvement opportunities"]},examples:["iFood: sequência intencional do 1º pedido — conversão para 2º pedido +23%.","Disney: arco dramático completo de cada visita — o último momento é sempre memorável.","Banco: o maior abandono era pedir RG e CPF separados — 2 palavras resolveram.","Plano de saúde: paciente fazia 5 ligações para autorizar um exame que deveria ser 1.","CTIC/UEMA: 70% dos chamados resolvidos na ligação inicial, mas registrados como se levassem dias."],who:["UX Designer","Service Designer","Product Designer","Pesquisador"]},
   {id:"mapa-stakeholders",type:"artefato",category:"visualizacao",custom:false,name:{pt:"Mapa de Stakeholders",en:"Stakeholder Map"},origin:"Gestão de Projetos / Service Design — adaptado para UX nos anos 2000",desc:{pt:"Visualização de todos os atores envolvidos em um serviço e seus relacionamentos. Revela quem influencia, quem é impactado e quem precisa estar no processo de design.",en:"Visualization of all actors involved in a service and their relationships. Reveals who influences, who is impacted and who needs to be in the design process."},steps:{pt:["Liste todos os atores: usuários, funcionários, parceiros, reguladores","Identifique nível de influência e impacto de cada um","Posicione no mapa: centro (maior influência) → periferia","Desenhe as conexões e o tipo de relação entre eles","Identifique stakeholders 'esquecidos' que afetam o serviço","Use para decidir quem incluir na pesquisa e codesign"],en:["List all actors","Identify influence and impact levels","Position: center (most influence) to periphery","Draw connections and relationship types","Identify 'forgotten' stakeholders","Use to decide who to include"]},examples:["Hospital: empresa de limpeza (stakeholder esquecido) impactava diretamente a experiência do paciente.","App de entrega: o restaurante (não o entregador) era o principal ponto de fricção.","INSS: problema não era interno — falta de integração com Receita Federal.","Startup B2B: usuário e comprador tinham necessidades opostas — o mapa tornou isso visual.","CTIC/UEMA: 3 departamentos com dados duplicados gerando inconsistências."],who:["Service Designer","UX Designer","Gestor de Projeto","Consultor"]},
+  {id:"mapa-ecossistema",type:"artefato",category:"visualizacao",custom:false,name:{pt:"Mapa de Ecossistema",en:"Ecosystem Map"},origin:"Design de Serviços / Systems Thinking — popularizado por consultorias de Service Design nos anos 2010",desc:{pt:"Visualização de todos os atores — pessoas, organizações, sistemas, canais, parceiros e regras — que participam ou influenciam um serviço, e como eles se relacionam entre si.",en:"Visualization of all actors — people, organizations, systems, channels, partners and rules — that participate in or influence a service, and how they relate to each other."},steps:{pt:["Defina o serviço específico a ser mapeado (evite escopo amplo demais)","Coloque o ator/usuário principal no centro do mapa","Liste todos os atores em 6 grupos: pessoas, organizações, sistemas, canais, parceiros externos, regras","Posicione por camadas: direto → suporte → externo","Conecte os atores nomeando o que circula entre eles (informação, dinheiro, autorização)","Identifique dependências críticas e gargalos a partir das conexões"],en:["Define the specific service to map","Place the main user/actor at the center","List all actors in 6 groups: people, organizations, systems, channels, external partners, rules","Position in layers: direct → support → external","Connect actors naming what flows between them","Identify critical dependencies and bottlenecks"]},examples:["Interaction Design Foundation: ecossistema de entrega revelando camadas entre app, quiosque, motoristas e transportadoras.","MakeMyTrip: ecossistema de viagens organizado por relevância direta, indireta e mínima.","Sistema de saúde: mapa por fases revelou lacuna de interação entre paciente e equipe de cuidado.","Seguradora: ecossistema organizado ao redor de uma única necessidade central — 'paz de espírito'.","CTIC/UEMA: mapa do serviço de VPN revelou dependência de aprovação manual não documentada."],who:["Service Designer","UX Researcher","Gestor de Projeto","Arquiteto de Serviços"]},
   {id:"hmw",type:"tecnica",category:"ideacao",custom:false,name:{pt:"Como nós poderíamos? (HMW)",en:"How Might We? (HMW)"},origin:"Procter & Gamble (1970s) — popularizado pelo IDEO e d.school Stanford",desc:{pt:"Reformulação de problemas em perguntas de oportunidade abertas. 'Como' sugere possibilidade. 'Nós' convida à colaboração. 'Poderíamos' abre alternativas sem limitar a solução.",en:"Reformulation of problems into open opportunity questions. 'How' suggests possibility. 'We' invites collaboration. 'Might' opens alternatives."},steps:{pt:["Parta de um insight de pesquisa ou ponto de atrito","Reformule como 'Como nós poderíamos...' — sem solução embutida","Crie versões em 3 escalas: muito ampla, certa, muito estreita","Selecione a HMW mais equilibrada para iniciar a ideação","Poste as HMWs no mural como prompts para brainstorming","Conecte cada ideia gerada à HMW que a inspirou"],en:["Start from insight or friction point","Reformulate as 'How might we...'","Create 3 scale versions","Select most balanced HMW","Post on board as prompts","Connect each idea to the HMW"]},examples:["'Check-in lento' → 'Como tornar o check-in uma experiência de boas-vindas?' — soluções além de acelerar.","Google usa HMW nos Design Sprints para transformar cada dor em pergunta.","'Pacientes não tomam remédios' → 'Como fazer o horário fazer parte da rotina?' — além de alarmes.","'Portal difícil' → 'Como qualquer servidor encontra o serviço em menos de 30 segundos?'","Amazon usa HMW internamente antes de decidir qualquer solução técnica."],who:["Facilitador","UX Designer","Service Designer","Qualquer equipe"]},
   {id:"crazy-8",type:"tecnica",category:"ideacao",custom:false,name:{pt:"Crazy 8's",en:"Crazy 8's"},origin:"Google Ventures — Design Sprint (Jake Knapp, 2010)",desc:{pt:"Técnica de ideação rápida: 8 esboços em 8 minutos. Força volume de ideias diferentes antes de convergir. Elimina o bloqueio criativo de 'precisar ter a ideia certa'.",en:"Rapid ideation: 8 sketches in 8 minutes. Forces volume of different ideas before converging. Eliminates the creative block of 'needing the right idea'."},steps:{pt:["Dobre uma folha A4 em 8 partes iguais (3 dobras)","Configure um timer de 8 minutos (1 min por quadrante)","Esboce 8 ideias diferentes — qualidade não importa","Não repita a mesma ideia com pequena variação","Apresente para o grupo em 3 min (todos simultaneamente)","Vote nas ideias mais promissoras com pontos adesivos"],en:["Fold A4 sheet into 8 equal parts","Set 8-minute timer","Sketch 8 different ideas","Don't repeat with small variation","Present to group in 3 min","Vote on most promising ideas"]},examples:["Google usa Crazy 8's nos Design Sprints para evitar que uma ideia domine cedo demais.","Slack: barra lateral de canais gerada em um Crazy 8's — óbvia só depois de desenhada.","iFood explorou formas de comunicar status do pedido — de notificações push a animações de mapa.","CTIC/UEMA: 40+ ideias para a tela inicial do portal em 5 minutos de equipe.","Airbnb usa Crazy 8's para evitar que a primeira ideia (sempre a mais óbvia) seja a única."],who:["UX Designer","Product Designer","Facilitador","Qualquer equipe"]},
   {id:"prototipo-papel",type:"metodo",category:"prototipagem",custom:false,name:{pt:"Prototipagem em papel",en:"Paper prototyping"},origin:"Carolyn Snyder — 'Paper Prototyping' (2003)",desc:{pt:"Criação de protótipos de baixa fidelidade com papel, caneta e tesoura. Permite testar fluxos com usuários reais antes de qualquer código — rápido, barato e descartável.",en:"Low-fidelity prototypes with paper, pen and scissors. Tests flows with real users before any code — fast, cheap and disposable."},steps:{pt:["Esboce as telas principais à mão em folhas separadas","Crie elementos interativos em papel (botões, menus, cards)","Defina um usuário e uma tarefa específica para testar","Simule a interação: usuário aponta, você troca as 'telas'","Observe onde o usuário hesita, erra ou pergunta","Itere o protótipo imediatamente após cada teste"],en:["Sketch main screens by hand","Create interactive elements in paper","Define user and specific task","Simulate: user points, you swap screens","Observe where user hesitates or errs","Iterate immediately after each test"]},examples:["Google criou o primeiro protótipo do Maps em papel antes de qualquer desenvolvimento.","Dropbox testou sincronização — usuários não entendiam 'nuvem', mas entendiam 'cópia automática'.","CTIC/UEMA: protótipos em papel do portal economizaram semanas de retrabalho.","Hospital testou formulário de triagem — 3 campos nunca eram preenchidos, foram eliminados.","Startup testou 5 versões do fluxo de abertura de conta em papel em um único dia."],who:["UX Designer","Product Designer","Service Designer","Qualquer pessoa"]},
