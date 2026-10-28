@@ -3126,6 +3126,788 @@ A LIÇÃO SOBRE ÉTICA: Teste A/B pode otimizar para métricas que prejudicam a 
 
 APLICAÇÃO PARA A CTIC/UEMA: Uma cultura de pequenos experimentos — testar ordem de campos em formulários, texto de mensagens de erro, posição de links — acumula aprendizado sobre os usuários de forma muito mais rápida e barata que grandes projetos de reformulação.` }
     ]
+  },
+
+  "diary-study": {
+    intro: `## 📓 Diary Study — Pesquisa Longitudinal no Contexto Real
+
+O **Diary Study** (ou Diário do Usuário) é uma técnica de pesquisa qualitativa em que os próprios participantes registram suas experiências, comportamentos e sentimentos ao longo do tempo — em seu contexto real, sem a presença do pesquisador.
+
+**Por que isso é poderoso?**
+
+Porque captura o que acontece *entre* as sessões de pesquisa. Entrevistas e testes de usabilidade capturam um momento. O diário captura uma *jornada*.
+
+**A lógica central:**
+
+Pesquisa tradicional → pesquisador observa usuário em um momento específico
+
+Diary Study → usuário registra a própria experiência ao longo de dias ou semanas
+
+**Tipos de entrada no diário:**
+- 📝 Texto livre (narrativa)
+- ⭐ Escala de satisfação ou emoção
+- 📸 Foto do contexto
+- 🎙️ Áudio rápido
+- 📋 Formulário estruturado
+
+**Quando usar:**
+- Comportamentos difíceis de observar diretamente (uso noturno, privacidade)
+- Mudanças graduais ao longo do tempo
+- Experiências que ocorrem em contextos distribuídos
+- Quando o pesquisador não pode estar presente
+
+**Estrutura típica de um Diary Study:**
+
+\`\`\`
+Recrutamento → Briefing → Período de registro → Lembretes → Encerramento → Análise
+    2 dias       1h       3 dias a 4 semanas     diários      entrevista    2 semanas
+\`\`\`
+
+**Ferramentas comuns:**
+- Google Forms ou Typeform (formulários)
+- WhatsApp (envio de mídias)
+- Notion ou Airtable (organização)
+- dscout ou Indeemo (plataformas específicas)`,
+    sections: [
+      { title: "Quando e por que usar", content: `**Diary Study é ideal quando:**
+
+O comportamento acontece em **contexto privado ou distribuído**:
+- Uso de aplicativo à noite, sozinho
+- Rotina de trabalho ao longo da semana
+- Experiências emocionais ao longo de um tratamento médico
+
+Você precisa capturar **mudanças ao longo do tempo**:
+- Curva de adoção de uma nova ferramenta
+- Impacto de uma mudança de interface na semana seguinte
+- Evolução da satisfação com um serviço
+
+Há **gap entre o que as pessoas dizem e o que fazem**:
+- Entrevistas revelam intenção; diários revelam comportamento real
+
+**Diary Study NÃO é ideal quando:**
+- Você precisa de dados em 1–2 dias
+- As tarefas são simples e pontuais
+- Os participantes têm baixa motivação para registro contínuo` },
+      { title: "Como estruturar um Diary Study", content: `**Etapa 1 — Definir o período**
+
+A duração depende do fenômeno a estudar:
+- 3–5 dias: comportamentos cotidianos
+- 1–2 semanas: adoção de produto
+- 3–4 semanas: padrões sazonais ou tratamentos
+
+**Etapa 2 — Recrutar participantes**
+
+5 a 15 participantes é o número ideal. Mais do que isso dificulta a análise sem aumentar muito a descoberta.
+
+**Etapa 3 — Criar o instrumento**
+
+Combine perguntas abertas e fechadas:
+
+\`\`\`
+Pergunta 1: O que você acabou de fazer? (aberta)
+Pergunta 2: Como você se sentiu? (escala 1–5)
+Pergunta 3: O que causou essa situação? (aberta)
+Pergunta 4: Tire uma foto do contexto (opcional)
+\`\`\`
+
+**Etapa 4 — Enviar lembretes**
+
+Notificações programadas aumentam muito a taxa de resposta. O ideal é pedir registros no momento do evento, não horas depois.
+
+**Etapa 5 — Entrevista de encerramento**
+
+Depois do período de registro, conduza uma entrevista de 30–60 min para aprofundar os achados do diário.` },
+      { title: "Análise dos dados", content: `**Como analisar um Diary Study:**
+
+**1. Codificação temática**
+Leia todos os registros e identifique padrões recorrentes de comportamento, emoção ou contexto.
+
+**2. Linha do tempo individual**
+Crie uma linha do tempo para cada participante mostrando altos e baixos de satisfação ou uso ao longo do período.
+
+**3. Affinity Diagram**
+Agrupe registros similares em temas e subtemas para identificar padrões coletivos.
+
+**4. Mapas de experiência**
+Combine os diários para construir um mapa da experiência ao longo do tempo — similar a uma jornada, mas baseado em dados reais.
+
+**Métricas úteis:**
+- Frequência de uso (quando e quanto)
+- Picos emocionais (positivos e negativos)
+- Contextos de abandono
+- Comportamentos de contorno (workarounds)
+
+**Erro comum:** Tratar as respostas do diário como dados isolados, sem buscar o padrão ao longo do tempo. O valor está na progressão, não em cada entrada individualmente.` }
+    ],
+    examples: [
+      { title: "Google — Estudo de uso de busca em mobile", content: `**Contexto:** O Google queria entender como as pessoas usavam busca em smartphones no dia a dia — não em um laboratório, mas em contexto real.
+
+**O problema com testes em laboratório:**
+
+Quando você coloca uma pessoa num laboratório e pede para ela "usar o celular como faria normalmente", ela não usa normalmente. Ela sabe que está sendo observada.
+
+**Solução: Diary Study com experiência amostrada**
+
+O Google usou o método de **Experience Sampling Method (ESM)** — uma variação do diary study em que notificações são enviadas aleatoriamente durante o dia e o participante registra o que estava fazendo naquele momento.
+
+**O que descobriram:**
+
+A busca mobile não era usada da mesma forma que a desktop.
+
+Desktop: sessões longas, pesquisas elaboradas, resultado único esperado
+
+Mobile: micro-momentos. A pessoa estava fazendo outra coisa — dirigindo, conversando, cozinhando — e consultava algo rapidamente.
+
+Isso gerou o conceito de **"micro-moments"** do Google:
+
+I-want-to-know
+I-want-to-go
+I-want-to-do
+I-want-to-buy
+
+**O grande aprendizado:**
+
+O diário revelou que o contexto de uso mobile era radicalmente diferente do que a equipe imaginava. Isso mudou a estratégia de produto e conteúdo do Google para mobile.
+
+Sem o diary study, essa descoberta provavelmente viria tarde — ou nunca viria de entrevistas tradicionais.` },
+      { title: "Microsoft — Estudo de trabalho remoto com Teams", content: `**Contexto:** Com a expansão do trabalho remoto, o Microsoft Teams precisava entender como as pessoas realmente trabalhavam ao longo do dia — não como imaginavam trabalhar.
+
+**O problema:**
+
+Reuniões, chats, colaboração em documentos, pausas — tudo acontecia de forma fragmentada ao longo do dia. Observação pontual não capturaria essa dinâmica.
+
+**Diary Study de 2 semanas**
+
+Participantes registravam:
+- Quando iniciavam e terminavam o trabalho
+- Quantas reuniões tinham e como se sentiam após cada uma
+- Momentos de foco × momentos de interrupção
+- Uso de ferramentas paralelas (papel, e-mail, WhatsApp)
+
+**Descobertas:**
+
+Reunião consecutiva sem pausa → queda acentuada na concentração após 3ª reunião
+
+Pessoas criaram rituais de início e fim de jornada para compensar a ausência de deslocamento físico
+
+Muita comunicação "urgente" era processada com atraso por sobrecarga
+
+**Impacto no produto:**
+
+O Teams lançou:
+- Notificações de fim de reunião 5 min antes para "pausa obrigatória"
+- Modo "não perturbe" programado
+- Insights de bem-estar (Viva Insights) baseados nos padrões de reunião
+
+**O aprendizado:**
+
+O diary study revelou padrões de comportamento que nenhuma entrevista revelaria — porque as próprias pessoas não tinham consciência dos seus padrões até ver os registros acumulados.` }
+    ]
+  },
+
+  "focus-group": {
+    intro: `## 🗣️ Focus Group — Pesquisa Coletiva de Percepções
+
+O **Focus Group** é uma técnica de pesquisa qualitativa em que um grupo de 5 a 10 participantes discute um tema, produto ou serviço conduzidos por um moderador — gerando insights sobre atitudes, percepções, valores e linguagem coletiva.
+
+**A lógica central:**
+
+Diferente da entrevista individual, o focus group aproveita a dinâmica de grupo: participantes reagem uns às ideias dos outros, constroem argumentos coletivos e revelam como o tema é discutido socialmente.
+
+**Para que serve:**
+- Explorar percepções e opiniões sobre um conceito
+- Testar mensagens, nomes ou posicionamentos
+- Entender como grupos falam sobre um problema
+- Identificar vocabulário e framing coletivo
+
+**Para que NÃO serve:**
+- Capturar comportamentos individuais reais
+- Validar dados quantitativos
+- Pesquisar temas muito sensíveis (inibição social)
+
+**Estrutura típica:**
+
+\`\`\`
+Abertura → Aquecimento → Tópicos centrais → Atividade/estímulo → Encerramento
+  10 min      10 min         40–60 min           20 min            10 min
+\`\`\`
+
+**Dinâmicas para enriquecer:**
+- 📋 Ranking de conceitos
+- 🗳️ Votação silenciosa (antes da discussão)
+- 🃏 Card sorting em grupo
+- 📝 Word association`,
+    sections: [
+      { title: "Como moderar um Focus Group", content: `**O papel do moderador é o mais crítico.**
+
+Um bom moderador:
+
+✅ Mantém o foco sem dirigir as respostas
+✅ Estimula participantes tímidos
+✅ Modera vozes dominantes sem constrangimento
+✅ Aprofunda respostas superficiais com "por quê?"
+✅ Gerencia o tempo sem parecer mecânico
+
+**Técnicas de moderação:**
+
+**Silêncio estratégico:** Após uma resposta, aguarde 3–5 segundos antes de prosseguir. Muitas vezes o participante continua e diz algo mais profundo.
+
+**Redirecionamento:** "Interessante. Outras pessoas pensam de forma diferente?"
+
+**Balão:** Quando um participante fala muito, diga: "Que bom ponto. Quero ouvir outros ângulos antes de voltar a você."
+
+**Escalonamento:** Comece com perguntas gerais e vá afunilando para o tema central.
+
+**Armadilhas comuns:**
+- ❌ Fazer perguntas fechadas ("vocês gostaram?")
+- ❌ Validar opiniões com linguagem corporal ("ótimo ponto!")
+- ❌ Interromper para explicar
+- ❌ Deixar o grupo chegar a consenso cedo demais (perde diversidade)` },
+      { title: "Análise dos dados", content: `**Análise de Focus Group vai além de transcrever o que foi dito.**
+
+**1. Análise temática**
+Identifique temas recorrentes nas falas — não apenas o que foi dito, mas como foi dito. Emoções, hesitações e linguagem importam.
+
+**2. Análise de polarização**
+Mapeie onde houve concordância × discordância. Divergências são tão importantes quanto consensos.
+
+**3. Análise de framing**
+Como os participantes descrevem o problema? Que metáforas usam? Que palavras escolhem? Isso é ouro para comunicação e produto.
+
+**4. Análise de dinâmica de grupo**
+Quem influenciou quem? Houve mudança de opinião durante a sessão? Por quê?
+
+**Ferramentas úteis:**
+- Transcrição + marcação por cores
+- Affinity diagram dos temas
+- Matriz de concordância × importância
+
+**Erro clássico:** Tratar o focus group como pesquisa quantitativa. "7 dos 8 participantes disseram X" não é dado estatisticamente válido. O valor está nos insights qualitativos, não na contagem.` }
+    ],
+    examples: [
+      { title: "Netflix — Decisão de produzir House of Cards", content: `**Contexto:** Em 2011, a Netflix estava considerando sua primeira produção original de peso. A decisão envolvia US$ 100 milhões para duas temporadas de House of Cards — antes de qualquer episódio existir.
+
+**O papel da pesquisa coletiva:**
+
+A Netflix usou dados comportamentais dos próprios usuários — quem assistia filmes de David Fincher, quem assistia Kevin Spacey, quem havia assistido a versão britânica da série.
+
+Mas também conduziu grupos de discussão para entender como esses públicos reagiam ao conceito da série.
+
+**Descobertas:**
+
+Os grupos revelaram que o público que combinava os três perfis (Fincher + Spacey + drama político) era significativamente maior do que pareceria em pesquisa individual.
+
+Mais importante: a *linguagem* que o grupo usava para descrever o tipo de conteúdo que queria ("moralmente complexo", "cinematográfico", "adulto") informou o posicionamento e o marketing da série.
+
+**O aprendizado:**
+
+Focus groups sozinhos não tomam decisões de US$ 100M. Mas quando combinados com dados comportamentais, revelam *como o público pensa* sobre um tema — e isso alimenta estratégia de conteúdo, marketing e posicionamento.` },
+      { title: "Coca-Cola — O erro da New Coke", content: `**Contexto:** Em 1985, a Coca-Cola lançou a "New Coke" — uma reformulação da fórmula original — e foi um dos maiores fracassos de marketing da história.
+
+**O que a pesquisa disse:**
+
+Testes cegos com mais de 200.000 consumidores mostraram que as pessoas *preferiam o sabor* da New Coke ao sabor original.
+
+Grupos de discussão confirmaram preferência pelo novo sabor.
+
+**O que a pesquisa não capturou:**
+
+O que as pessoas sentiam sobre a *marca* Coca-Cola — que era inseparável da fórmula original. A pesquisa testou produto. Não testou identidade.
+
+Quando o produto chegou às prateleiras, a reação foi de indignação. As pessoas não estavam comprando apenas um refrigerante — estavam comprando um símbolo cultural.
+
+**A lição de research:**
+
+Focus groups são excelentes para capturar percepções declaradas — o que as pessoas dizem que sentem.
+
+Mas não capturam bem:
+- Comportamento real de compra
+- Vínculo emocional com marca
+- Reações a mudanças que ameaçam identidade
+
+Para isso, você precisa combinar focus group com pesquisa observacional, análise de dados e teste em contexto real.
+
+**Isso gerou uma regra de ouro em research:**
+
+O que as pessoas dizem em pesquisa ≠ o que fazem no mundo real.` }
+    ]
+  },
+
+  "guerrilla-research": {
+    intro: `## ⚡ Guerrilla Research — Pesquisa Rápida no Campo
+
+**Guerrilla Research** é uma abordagem de pesquisa ágil e de baixo custo em que o pesquisador vai até onde o público-alvo está — cafés, praças, universidades, filas — e conduz mini-sessões rápidas de teste ou entrevista, sem agendamento formal.
+
+**A filosofia:**
+
+Pesquisa perfeita que nunca acontece é menos útil do que pesquisa imperfeita que acontece hoje.
+
+**Quando faz sentido:**
+- Fases iniciais de descoberta com orçamento limitado
+- Validação rápida de uma hipótese específica
+- Testes de usabilidade de baixa fidelidade
+- Quando o tempo de agendamento tradicional é inviável
+
+**O que você precisa:**
+- Um protótipo, wireframe, papel ou pergunta
+- 2–3 horas num local com o público certo
+- Blocos de anotação ou gravador (com consentimento)
+- Disposição para abordar desconhecidos
+
+**Estrutura típica de uma sessão:**
+
+\`\`\`
+Abordagem → Consentimento → Tarefa/Pergunta → Observação → Agradecimento
+   30s          30s              5–10 min           5 min          30s
+\`\`\`
+
+**Regra de ouro de Steve Krug:**
+
+*"Testing one user early in the project is better than testing 50 near the end."*`,
+    sections: [
+      { title: "Como conduzir bem uma sessão", content: `**Passo 1 — Defina a pergunta central**
+
+O que você precisa descobrir? Seja específico:
+- ❌ "Queremos entender o que as pessoas pensam do produto"
+- ✅ "Queremos saber se as pessoas entendem o que o produto faz na primeira tela"
+
+**Passo 2 — Escolha o local certo**
+
+Onde seu público-alvo circula?
+- Estudantes → biblioteca, cantina, pátio
+- Profissionais → cafés perto de escritórios
+- Usuários de serviço público → próximo aos postos de atendimento
+- Pessoas em espera → filas, salas de espera
+
+**Passo 3 — O pitch de abordagem**
+
+Seja direto e amigável:
+
+"Olá, bom dia! Sou [nome] e estou fazendo uma pesquisa rápida sobre [tema]. Leva uns 5 minutos. Topas dar uma olhada?"
+
+Evite:
+- Parecer vendedor
+- Prometer recompensas que não existem
+- Ser vago ("é sobre tecnologia")
+
+**Passo 4 — Durante a sessão**
+
+Observe mais do que pergunta. Se for um teste:
+- Dê a tarefa: "Tente fazer X nessa tela"
+- Não explique — observe o comportamento
+- Anote hesitações, cliques errados, comentários espontâneos
+
+**Passo 5 — Registre imediatamente**
+
+Após cada sessão, antes da próxima, registre:
+- O que a pessoa fez / disse
+- Onde hesitou
+- Insights inesperados
+
+Memória deteriora rápido.` },
+      { title: "Guerrilla Research na universidade", content: `**Contexto prático para equipes de TI e Design em instituições públicas:**
+
+Universidades são ambientes perfeitos para guerrilla research porque você tem acesso direto ao seu público-alvo: estudantes, professores e servidores.
+
+**Cenários ideais:**
+
+🎓 Testar o portal do aluno → cantina ou biblioteca no intervalo entre aulas
+
+📋 Validar um formulário → fila do RU ou da secretaria
+
+🖥️ Testar um sistema → sala dos professores ou laboratório
+
+**Script para CTIC/UEMA:**
+
+"Oi! Sou da equipe de desenvolvimento do sistema [X]. Estamos testando uma versão nova. Você toparia dar uma olhada e me contar o que acha? São 5 minutos."
+
+**O que observar:**
+- A pessoa encontra o que precisa sem ajuda?
+- Onde ela clica primeiro?
+- Em que momento ela para ou hesita?
+- O que ela fala espontaneamente?
+
+**Armadilha comum:**
+
+Não explique o sistema antes. Se explicar, você invalida o teste. A pessoa que vai usar o sistema na vida real não vai ter você do lado explicando.
+
+**Frequência ideal:**
+
+Guerrilla research funciona melhor como prática recorrente — um teste rápido a cada 2 semanas é mais valioso do que um grande teste a cada 6 meses.` }
+    ],
+    examples: [
+      { title: "Dropbox — Y Combinator e validação com usuários reais", content: `**Contexto:** Em 2007, antes de ter um produto funcionando, Drew Houston (fundador do Dropbox) precisava validar se as pessoas realmente precisariam de sincronização automática de arquivos na nuvem.
+
+**O problema:**
+
+Construir o produto completo para descobrir que ninguém queria seria um erro caro. Mas como pesquisar algo que não existia ainda?
+
+**Solução de guerrilla validation:**
+
+Houston foi para a frente de uma loja Apple em San Francisco e abordou pessoas saindo com notebooks novos.
+
+Pergunta direta: "Você já perdeu arquivos importantes? Já teve problema com backup?"
+
+O que descobriu: praticamente todo mundo tinha uma história de perda de dados ou frustração com backup. A dor era real e universal.
+
+**O que veio depois:**
+
+Com essa validação simples, Houston gravou um vídeo demonstrando como o Dropbox *funcionaria* — antes de estar pronto — e colocou numa landing page.
+
+O resultado: 75.000 inscritos na fila de espera em um dia.
+
+**A lição:**
+
+Você não precisa do produto pronto para pesquisar. Você precisa saber se a dor é real. E às vezes isso cabe em 10 conversas rápidas com strangers.` },
+      { title: "IDEO — Testes rápidos em aeroportos", content: `**Contexto:** A IDEO frequentemente usa aeroportos para testes rápidos de novos conceitos — porque aeroportos concentram uma diversidade demográfica difícil de encontrar em qualquer outro ambiente público.
+
+**Por que aeroportos?**
+
+- Pessoas de diferentes lugares, idades e contextos
+- Pessoas com tempo para esperar — e dispostas a conversar
+- Ambiente neutro sem viés de contexto de trabalho ou casa
+
+**Como funciona na prática:**
+
+A equipe chega com protótipos de papel, impressos ou sketches.
+
+Aborda viajantes na espera: "Estamos testando um novo conceito de [produto/serviço]. Você toparia dar uma olhada em 5 minutos?"
+
+Observa a reação à primeira impressão, o entendimento sem explicação e as perguntas espontâneas.
+
+**O que esse método revela:**
+
+- First impression sem explicação
+- Linguagem que o público usa para descrever o conceito
+- Clareza (ou confusão) da proposta de valor
+
+**Exemplo de achado:**
+
+Em um teste de conceito de serviço de saúde, a IDEO descobriu que o mesmo conceito recebia reações completamente diferentes dependendo da ordem em que os elementos eram apresentados. Isso levou a uma revisão da sequência de comunicação antes de qualquer investimento de produção.
+
+**A regra:**
+
+Guerrilla research não valida. Ele *direciona*. Ele diz se você está completamente errado antes de investir mais.` }
+    ]
+  },
+
+  "contextual-inquiry": {
+    intro: `## 🔍 Contextual Inquiry — Pesquisa no Contexto Real
+
+A **Contextual Inquiry** (CI) é um método de pesquisa qualitativa desenvolvido por Hugh Beyer e Karen Holtzblatt que combina observação e entrevista no contexto real de uso — o pesquisador vai até o ambiente do usuário, observa as tarefas acontecendo e faz perguntas enquanto o trabalho ocorre.
+
+**A metáfora central:**
+
+O pesquisador é o **aprendiz**. O usuário é o **mestre**. O pesquisador vai aprender como o trabalho realmente funciona — não como deveria funcionar.
+
+**Por que isso importa:**
+
+Entrevistas tradicionais perguntam como as pessoas trabalham. A CI mostra como elas realmente trabalham — e a diferença costuma ser enorme.
+
+**Os 4 princípios da CI (Beyer & Holtzblatt):**
+
+1. **Contexto** — Vá ao ambiente real do usuário
+2. **Parceria** — Trabalhe junto com o usuário, não apenas observe
+3. **Interpretação** — Construa entendimento compartilhado em tempo real
+4. **Foco** — Mantenha o foco no trabalho relevante ao seu problema
+
+**Diferença CI × Shadowing:**
+
+\`\`\`
+Shadowing → observação passiva, sem interferência
+CI → observação + perguntas durante o trabalho
+\`\`\`
+
+**Diferença CI × Entrevista:**
+
+\`\`\`
+Entrevista → pessoa descreve como trabalha (memória + teoria)
+CI → pessoa mostra como trabalha (comportamento real)
+\`\`\``,
+    sections: [
+      { title: "Como conduzir uma Contextual Inquiry", content: `**Etapa 1 — Preparação**
+
+Defina o foco: que aspecto do trabalho você precisa entender?
+
+Recrute 5–10 participantes que realizam esse trabalho regularmente.
+
+Prepare perguntas abertas de partida — não um roteiro rígido.
+
+**Etapa 2 — A sessão (60–120 minutos)**
+
+*Início:* Explique o papel de cada um. "Você vai me ensinar como você trabalha. Vou observar e fazer perguntas. Não há respostas certas."
+
+*Durante o trabalho:* O participante trabalha normalmente. Você observa.
+
+Quando algo interessante ocorre, pergunte:
+- "Por que você fez isso dessa forma?"
+- "O que aconteceria se fizesse diferente?"
+- "Você sempre faz assim?"
+
+*Capture artefatos:* Post-its, planilhas paralelas, cadernos, bilhetes — tudo que o usuário usa além do sistema oficial.
+
+**Etapa 3 — Interpretação compartilhada**
+
+Ao final, compartilhe o que você observou e entendeu. O usuário corrige ou confirma. Isso evita interpretações erradas.
+
+"O que eu entendi é que você sempre confere isso numa planilha separada porque o sistema não gera esse relatório automaticamente. Está correto?"
+
+**Etapa 4 — Análise**
+
+Após múltiplas sessões de CI, realize uma sessão de **affinity mapping** com a equipe: agrupe observações em temas e identifique padrões.` },
+      { title: "Modelos de trabalho (Work Models)", content: `A CI gera **modelos de trabalho** — representações estruturadas de como o trabalho acontece:
+
+**1. Flow Model (Modelo de Fluxo)**
+Mostra quem se comunica com quem e por quê. Mapeia as pessoas, papéis e responsabilidades.
+
+**2. Sequence Model (Modelo de Sequência)**
+Mostra o passo a passo detalhado de como uma tarefa é executada — com desvios, interrupções e workarounds.
+
+**3. Artifact Model (Modelo de Artefato)**
+Documenta os artefatos físicos ou digitais que as pessoas criam ou usam — formulários, planilhas, post-its, bilhetes.
+
+**4. Cultural Model (Modelo Cultural)**
+Captura regras implícitas, valores e pressões que influenciam como o trabalho é feito.
+
+**5. Physical Model (Modelo Físico)**
+Mapeia o ambiente físico e como ele impacta o trabalho.
+
+Esses modelos são consolidados em um **Work Model Consolidado** — que mostra padrões entre múltiplos usuários e informa o design do sistema.` }
+    ],
+    examples: [
+      { title: "Estudo de enfermeiros e prontuários eletrônicos", content: `**Contexto:** Uma equipe de design foi contratada para melhorar um sistema de prontuário eletrônico hospitalar. A taxa de adoção era baixa e os enfermeiros reclamavam que o sistema "não funcionava".
+
+**Abordagem tradicional (errada):**
+
+Convocar enfermeiros para uma sala de reunião e perguntar: "O que vocês acham do sistema? O que deveria ser diferente?"
+
+**Abordagem CI:**
+
+A equipe foi até a UTI e acompanhou enfermeiros durante seus turnos — 4 horas cada, em turnos diferentes (dia, tarde, noite).
+
+**O que observaram:**
+
+O sistema oficial exigia que cada campo fosse preenchido na ordem da tela.
+
+Mas o trabalho real não acontecia nessa ordem.
+
+O enfermeiro avaliava o paciente, depois ia para o computador, depois voltava ao paciente, depois recebia uma ligação, depois voltava ao computador.
+
+**Artefato descoberto:**
+
+Todos os enfermeiros usavam um papel dobrado no bolso — uma "folha de rascunho" pessoal onde anotavam informações antes de lançar no sistema.
+
+Esse artefato era invisível para qualquer entrevista. Apareceu na CI porque o pesquisador estava lá.
+
+**Insight:**
+
+O problema não era a interface. Era o fluxo de trabalho que o sistema pressupunha — linear — versus o fluxo real — fragmentado e interrompido.
+
+**Redesign baseado no achado:**
+
+O sistema foi redesenhado para salvar rascunhos automáticos, permitir preenchimento fora de ordem e retomar do ponto onde foi interrompido.` },
+      { title: "CI na CTIC/UEMA — A planilha paralela", content: `**Contexto hipotético mas realista para quem trabalha em TI universitária:**
+
+A equipe de desenvolvimento recebeu uma demanda: "O sistema de relatórios não está sendo usado. Os coordenadores reclamam que falta informação."
+
+**Solução inicial (sem CI):**
+
+Adicionar mais campos ao sistema de relatórios.
+
+**Com Contextual Inquiry:**
+
+Um membro da equipe visitou o gabinete de 3 coordenadores de curso e observou como eles trabalhavam com dados acadêmicos.
+
+**Descoberta:**
+
+Todos os três coordenadores mantinham uma planilha Excel própria — alimentada manualmente — paralela ao sistema oficial.
+
+A planilha tinha colunas como: "alunos em risco de reprovação", "situação de matrícula não confirmada", "pendências de TCC".
+
+**Por que existia a planilha?**
+
+Porque o sistema oficial não gerava nenhuma dessas visões de forma consolidada. Para cada informação, o coordenador precisava fazer 4–5 cliques em telas diferentes.
+
+**O que a CI revelou:**
+
+O problema não era falta de dados no sistema. Os dados existiam. O problema era que o sistema não oferecia as *visões de trabalho* que os coordenadores precisavam.
+
+**Redesign:**
+
+Um painel de coordenação foi criado — uma única tela que consolidava: situação de matrícula, alunos com frequência crítica, pendências de TCC e alertas de prazo.
+
+A planilha paralela desapareceu. A adoção do sistema aumentou. Não porque o sistema ganhou mais dados — mas porque finalmente mostrava o trabalho do jeito que o coordenador precisava ver.` }
+    ]
+  },
+
+  "think-aloud": {
+    intro: `## 💬 Think Aloud Protocol — Verbalizar para Revelar
+
+O **Think Aloud Protocol** (TAP) é uma técnica de avaliação em que o participante verbaliza seus pensamentos, sentimentos e raciocínios *enquanto realiza uma tarefa* — revelando seu modelo mental, dúvidas e pontos de confusão que seriam invisíveis na observação silenciosa.
+
+**A pergunta central que o TAP responde:**
+
+*"O que está passando pela cabeça do usuário enquanto usa o produto?"*
+
+**Por que isso é revolucionário:**
+
+Quando observamos alguém usar uma interface, vemos o que a pessoa faz. O TAP revela por que ela faz — e o que ela pensa quando não consegue.
+
+**Tipos de Think Aloud:**
+
+**Concorrente (Concurrent):** O participante fala *enquanto* realiza a tarefa. É o mais comum. Pode ser ligeiramente artificial.
+
+**Retrospectivo (Retrospective):** O participante assiste à gravação da própria sessão e comenta. Mais natural, mas a memória pode falhar.
+
+**Estrutura típica:**
+
+\`\`\`
+Briefing → Prática → Tarefas reais → Debriefing
+  10 min    5 min      30–60 min       10 min
+\`\`\`
+
+**Regra de Clayton Lewis:**
+
+*O pesquisador não deve ajudar o participante. O silêncio e a hesitação são dados.*`,
+    sections: [
+      { title: "Como conduzir um Think Aloud", content: `**Passo 1 — Briefing**
+
+Explique o protocolo sem contaminar:
+
+"Vamos pedir que você realize algumas tarefas usando esse sistema. O importante é que você fale em voz alta tudo que estiver pensando — o que está tentando fazer, o que está vendo, o que está sentindo. Não existe resposta certa ou errada. Estamos testando o sistema, não você."
+
+**Passo 2 — Tarefa de aquecimento**
+
+Antes de começar as tarefas reais, peça algo neutro: "Pense em voz alta enquanto me explica como você vai de casa para o trabalho."
+
+Isso treina o participante a verbalizar sem ansiedade sobre o produto em teste.
+
+**Passo 3 — Tarefas reais**
+
+Apresente cada tarefa em cartão separado, uma por vez:
+
+"Tente encontrar onde você pode agendar um atendimento."
+
+NÃO diga como encontrar. NÃO aponte para a tela. Observe.
+
+**Passo 4 — Quando o participante silencia**
+
+Use prompts neutros:
+- "O que você está pensando?"
+- "O que está acontecendo?"
+- "O que você esperava que acontecesse?"
+
+Evite:
+- ❌ "Você está tendo algum problema?"
+- ❌ "Deveria clicar ali..."
+- ❌ Expressões faciais que indiquem julgamento
+
+**Passo 5 — Registre**
+
+Idealmente: grave tela + voz + câmera facial. Se não for possível, use dois observadores: um anota comportamento, outro anota verbalizações.` },
+      { title: "Análise dos dados de Think Aloud", content: `**O que analisar nas verbalizações:**
+
+**1. Momentos de hesitação**
+"Hmm... onde fica isso?" → o usuário não sabe onde ir.
+
+**2. Expectativas não atendidas**
+"Achei que ia aparecer uma confirmação..." → o sistema não feedback o esperado.
+
+**3. Modelos mentais revelados**
+"Acho que é aqui em Serviços... não, talvez em Atendimento..." → o usuário tem um modelo mental diferente da arquitetura do sistema.
+
+**4. Erros de interpretação de rótulos**
+"'Protocolo' deve ser o número do processo, né?" → rótulo ambíguo.
+
+**5. Workarounds espontâneos**
+"Vou voltar para o início e tentar de novo..." → o usuário encontrou um caminho alternativo.
+
+**Gravidade dos problemas (escala de Nielsen):**
+
+0 — Não é problema de usabilidade
+1 — Cosmético — corrigir se sobrar tempo
+2 — Pequeno — baixa prioridade
+3 — Grande — alta prioridade
+4 — Catástrofe — deve ser corrigido antes do lançamento
+
+**Regra dos 5 usuários:**
+
+Jakob Nielsen demonstrou que 5 participantes revelam ~80% dos problemas de usabilidade. Mais do que isso tem retorno decrescente — cada novo usuário repete problemas já encontrados.
+
+**Recomendação prática:**
+
+Faça rodadas iterativas: 5 usuários → corrige problemas → 5 novos usuários → corrige → lança.` }
+    ],
+    examples: [
+      { title: "Portal de matrícula universitário — Think Aloud revelando o óbvio invisível", content: `**Contexto:** Uma universidade federal redesenhou seu portal de matrícula online. A equipe de TI estava convicta de que o sistema era intuitivo — afinal, todos que trabalharam nele acharam fácil de usar.
+
+**O problema com essa convicção:**
+
+Quem desenvolveu o sistema sabe como ele funciona. O problema é que os usuários não.
+
+**Sessão de Think Aloud com 5 estudantes calouros**
+
+Tarefa: "Tente realizar a sua matrícula nas disciplinas do primeiro semestre."
+
+**O que aconteceu:**
+
+Estudante 1:
+"Estou na tela inicial... tem um botão escrito 'Serviços Acadêmicos'... clico aqui... apareceu 'SIGAA'... mas onde é a matrícula? Tem 'Matrícula Online' e 'Requerimento de Matrícula'... qual é o certo?"
+
+A equipe de TI olhando: "Óbvio que é 'Matrícula Online'."
+
+Estudante 1: *clicou em 'Requerimento de Matrícula'*
+
+Estudante 2:
+"'Turmas Disponíveis'... mas como sei quais são obrigatórias? Não tem nada indicando."
+
+Estudante 3:
+"Coloquei as disciplinas no carrinho... mas não encontro onde confirmar. Tem um botão 'Finalizar' e um 'Salvar Rascunho'... se eu clicar em Salvar vou perder a vaga?"
+
+**Problemas revelados:**
+
+1. Dois botões com nomes similares gerando confusão
+2. Nenhuma indicação de disciplinas obrigatórias vs. optativas
+3. Ambiguidade entre "salvar" e "confirmar"
+4. Ausência de feedback de confirmação de vaga
+
+**Nenhum desses problemas apareceu em revisão interna.**
+
+Todos foram corrigidos antes do período de matrícula real — evitando potencialmente centenas de matrículas incorretas.` },
+      { title: "Microsoft Word Ribbon — Como o TAP mudou o design do Office", content: `**Contexto:** Em 2004, a Microsoft precisava redesenhar a interface do Word, Excel e PowerPoint — produtos usados por centenas de milhões de pessoas. Eles tinham 10 anos de menus e submenus acumulados.
+
+**O problema:**
+
+Pesquisas mostravam que usuários não encontravam funções que precisavam — mas não conseguiam explicar por quê.
+
+**Sessões de Think Aloud em escala**
+
+A equipe de UX realizou centenas de sessões de Think Aloud com usuários de diferentes níveis.
+
+**O que as verbalizações revelaram:**
+
+Usuário avançado: "Sei que existe uma função para isso... já usei antes... mas não lembro onde estava... não é em Formatar?... não... em Ferramentas?... deixa para lá, vou fazer do jeito mais lento."
+
+Usuário iniciante: "Quero colocar o texto em negrito... deve ser em algum lugar aqui... clico em Editar... não tem nada... vou no Formatar... 'Caractere'... aqui tem Negrito! Mas por que está tão escondido?"
+
+**O padrão identificado:**
+
+Os menus exigiam que o usuário lembrasse *onde* a função estava — não *o que* ela fazia. A interface era organizada pela lógica do sistema, não pela lógica do usuário.
+
+**A solução: o Ribbon**
+
+O Ribbon reorganizou as funções por contexto de tarefa: quando você está trabalhando com texto, aparecem opções de texto. Quando seleciona uma tabela, aparecem opções de tabela.
+
+A interface passou a ser orientada por *o que você está fazendo* — não por *onde a função está no sistema*.
+
+**Resultado:**
+
+O Ribbon foi controverso no lançamento (2007), mas pesquisas de acompanhamento mostraram que usuários encontravam funções 60% mais rápido do que no sistema de menus antigo.
+
+**A lição:**
+
+O Think Aloud revelou não apenas onde os usuários erravam — revelou *por que* a lógica de organização do sistema estava errada.` }
+    ]
   }
 };
 const DEEP_EXAMPLES = {
@@ -3304,6 +4086,435 @@ Solução: criação da primeira Carta de Serviços da CTIC, baseada diretamente
 Em organizações públicas, existe enorme quantidade de conhecimento tácito que vive exclusivamente na cabeça das pessoas. Quando essas pessoas saem (aposentadoria, transferência, licença), o serviço para. O Blueprint extrai esse conhecimento e o torna patrimônio organizacional — deixando de depender de indivíduos para se tornar um processo institucional.
 
 A Carta de Serviços nasceu diretamente dos blueprints: é a versão do usuário do blueprint — simplificada, orientada ao que ele precisa saber para solicitar o serviço, sem o detalhamento operacional interno.` }
+  ],
+
+  "diary-study": [
+    { id:"ex1", title:"Google — Micro-momentos: como o mobile mudou a busca",
+      summary:"Um Diary Study com usuários de smartphone revelou que a busca mobile acontecia em fragmentos de segundos — não em sessões longas como no desktop. Isso criou o conceito de micro-moments que mudou toda a estratégia de conteúdo do Google.",
+      context:`Em 2013, o Google estava vendo um crescimento explosivo de buscas em dispositivos móveis. Mas os dados de comportamento mobile eram tratados como uma versão menor do desktop.
+
+A equipe de UX Research foi encarregada de entender como as pessoas realmente usavam a busca no smartphone — não em laboratório, mas no dia a dia real.`,
+      problem:`Sessões de laboratório mostravam pessoas usando o smartphone de forma contemplativa, como faziam no desktop. Mas os dados de Analytics não batiam — as sessões mobile eram muito mais curtas e fragmentadas. Havia uma contradição entre o que se observava no laboratório e o que os dados mostravam.`,
+      process:`A equipe aplicou um Diary Study combinado com Experience Sampling Method (ESM):
+
+Fase 1 (2 semanas): 50 participantes recebiam notificações aleatórias 6x por dia pedindo: "O que você está fazendo agora? Acabou de fazer alguma busca? Sobre o quê?"
+
+Fase 2: Participantes fotografavam o contexto quando faziam uma busca — onde estavam, o que estava ao redor.
+
+Fase 3: Entrevista de encerramento para aprofundar padrões identificados no diário.
+
+Os pesquisadores analisaram mais de 2.000 entradas de diário.`,
+      solution:`O Diary Study revelou que a busca mobile não era uma "sessão" — era um reflexo.
+
+As pessoas buscavam enquanto:
+- Esperavam o café ficar pronto (15 segundos disponíveis)
+- Estavam em um papo e queriam confirmar um fato
+- Dirigindo e precisavam de endereço (voz)
+- Assistindo TV e viram algo interessante
+
+Cada contexto gerava um tipo diferente de necessidade:
+"Quero saber" / "Quero ir" / "Quero fazer" / "Quero comprar"
+
+Isso não era apenas comportamento — era uma nova arquitetura de intenção.`,
+      result:`O conceito de "micro-moments" foi publicado pelo Google em 2015 e reformulou:
+→ Como o Google ranqueia resultados para mobile (velocidade e contexto > completude)
+→ Como parceiros de conteúdo são aconselhados a estruturar páginas mobile
+→ Toda a divisão de marketing de performance do Google Ads
+→ O formato AMP (Accelerated Mobile Pages) para carregamento instantâneo
+
+O Diary Study não foi apenas uma pesquisa — foi o fundamento de uma mudança de plataforma.`,
+      learning:`O valor do Diary Study está no que acontece entre as sessões de pesquisa.
+
+Nenhum teste de laboratório revelaria o comportamento de busca ao esperar o café, porque ninguém leva um pesquisador para cozinha. O contexto real só aparece quando o participante registra no momento.
+
+A lição: quando há contradição entre o que você observa em pesquisa controlada e os dados de uso real, o Diary Study é a ferramenta para resolver essa contradição.` },
+    { id:"ex2", title:"Microsoft — Padrões de trabalho remoto com Teams",
+      summary:"Diary Study de 2 semanas com trabalhadores remotos revelou que reuniões consecutivas sem pausa causavam queda acentuada de concentração — achado que gerou o recurso de pausa obrigatória entre reuniões no Teams e os Insights de bem-estar.",
+      context:`Em 2020, com a expansão abrupta do trabalho remoto, o Microsoft Teams viu seu uso explodir de 32 para 75 milhões de usuários em dois meses. A equipe de produto precisava entender como as pessoas realmente trabalhavam em casa — não como diziam trabalhar.
+
+O problema: em laboratório, simular "um dia de trabalho remoto" era impossível.`,
+      problem:`Entrevistas revelavam que as pessoas "adoravam a flexibilidade" do trabalho remoto. Mas dados de uso mostravam padrões preocupantes: reuniões de 6h seguidas, uso do Teams até meia-noite, nenhuma pausa entre calls.
+
+Havia um gap entre o que as pessoas diziam (positivo) e o que os dados mostravam (exaustão).`,
+      process:`Diary Study com 40 trabalhadores remotos em 5 países:
+
+Período: 2 semanas
+Instrumento: formulário enviado 3x por dia (manhã, tarde, fim do dia) com:
+- Quantas reuniões tiveram
+- Nível de energia (1–10)
+- Sensação de produtividade (1–10)
+- O que gostariam que fosse diferente
+
+Complemento: dados anonimizados de uso do Teams (com consentimento)`,
+      solution:`Correlação revelada pelo Diary Study:
+
+Após 3 reuniões consecutivas sem pausa → energia caía em média 40%
+Após 5 reuniões → nível de concentração relatado caía para 3/10
+
+Participantes criaram rituais para compensar a ausência de deslocamento:
+- Caminhar pelo quarteirão antes de começar o dia
+- Desligar o computador fisicamente ao final
+- Roupa específica para "trabalho" vs "casa"
+
+Esses rituais foram relatados no diário, não nas entrevistas — as pessoas não tinham consciência de que faziam isso.`,
+      result:`O Teams lançou baseado nos achados do Diary Study:
+→ Notificação de "fim de reunião" 5 min antes do horário para forçar pausa
+→ Configuração de reuniões de 50 min em vez de 60 min como padrão
+→ Viva Insights: painel pessoal com análise de padrões de reunião e saúde
+→ "Quiet time" programado para proteger blocos de trabalho focado
+
+Pesquisa posterior mostrou redução de 40% em relatos de exaustão entre usuários que adotaram as novas configurações.`,
+      learning:`Diary Study é a única técnica capaz de revelar padrões que as próprias pessoas não percebem nelas mesmas.
+
+Nenhum participante responderia "sim, faço 6 reuniões seguidas sem pausa" numa entrevista — porque não tinham consciência disso. O diário acumulou a evidência ao longo de 2 semanas.
+
+Para pesquisa de produto em saúde e bem-estar, o Diary Study é praticamente obrigatório — porque o fenômeno só existe no tempo.` }
+  ],
+
+  "focus-group": [
+    { id:"ex1", title:"Spotify — Descoberta musical e o problema do paradoxo da escolha",
+      summary:"Focus groups com usuários revelaram que a abundância de músicas no Spotify criava paralisia de decisão — achado que gerou o algoritmo de Discover Weekly e a lógica de curadoria por editorial.",
+      context:`Em 2014, o Spotify tinha 20 milhões de músicas. O que parecia uma vantagem competitiva estava se tornando um problema: usuários relatavam dificuldade em descobrir músicas novas.
+
+A equipe de produto queria entender como as pessoas experienciavam a descoberta musical — e por que, tendo acesso a tudo, ouviam sempre as mesmas coisas.`,
+      problem:`Dados mostravam que usuários repetiam as mesmas playlists. Mas o dashboard não revelava o porquê. Entrevistas individuais geravam respostas vagas ("gosto das que já conheço").
+
+A equipe precisava entender como as pessoas falavam sobre descoberta musical entre si — o que era um fenômeno social, não individual.`,
+      process:`Série de 8 focus groups, 2 por cidade (São Paulo, Nova York, Estocolmo, Berlim):
+
+Fase 1 — Aquecimento: "Me conte a última vez que você descobriu uma música nova que amou. Como foi?"
+
+Fase 2 — Atividade de cartões: os participantes ordenavam formas de descoberta por prazer (rádio, amigos, playlists, algoritmo, editorial)
+
+Fase 3 — Discussão aberta sobre o que tornava uma recomendação "confiável"
+
+Fase 4 — Estímulo: apresentação de protótipos de 3 conceitos de descoberta`,
+      solution:`Os focus groups revelaram padrões que entrevistas individuais não captariam:
+
+A descoberta musical era profundamente social: "Meu amigo me mandou" era mais confiável que qualquer algoritmo. Mas "um editor especialista" era quase tão confiável quanto amigos.
+
+O paradoxo da escolha surgiu espontaneamente em todos os grupos: "Tem muita coisa. Fico na playlist que já sei que é boa."
+
+A linguagem dos grupos foi crucial: pessoas não diziam "recomendação algorítmica" — diziam "o Spotify adivinhou meu gosto" ou "parece que tem alguém que me conhece".
+
+Isso definiu o tom: a voz do Discover Weekly deveria parecer pessoal, não técnica.`,
+      result:`O Discover Weekly foi lançado em 2015 baseado nos insights dos focus groups:
+→ Posicionamento como "mixtape feita por um amigo que te conhece"
+→ Formato semanal (não contínuo) para criar ritual de descoberta
+→ 40 músicas — suficiente para surpresa, sem sobrecarregar
+→ Nos primeiros 10 meses: 1,7 bilhão de streams, 5 milhões de novas faixas descobertas por semana`,
+      learning:`Focus groups são a técnica certa para entender como um tema é experienciado coletivamente — porque a dinâmica de grupo revela o que é difícil capturar individualmente.
+
+A descoberta musical é um fenômeno social ("meu amigo me indicou"). Isso só emerge quando você coloca pessoas para conversar sobre o assunto entre si.
+
+Mais importante: os grupos revelaram a linguagem certa. "Um amigo que te conhece" não saiu de briefing — saiu de como os participantes descreveram o que queriam.` },
+    { id:"ex2", title:"Governo SP — Percepção de serviços digitais por cidadãos",
+      summary:"Focus groups com cidadãos sobre serviços públicos digitais revelaram que o problema não era tecnologia, mas a percepção de que 'o governo não faz nada funcionar' — achado que levou a uma estratégia de comunicação antes de qualquer lançamento de produto.",
+      context:`A Secretaria de Gestão do Estado de São Paulo estava lançando um portal unificado de serviços digitais. A equipe de comunicação precisava entender como os cidadãos percebiam e se comunicavam sobre serviços públicos antes de definir a estratégia de lançamento.`,
+      problem:`Pesquisas quantitativas anteriores mostravam que cidadãos queriam serviços digitais. Mas tentativas anteriores de digitalização tinham baixa adoção. O que estava errado?
+
+O gap era entre intenção declarada ("quero serviços digitais") e comportamento real (não usar os serviços digitais disponíveis).`,
+      process:`6 focus groups, segmentados por perfil:
+- Cidadãos que nunca usaram serviços digitais do governo
+- Cidadãos que tentaram usar e desistiram
+- Cidadãos que usam regularmente
+
+Roteiro:
+- Como você descreveria sua experiência com serviços públicos? (geral)
+- Conte uma situação em que precisou de um serviço público. Como foi?
+- O que você pensa quando ouve "serviço digital do governo"?
+
+Atividade: participantes escreveram em cartões o primeiro pensamento ao ouvir "site do governo"`,
+      solution:`Achados dos focus groups:
+
+O problema era de crença, não de usabilidade:
+"Já tentei. Não funciona." — frase repetida em todos os grupos.
+
+A memória coletiva de sistemas que não funcionavam bloqueava até a tentativa de usar sistemas novos.
+
+Nos cartões: "lento", "trava", "pede documento que não existe", "tem que ir pessoalmente de qualquer jeito".
+
+Insight crítico: lançar um produto melhor não era suficiente. Era preciso mudar a expectativa antes do lançamento.`,
+      result:`A estratégia de lançamento foi reescrita:
+→ Campanha de "prova social" antes do lançamento: usuários beta gravando depoimentos reais
+→ Nome do portal escolhido para evitar linguagem burocrática
+→ Página de status de serviços em tempo real para combater a percepção de "não funciona"
+→ Suporte ativo nas primeiras semanas para capturar e resolver problemas antes que virassem memória negativa
+
+Adoção 6 meses após lançamento foi 3x superior a portais lançados sem essa estratégia.`,
+      learning:`Focus groups revelam o que as pessoas pensam quando o assunto é coletivo — como serviços públicos, marcas e produtos de uso comum.
+
+Aqui, o produto poderia ser perfeito do ponto de vista técnico e ainda assim falhar — porque o problema estava na percepção prévia, não na experiência atual.
+
+A lição: antes de lançar, entenda o contexto cultural e histórico que seu usuário traz. Um focus group sobre "serviços públicos" era mais estratégico do que dez testes de usabilidade do portal.` }
+  ],
+
+  "guerrilla-research": [
+    { id:"ex1", title:"Dropbox — Validação de conceito em frente à Apple Store",
+      summary:"Antes de ter um produto funcionando, o fundador do Dropbox abordou pessoas em locais públicos para validar se a dor do backup era real e universal. 10 conversas informais informaram um vídeo que gerou 75.000 inscritos em um dia.",
+      context:`Em 2007, Drew Houston tinha apenas uma ideia: sincronização automática de arquivos na nuvem. Não existia produto — apenas um conceito. Mas antes de construir, ele precisava saber se a dor existia.
+
+O problema: como pesquisar algo que ainda não existe? Como recrutar participantes para testar um produto que não está pronto?`,
+      problem:`A abordagem tradicional (recrutar usuários, agendar sessões, preparar roteiro, obter aprovação de IRB) levaria meses. Houston tinha semanas antes da apresentação no Y Combinator.
+
+Ele precisava saber: as pessoas realmente perdem arquivos? A dor é real o suficiente para mudarem comportamento?`,
+      process:`Guerrilla validation em 3 locais diferentes em São Francisco:
+
+Local 1 — Calçada em frente à Apple Store em Palo Alto
+Local 2 — Cafeteria próxima a escritórios de tecnologia
+Local 3 — Biblioteca universitária da Stanford
+
+Script: "Oi, posso te fazer uma pergunta rápida sobre computadores? Você já perdeu arquivos importantes ou teve problema com backup?"
+
+Sem formulário. Sem gravação formal. Só conversa e anotações rápidas.`,
+      solution:`Em 2 tardes, Houston conversou com cerca de 30 pessoas:
+
+100% tinham uma história de perda de arquivos ou frustração com backup
+A maioria usava pen drives — e havia histórias de pen drives perdidos, corrompidos, esquecidos
+Alguns usavam e-mail para "enviar arquivos para si mesmos"
+Ninguém usava backup automático na nuvem — porque não existia de forma simples
+
+A dor era universal, real e não resolvida.`,
+      result:`Com essa validação, Houston gravou um vídeo de 3 minutos mostrando como o Dropbox funcionaria — antes de estar pronto.
+
+O vídeo foi para o Hacker News.
+
+Em 24 horas: 75.000 pessoas na fila de espera.
+
+Isso provou a tese sem construir o produto completo — e gerou financiamento para construí-lo.
+
+O Dropbox foi avaliado em US$ 10 bilhões no IPO de 2018.`,
+      learning:`Guerrilla Research não valida o produto. Valida a dor.
+
+Antes de qualquer investimento em desenvolvimento, a pergunta mais importante é: a dor que estou tentando resolver é real e significativa para o suficiente de pessoas?
+
+Essa pergunta pode ser respondida com 20–30 conversas informais em locais públicos. É assim que o Dropbox — e muitas outras empresas de bilhões de dólares — começou.
+
+A regra de ouro: quanto mais rápido e mais barato você descobrir que está errado, melhor.` },
+    { id:"ex2", title:"CTIC/UEMA — Teste rápido do portal do aluno na fila do RU",
+      summary:"Teste guerrilha de 5 minutos com calouros na fila do Restaurante Universitário revelou que 4 dos 5 não conseguiam encontrar o horário de aulas sem ajuda — problema invisível para a equipe de TI que conhecia o sistema de memória.",
+      context:`A equipe de desenvolvimento de sistemas da CTIC/UEMA recebeu reclamações recorrentes sobre o portal do aluno, mas sem especificidade: "o sistema é ruim", "não acho nada".
+
+Um desenvolvedor decidiu fazer um teste informal antes de abrir uma sprint de melhorias — sem orçamento, sem agenda, sem laboratório.`,
+      problem:`A equipe de TI achava o portal intuitivo — afinal, todos que o desenvolveram sabiam exatamente onde cada informação estava.
+
+O "sistema é ruim" dos alunos não era uma hipótese de trabalho. Era necessário transformar a reclamação vaga em problema específico.`,
+      process:`Guerrilla test na fila do RU em um dia de segunda-feira (horário de pico):
+
+Ferramenta: celular com o portal do aluno aberto
+Script: "Posso pedir um favor rápido? Estou testando o sistema. Você topa tentar encontrar seu horário de aulas aqui? São uns 5 minutos."
+
+5 estudantes abordados, todos calouros (primeiro mês de aula)
+
+Observação silenciosa: onde clicaram primeiro, onde pararam, o que falaram espontaneamente`,
+      solution:`Achados em 25 minutos de teste:
+
+4 dos 5 estudantes não encontraram o horário de aulas no primeiro caminho
+O caminho esperado: Portal → Acadêmico → Matrícula → Horário
+O caminho que os alunos tentavam: Portal → Turmas → (não existia) → desistiam
+
+2 estudantes foram para "Serviços" antes de qualquer outra opção
+1 estudante voltou para a tela inicial 3 vezes
+
+Frase repetida: "Achei que ia estar em 'Minha Turma' ou 'Minhas Aulas'"
+
+O rótulo "Horário de Aulas" estava correto para a equipe. "Turmas" ou "Minhas Aulas" era o que os alunos procuravam.`,
+      result:`Com base em 25 minutos de campo, a equipe mudou:
+→ Rótulo do menu: "Horário de Aulas" → "Minhas Turmas e Horários"
+→ Adição de shortcut na tela inicial para "Horário"
+→ Reorganização das 3 funções mais buscadas por calouros para o topo
+
+Retest com 5 novos calouros: todos encontraram no primeiro caminho.
+
+Custo total da pesquisa: R$ 0. Tempo: 25 minutos + 1 hora de implementação.`,
+      learning:`O maior inimigo da usabilidade é o conhecimento interno.
+
+Quem construiu o sistema sabe onde as coisas estão. Os usuários não. E essa diferença nunca aparece em reuniões de revisão interna — só aparece quando você observa alguém usando sem ajuda.
+
+Guerrilla Research é a forma mais rápida e mais barata de romper essa barreira. Em 25 minutos, a equipe aprendeu mais do que em meses de relatórios de chamados.` }
+  ],
+
+  "contextual-inquiry": [
+    { id:"ex1", title:"SAP — Redesenho de ERP para o trabalho real de contadores",
+      summary:"Contextual Inquiry com contadores durante seu trabalho revelou que 78% das tarefas no ERP eram realizadas com uma planilha paralela aberta — porque o sistema não oferecia as visões de dados que o trabalho real exigia.",
+      context:`A SAP estava redesenhando a interface do SAP Finance para torná-la mais moderna e intuitiva. A equipe tinha uma lista de reclamações de usuários e queria redesenhar a interface com base nelas.
+
+O problema: as reclamações eram vagas ("é complicado", "tem muitos campos") e às vezes contraditórias.`,
+      problem:`Entrevistas com contadores geravam respostas como "o sistema funciona, só é um pouco lento" — porque as pessoas tendem a normalizar os problemas com ferramentas que usam há anos e não conseguem descrever o que é difícil de forma articulada.
+
+Para redesenhar o sistema, a equipe precisava ver o trabalho acontecendo — não ouvir sobre ele.`,
+      process:`Contextual Inquiry com 12 contadores em 4 empresas diferentes:
+
+Cada sessão: 90 a 120 minutos no posto de trabalho real do contador
+Instrução inicial: "Faça seu trabalho normalmente. Eu vou observar e fazer perguntas de tempos em tempos."
+
+Os pesquisadores documentaram:
+- Sequência exata de ações no sistema
+- Artefatos paralelos utilizados (planilhas, papel, outros sistemas)
+- Interrupções e como eram tratadas
+- Momentos de hesitação ou busca por informação`,
+      solution:`O padrão mais impactante descoberto pela CI:
+
+Em 9 dos 12 participantes, havia uma planilha Excel aberta em outra tela simultaneamente com o SAP.
+
+Quando questionados: "Essa planilha faz parte do seu trabalho?"
+Resposta típica: "Ah, essa é minha planilha de controle. Uso para não perder nada."
+
+A planilha continha:
+- Conciliações que o SAP não fazia automaticamente
+- Visões combinadas de dados que exigiam 4–5 telas no sistema
+- Alertas manuais criados pelo contador para prazos
+
+O SAP era o sistema oficial. A planilha era onde o trabalho real acontecia.`,
+      result:`A CI gerou o redesign do SAP Fiori (lançado em 2013):
+→ Dashboard personalizável com visões de trabalho do contador, não de dados do sistema
+→ Conciliação automática de partidas em aberto (a principal função da planilha paralela)
+→ Alertas configuráveis por prazo fiscal e limite de valor
+→ Redução de 60% no número de telas necessárias para as tarefas mais comuns
+
+A planilha paralela foi eliminada no fluxo de trabalho de 85% dos usuários testados no pós-implantação.`,
+      learning:`A Contextual Inquiry tem um princípio central: o trabalho real sempre diverge do trabalho prescrito.
+
+Sistemas são desenhados para um fluxo ideal. As pessoas criam workarounds para o fluxo real. Se você não vai até o ambiente de trabalho, esses workarounds ficam invisíveis — e você redesenha o sistema ideal sem resolver os problemas reais.
+
+A planilha paralela nunca apareceria em uma entrevista porque os contadores não a viam como um problema — era apenas "como as coisas funcionam".` },
+    { id:"ex2", title:"CTIC/UEMA — CI com coordenadores e o painel que substituiu 5 sistemas",
+      summary:"Contextual Inquiry com coordenadores de curso revelou que cada um mantinha planilhas manuais paralelas ao SIGAA para acompanhar alunos em risco — porque o sistema oficial exigia 7 cliques para ver informações básicas de acompanhamento acadêmico.",
+      context:`A equipe de desenvolvimento recebeu uma demanda da Pró-Reitoria de Graduação: "Os coordenadores não usam o SIGAA para gestão acadêmica. Precisamos entender por quê."
+
+A hipótese inicial da gestão: falta de treinamento ou resistência à tecnologia.`,
+      problem:`Diagnóstico baseado em entrevista teria confirmado a hipótese inicial — coordenadores são professores, muitos com baixa fluência digital, e provavelmente diriam que o sistema "é difícil".
+
+Mas a equipe de TI sabia por experiência que "difícil" raramente é o problema real. Foram a campo.`,
+      process:`Contextual Inquiry com 5 coordenadores de cursos diferentes (Administração, Engenharia Civil, Pedagogia, Enfermagem, Computação):
+
+Cada visita: 2 horas no gabinete do coordenador durante período letivo
+Instrução: "Me mostre como você acompanha seus alunos. Como você sabe quem está em risco de reprovação?"
+
+Pesquisadores documentaram:
+- Cada ferramenta aberta no computador
+- Cada troca entre aplicativos
+- Artefatos físicos (cadernos, planilhas impressas)
+- Informações que os coordenadores procuravam mas não encontravam`,
+      solution:`Achado consistente em todos os 5 coordenadores:
+
+Todos mantinham um arquivo Excel com:
+- Lista de alunos por período com faltas acumuladas
+- Alunos com histórico de reprovação em disciplinas específicas
+- Prazos de defesa de TCC
+- Situação de matrícula de alunos irregulares
+
+Para obter essas informações no SIGAA, o processo era:
+→ Login → Coordenação → Relatórios → Desempenho → Turma → Exportar CSV → Abrir no Excel → Filtrar
+
+7 cliques e 3 aplicativos para uma informação que deveria estar imediata.
+
+Os coordenadores não viam isso como um problema do sistema. "É assim que funciona."`,
+      result:`A equipe desenvolveu o Painel do Coordenador:
+→ Visão única: alunos com frequência abaixo de 75%, reprovações acumuladas, pendências de TCC
+→ Atualização diária automática — sem exportação manual
+→ Alerta por e-mail para situações críticas
+
+Resultado após 1 semestre:
+→ 4 dos 5 coordenadores eliminaram completamente a planilha paralela
+→ Tempo médio de identificação de alunos em risco: de 45 minutos para 3 minutos
+→ Intervenções pedagógicas precoces aumentaram 60%`,
+      learning:`A CI revelou que o problema não era tecnofobia nem falta de treinamento.
+
+Era que o sistema não oferecia as visões de trabalho que os coordenadores precisavam. A informação existia no banco de dados — só não estava acessível da forma que o trabalho exigia.
+
+Isso nunca apareceria em uma entrevista porque os coordenadores não sabiam que podia ser diferente. A solução era óbvia depois da CI — e invisível antes dela.` }
+  ],
+
+  "think-aloud": [
+    { id:"ex1", title:"Portal GOV.BR — Redesenho da emissão de documentos",
+      summary:"Sessões de Think Aloud com cidadãos revelaram que o fluxo de emissão de CPF online tinha 3 pontos de abandono causados por rótulos ambíguos — problemas invisíveis para a equipe que sabia o significado de cada campo.",
+      context:`O Serviço Federal de Processamento de Dados (Serpro) estava redesenhando o portal GOV.BR para consolidar serviços de documentos federais. Uma das prioridades era digitalizar a emissão e atualização de CPF.
+
+A equipe tinha construído o fluxo seguindo os procedimentos burocráticos — mas as métricas de conclusão eram baixas: apenas 34% dos usuários que começavam o processo concluíam sem abandonar.`,
+      problem:`Dados de Analytics mostravam três pontos de abandono:
+- Tela 3: campo "Natureza do documento"
+- Tela 5: upload de comprovante
+- Tela 7: confirmação de dados
+
+Mas os dados não diziam por quê as pessoas abandonavam nesses pontos.`,
+      process:`Think Aloud com 8 participantes recrutados em CRAS (Centro de Referência de Assistência Social):
+
+Perfil: cidadãos que precisavam atualizar CPF — o público real do serviço (não universitários, não profissionais de tecnologia)
+
+Tarefa: "Tente atualizar seus dados no CPF usando esse computador. Fale tudo que estiver pensando."
+
+Pesquisadores observavam sem intervir. Um gravava tela + voz. Outro tomava notas de comportamento.`,
+      solution:`Verbalização dos participantes revelou o porquê de cada ponto de abandono:
+
+Tela 3 — "Natureza do documento":
+"Natureza... o que é isso? É o tipo? É o número? Eu tenho que escolher aqui entre RG e CNH mas não sei o que é 'natureza'."
+→ O termo era jargão burocrático. Cidadãos não sabiam o que preencher.
+
+Tela 5 — Upload de comprovante:
+"Preciso de comprovante de endereço... mas qual? Conta de luz? Contrato de aluguel? Tem que ser recente?"
+→ Ausência de especificação. Usuários paravam para buscar o documento certo e não voltavam.
+
+Tela 7 — Confirmação:
+"Confirmar... mas o que estou confirmando? Já enviei tudo. É pra clicar aqui ou esperar chegar algo?"
+→ Ambiguidade no estado final: usuários não sabiam se o processo havia terminado.`,
+      result:`Três mudanças implementadas com base direta no Think Aloud:
+
+1. "Natureza do documento" → "Tipo de documento de identificação (RG, CNH, Passaporte)"
+2. Instruções de upload: lista exata de documentos aceitos + requisito de data
+3. Tela de confirmação: status claro + tempo estimado + e-mail de protocolo
+
+Taxa de conclusão: de 34% para 71% em 30 dias após mudanças.
+
+Custo da pesquisa: 2 dias de campo + 1 dia de análise.
+Impacto: +37 pontos percentuais de conclusão em serviço com milhões de acessos mensais.`,
+      learning:`Think Aloud é a técnica mais eficiente para identificar onde e por que uma interface confunde.
+
+O Analytics dizia "onde" as pessoas abandonavam. O Think Aloud dizia "por quê" — e o "por quê" era a diferença entre adicionar um campo e mudar um rótulo.
+
+A lição mais importante: o problema raramente está onde você acha. A Tela 3 parecia simples para toda a equipe. Para o cidadão, era um campo sem sentido.` },
+    { id:"ex2", title:"iFood — Think Aloud com usuários de baixa renda revelou linguagem errada",
+      summary:"Sessões de Think Aloud com usuários de periferia mostraram que o botão 'Rastrear pedido' não era entendido como rastreamento em tempo real — porque 'rastrear' era associado a Correios e espera de dias, não a mapa em tempo real.",
+      context:`O iFood estava expandindo para regiões periféricas de cidades brasileiras onde o aplicativo tinha penetração menor. A taxa de pedidos repetidos (retenção) era significativamente menor nesses segmentos — apesar de preços e tempo de entrega similares.
+
+A hipótese inicial: problema de confiança na entrega.`,
+      problem:`Dados mostravam que a maioria dos usuários novos de periferia não abria o rastreamento em tempo real — o que levava a mais ligações para o restaurante e mais pedidos cancelados por suposta demora.
+
+A equipe de produto achava que o recurso de rastreamento estava sendo subutilizado por desconhecimento do recurso.`,
+      process:`Think Aloud com 10 participantes em São Paulo (bairros de Itaquera, Campo Limpo e Parelheiros):
+
+Recrutamento: usuários que haviam feito 1–3 pedidos no iFood (novatos)
+Tarefa: "Você acabou de fazer um pedido. Fale tudo que está pensando enquanto aguarda."
+
+Pesquisadores observaram a tela e a verbalização enquanto os participantes aguardavam um pedido real.`,
+      solution:`O Think Aloud revelou algo inesperado:
+
+Quando o pedido era confirmado, a maioria dos participantes fechava o app.
+
+Pesquisadora: "O que você está pensando agora?"
+Participante 1: "Agora é esperar. Uns 40 minutos né."
+Pesquisadora: "Você viu esse botão aqui?"
+Participante 1: "Rastrear pedido? Ah, esse é pra se o pedido se perder. Igual nos Correios."
+
+O "rastrear" era interpretado como recurso de recuperação de problema — não como acompanhamento em tempo real.
+
+Participante 3: "Mas meu pedido vai chegar mesmo sem rastrear, né?"
+
+A palavra "rastrear" criava ansiedade, não conforto.`,
+      result:`Mudança implementada: "Rastrear pedido" → "Ver entregador no mapa"
+
+Complementado por:
+→ Notificação push automática quando o entregador saía do restaurante: "Seu pedido está a caminho!"
+→ Visualização do mapa na tela de confirmação sem precisar clicar
+
+Taxa de abertura do rastreamento: +180% nos segmentos testados
+Pedidos cancelados por "demora": -40%
+Ligações para restaurante: -55%`,
+      learning:`A linguagem certa é parte do produto — não do marketing.
+
+"Rastrear" e "Ver entregador no mapa" descrevem a mesma funcionalidade. Para um segmento, eram experiências completamente diferentes: uma causava ansiedade, a outra causava alívio.
+
+O Think Aloud revelou uma interpretação que nenhum teste A/B teria encontrado — porque o teste A/B testa o comportamento, não o significado que o usuário atribui ao comportamento.` }
   ]
 };
 const TOOLS = [
@@ -3409,6 +4620,121 @@ const TOOLS = [
     steps:{pt:["Defina uma hipótese clara: 'Acredito que [mudança X] vai aumentar [métrica Y] porque [razão Z]'","Isole UMA variável por teste — múltiplas variáveis tornam impossível saber o que causou o resultado","Calcule o tamanho de amostra necessário — testes com poucos usuários produzem resultados não confiáveis","Defina a duração mínima: geralmente 2 semanas para capturar variação de comportamento semanal","Execute sem interferência — não pare cedo mesmo que um resultado pareça óbvio","Analise com 95% de significância estatística — abaixo disso o resultado pode ser aleatório","Documente o aprendizado mesmo quando o teste falha — testes negativos são dados valiosos"],en:["Define clear hypothesis","Isolate ONE variable","Calculate required sample size","Define minimum 2-week duration","Run without interference","Analyze at 95% confidence","Document learnings"]},
     examples:["Campanha Obama 2008: mudar texto do botão de 'Sign Up' para 'Learn More' aumentou inscrições em 40,6% — gerando US$ 60 milhões adicionais em doações.","Booking.com roda mais de 1.000 testes A/B simultâneos — nenhuma mudança de interface chega a todos os usuários sem passar por experimento.","Mudar texto do botão de 'Enviar' para 'Concluir matrícula' em um portal universitário aumentou a taxa de completude em 18% — mudança de uma palavra.","Amazon testou remover o carrinho de compras do fluxo de ebooks — a versão sem carrinho converteu 68% mais neste segmento.","Nubank testou o timing de oferta de aumento de limite — encontrar o momento certo aumentou a taxa de aceitação em 34%."],
     who:["UX Researcher","Product Manager","Desenvolvedor","Analista de Dados"]}
+
+,{id:"diary-study",icon:"📓",label:"Diary Study",type:"Método",category:"pesquisa",
+  origin:"Adaptado de estudos longitudinais em psicologia; popularizado em UX por autores como Bill Buxton",
+  tags:["pesquisa","qualitativa","longitudinal","comportamento","diário"],
+  summary:"Técnica de pesquisa longitudinal em que participantes registram experiências, sentimentos e comportamentos ao longo do tempo — em contexto real, sem pesquisador presente.",
+  when:"Use quando precisar capturar comportamentos e experiências ao longo de dias ou semanas; quando o contexto do usuário for difícil de observar diretamente; quando mudanças graduais de comportamento forem relevantes.",
+  steps:[
+    "Defina o período de estudo (3 dias a 4 semanas)",
+    "Recrute participantes representativos (5–15 pessoas)",
+    "Crie o instrumento de registro: diário físico, app, formulário ou áudio/vídeo",
+    "Instrua os participantes sobre quando e como registrar",
+    "Envie lembretes periódicos para manter engajamento",
+    "Colete e consolide os registros",
+    "Analise padrões, picos de emoção e comportamentos recorrentes",
+    "Realize entrevistas de encerramento para aprofundar achados"
+  ],
+  tips:[
+    "Quanto menor o esforço de registro, maior a adesão",
+    "Combine registros estruturados (escala) com abertos (texto livre)",
+    "Inclua perguntas sobre contexto e emoção, não só ação",
+    "Use prompts programados (notificações) para capturar momentos específicos"
+  ],
+  who:["UX Researcher","Service Designer","Product Manager","Psicólogo","Antropólogo"]}
+
+,{id:"focus-group",icon:"🗣️",label:"Focus Group",type:"Método",category:"pesquisa",
+  origin:"Desenvolvido por Robert Merton nos anos 1940; amplamente adotado em pesquisa de mercado e ciências sociais",
+  tags:["pesquisa","qualitativa","grupo","discussão","opiniões"],
+  summary:"Sessão moderada com 5–10 participantes que discutem um tema, produto ou serviço em grupo — gerando insights sobre atitudes, percepções e linguagem dos usuários.",
+  when:"Use para explorar percepções, opiniões e valores coletivos; para testar mensagens, conceitos ou nomes; para entender como grupos sociais falam sobre um problema. Evite para comportamentos individuais — o grupo influencia respostas.",
+  steps:[
+    "Defina o objetivo: o que precisa aprender do grupo?",
+    "Recrute 5–10 participantes com perfis similares (homogeneidade facilita discussão)",
+    "Prepare o roteiro: abertura, aquecimento, tópicos centrais, encerramento",
+    "Garanta ambiente neutro e confortável (presencial ou remoto)",
+    "Conduza a sessão com moderador e observe com observador separado",
+    "Grave (com consentimento) ou tome notas detalhadas",
+    "Analise temas emergentes, consensos e divergências",
+    "Relacione achados ao objetivo original"
+  ],
+  tips:[
+    "O moderador deve estimular todos a falar — não deixar uma voz dominar",
+    "Grupos muito heterogêneos inibem participantes com menos poder social",
+    "Não use Focus Group para validar dados comportamentais — use para percepções",
+    "Dinamismo da sessão (votação, ranking) enriquece discussões estagnadas"
+  ],
+  who:["UX Researcher","Service Designer","Pesquisador de Marketing","Facilitador"]}
+
+,{id:"guerrilla-research",icon:"⚡",label:"Guerrilla Research",type:"Técnica",category:"pesquisa",
+  origin:"Popularizado por Steve Krug e comunidades de UX ágil; inspirado em práticas de guerrilha marketing dos anos 1970",
+  tags:["pesquisa","rápida","campo","informal","barato"],
+  summary:"Pesquisa rápida e informal conduzida em locais públicos ou ambientes reais — cafés, praças, universidades — com usuários recrutados no momento, sem agendamento formal.",
+  when:"Use quando precisar de feedback rápido e barato; em fases iniciais de descoberta; quando não há orçamento ou tempo para pesquisa formal; para validar hipóteses simples rapidamente.",
+  steps:[
+    "Defina claramente a pergunta ou hipótese a validar",
+    "Identifique o local onde o público-alvo circula",
+    "Prepare o instrumento: protótipo, wireframe, pergunta ou tarefa",
+    "Aborde participantes com pitch curto e claro ('2 minutos do seu tempo?')",
+    "Conduza a sessão: observe + ouça, não explique demais",
+    "Registre insights imediatamente após cada conversa",
+    "Repita com 5–10 pessoas para identificar padrões",
+    "Consolide e compartilhe achados com a equipe"
+  ],
+  tips:[
+    "5 usuários já revelam a maioria dos problemas de usabilidade (Nielsen, 1993)",
+    "Seja direto e honesto: 'estou testando um produto, não você'",
+    "Leve um tablet ou impresso — evite dispositivos que intimidem",
+    "Ótimo para testes de usabilidade rápidos e first-click tests"
+  ],
+  who:["UX Designer","UX Researcher","Product Designer","Estudante de Design"]}
+
+,{id:"contextual-inquiry",icon:"🔍",label:"Contextual Inquiry",type:"Método",category:"pesquisa",
+  origin:"Desenvolvido por Hugh Beyer e Karen Holtzblatt nos anos 1980 como parte do Contextual Design",
+  tags:["pesquisa","contextual","observação","entrevista","campo"],
+  summary:"Método de pesquisa em campo que combina observação e entrevista: o pesquisador vai até o ambiente real do usuário, observa ele trabalhando e faz perguntas enquanto as tarefas acontecem.",
+  when:"Use quando precisar entender o contexto real de uso; quando o usuário realiza tarefas complexas difíceis de reproduzir em laboratório; quando houver suspeita de gap entre o que as pessoas dizem e o que fazem.",
+  steps:[
+    "Defina as tarefas e contextos a observar",
+    "Recrute participantes no ambiente real de uso (trabalho, casa, campo)",
+    "Adote o papel de 'aprendiz': o usuário ensina, você aprende",
+    "Observe as tarefas acontecendo e faça perguntas em tempo real",
+    "Registre: notas, fotos, vídeos (com consentimento)",
+    "Ao final, faça interpretação compartilhada com o usuário",
+    "Consolide modelos de trabalho: sequências, artefatos, cultura",
+    "Compartilhe com a equipe em sessão de affinity mapping"
+  ],
+  tips:[
+    "Vá ao ambiente real — nunca traga o usuário ao escritório para CI",
+    "Peça para o usuário 'pensar em voz alta' enquanto trabalha",
+    "Capture artefatos físicos usados: post-its, planilhas paralelas, cadernos",
+    "Diferente de shadowing: CI inclui perguntas durante a observação"
+  ],
+  who:["UX Researcher","Service Designer","Ergonomista","Analista de Sistemas"]}
+
+,{id:"think-aloud",icon:"💬",label:"Think Aloud Protocol",type:"Técnica",category:"pesquisa",
+  origin:"Desenvolvido por Clayton Lewis na IBM (1982); baseado no protocolo verbal de Anders Ericsson e Herbert Simon",
+  tags:["pesquisa","usabilidade","verbalização","teste","avaliação"],
+  summary:"Técnica em que o participante verbaliza seus pensamentos, sentimentos e raciocínios enquanto realiza uma tarefa — revelando modelo mental, dúvidas e pontos de confusão invisíveis na observação silenciosa.",
+  when:"Use durante testes de usabilidade; para identificar onde a interface confunde; para entender o modelo mental do usuário; para avaliar protótipos e fluxos antes do lançamento.",
+  steps:[
+    "Defina as tarefas a testar (3–5 tarefas realistas)",
+    "Recrute 5–8 participantes representativos",
+    "Explique o protocolo: 'pense em voz alta — não há resposta certa ou errada'",
+    "Pratique com uma tarefa neutra para o participante se aquecer",
+    "Inicie as tarefas reais: observe, registre, não interfira",
+    "Se o participante silenciar, use prompts neutros: 'o que você está pensando?'",
+    "Grave tela + voz + câmera facial (com consentimento)",
+    "Analise gravações: identifique momentos de hesitação, erro e confusão"
+  ],
+  tips:[
+    "Não explique nem ajude — o silêncio do pesquisador é dado valioso",
+    "Diferencie Think Aloud Concorrente (durante) de Retrospectivo (após)",
+    "Combine com eyetracking para triangulação mais rica",
+    "Mesmo 5 participantes revelam 80% dos problemas de usabilidade (Nielsen)"
+  ],
+  who:["UX Researcher","UX Designer","Product Designer","Avaliador de Usabilidade"]}
 
 
 ];
